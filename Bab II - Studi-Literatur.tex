@@ -3,275 +3,97 @@
 % ==========================================
 \chapter{STUDI LITERATUR}
 \label{chap:studi-literatur}
-\section{Penulisan Gambar, Tabel, Rumus, dan Kode}
-\lipsum[1]
 
-\subsection{Gambar}
-Contoh gambar dapat dilihat pada Gambar \ref{gambar:jaringan}. Gambar dan judulnya diposisikan di tengah. Nomor gambar tidak diakhiri tanda titik. Gambar tersebut dibuat menggunakan aplikasi draw.io dan disimpan ke format PNG setelah dengan zoom setting pada angka 300\%. Ukuran gambar yang ditampilkan dapat diatur dengan mengubah nilai \textit{width} dalam sintaks \textit{includegraphics}.
+% --- 1.1 Krisis Hipertensi (Sesuai 1.1 di PDF) ---
+\section{Krisis Hipertensi}
+[cite_start]Krisis Hipertensi merupakan suatu kondisi medis serius yang ditandai oleh peningkatan tekanan darah (TD) akut yang parah[cite: 348]. [cite_start]Kondisi ini umumnya didefinisikan ketika Tekanan Darah Sistolik (TDS) melebihi 180 mmHg atau Tekanan Darah Diastolik (TDD) melebihi 120 mmHg (StatPearls 2025; Mayo Clinic 2022)[cite: 349]. [cite_start]Identifikasi dan tatalaksana segera sangat penting untuk mencegah kerusakan organ permanen atau risiko kematian (StatPearls 2025)[cite: 350]. [cite_start]Krisis ini diklasifikasikan berdasarkan keberadaan kerusakan organ target akut yang dimediasi oleh hipertensi atau HMOD, membaginya menjadi Hipertensi Urgensi dan Hipertensi Emergensi (Cleveland Clinic 2024; StatPearls 2025)[cite: 351].
 
-\begin{figure}[t] % pilihan opsi yang disarankan: t = top, b = bottom, h = here
-	\centering
-  \captionsetup{justification=centering}
-    	\includegraphics[width=0.7\textwidth]{image/gambar1.png}
-	\caption{Contoh gambar jaringan}
-	\label{gambar:jaringan}
-\end{figure}
+\subsection{Hipertensi Urgensi (Hypertensive Urgency)}
+[cite_start]Hipertensi Urgensi ditandai dengan peningkatan TD yang parah yaitu TD sistolik melebihi 180 mmHg dan TD diastolik melebihi 120 mmHg tanpa adanya tanda-tanda kerusakan organ target akut yang baru atau progresif (StatPearls 2023)[cite: 353]. [cite_start]Gejala yang mungkin dialami pasien dalam kondisi urgensi cenderung non-spesifik, mencakup sakit kepala berkepanjangan, mimisan, pusing, atau kegelisahan (MSF 2025; Cleveland Clinic 2024)[cite: 354]. [cite_start]Karena ketiadaan kerusakan organ akut, tatalaksana diarahkan pada penurunan tekanan darah secara bertahap dalam kurun waktu 24 hingga 48 jam, umumnya menggunakan medikasi oral (StatPearls 2025)[cite: 355].
 
-Gambar umumnya tidak jelas atau kabur jika gambar tersebut:
-\begin{enumerate}[a.]
-  \item diperoleh dari hasil cropping pada suatu halaman buku atau situs web;
-  \item hasil pembesaran gambar yang gambar aslinya sebenarnya berukuran kecil; atau
-  \item disimpan dalam resolusi kecil
-\end{enumerate}
-Ketidakjelasan gambar ini dapat dilihat pada garis-garis diagram yang tidak tegas dan tulisan-tulisan dalam gambar yang tampak kabur dan kurang jelas terbaca.
+\subsection{Hipertensi Emergensi (Hypertensive Emergency)}
+[cite_start]Hipertensi Emergensi adalah kondisi yang mengancam jiwa dan memerlukan intervensi segera (BMJ Best Practice 2024)[cite: 358]. [cite_start]Kondisi ini dicirikan oleh TD yang sangat tinggi yaitu TD sistolik melebihi 180 mmHg dan TD diastolik melebihi 120 mmHg yang disertai bukti kerusakan organ target akut[cite: 359]. [cite_start]Kerusakan organ yang dapat terjadi meliputi sistem saraf, yang dapat memunculkan perubahan status mental, kebingungan, atau perubahan penglihatan[cite: 360]. [cite_start]Selain itu, kerusakan juga dapat terjadi pada jantung, memicu gagal jantung atau infark miokard, ginjal yang menyebabkan gagal ginjal akut, serta pembuluh darah besar, misalnya diseksi aorta atau aneurisma (StatPearls 2024; AHA 2025)[cite: 361].
 
-Untuk mendapatkan gambar yang tidak kabur (\textit{blur}), langkah-langkah berikut dapat digunakan:
-\begin{enumerate}[(a)]
-\item Gambar yang didapat di suatu pustaka atau referensi sebaiknya digambar ulang, misalnya menggunakan PowerPoint, Canva, Figma, draw.io, atau yang lainnya.
-\item Jika diagram atau ilustrasi digambar menggunakan draw.io, saat gambar disimpan ke format PNG atau JPG (\textit{export as}), lakukan \textit{zoom} ke minimal 300\% (\textit{the default value is} 100\%). 
-\item Jika diagram digambar dengan menggunakan PowerPoint, gambar dapat langsung di-\textit{copy-paste} ke Word.
-\end{enumerate}
+\subsection{Faktor Pemicu Utama}
+[cite_start]Salah satu penyebab paling umum krisis hipertensi pada pasien dengan riwayat hipertensi kronis adalah **ketidakpatuhan pasien**, yang berarti kegagalan mengikuti jadwal dan dosis pengobatan antihipertensi yang diresepkan (MDPI 2022; StatPearls 2025)[cite: 363]. [cite_start]Faktor pemicu lain meliputi kondisi seperti preeklampsia atau eklampsia dalam kehamilan, adanya penyakit ginjal, serta penggunaan obat-obatan yang dapat meningkatkan TD, misalnya obat antiinflamasi nonsteroid atau stimulan seperti kokain (MSF 2025; StatPearls 2024)[cite: 364].
 
-\subsection{Tabel}
-Tabel ada dua jenis, yaitu tabel yang bisa termuat dalam satu halaman dan tabel yang sangat panjang sehingga tidak muat dalam satu halaman.
-\subsubsection{Tabel yang Muat dalam Satu Halaman}
-Contoh tabel dapat dilihat pada Tabel \ref{tbl:harga1} dan \ref{tbl:harga2}. Tabel dan judulnya dibuat rata kiri dan judul tabel diletakkan di atas tabel. Usahakan tabel dapat ditulis dalam satu halaman, tidak terpotong ke halaman berikutnya.
-
-\begin{table}[t] % pilihan opsi yang disarankan: t = top, b = bottom, h = here
-  \begin{tabular}{ | p{2cm} | p{2cm} | p{3cm} |}
-	\hline
-	Nama 	& Satuan 		& Harga \\
-	\hline
-	Buku 	& Exemplar	& 25000 \\
-	Komputer	& Unit		& 2500000 \\
-	Pensil	& Buah		& 118900 \\
-	\hline
-	\end{tabular}
-\caption{Tabel harga bahan pokok}
-\label{tbl:harga1}
-\end{table}
-
-\begin{table}[t] % pilihan opsi yang disarankan: t = top, b = bottom, h = here
-	\begin{tabular}{ | l | c | r | }
-	\hline
-	Nama 	& Satuan 		& Harga \\
-	\hline
-	Buku 	& Exemplar	& 25000 \\
-	Komputer	& Unit		& 2500000 \\
-	Pensil	& Buah		& 118900 \\
-	\hline
-	\end{tabular}
-\caption{Tabel harga bahan sekunder}
-\label{tbl:harga2}
-\end{table}
-
-\subsubsection{Tabel yang Sangat Panjang}
-Jika tabel terlalu panjang sehingga tidak muat dalam satu halaman, gunakan paket 
-\textit{longtable} untuk membuat tabel yang dapat terpotong ke halaman berikutnya, 
-seperti pada Tabel \ref{tbl:longtable1}.
-
-\begin{longtable}{@{\extracolsep{\fill}} l c r r}
-\caption{Comprehensive Data Table Example}\label{tbl:longtable1} \\
-\toprule
-\textbf{ID} & \textbf{Name} & \textbf{Score} & \textbf{Rank} \\
-\midrule
-\endfirsthead
-
-\caption*{Comprehensive Data Table Example (lanjutan)} \\
-\toprule
-\textbf{ID} & \textbf{Name} & \textbf{Score} & \textbf{Rank} \\
-\midrule
-\endhead
-
-\midrule
-\multicolumn{4}{r}{\textit{Bersambung ke halaman berikutnya}} \\
-\bottomrule
-\endfoot
-
-\bottomrule
-\endlastfoot
-
-% === Table Data ===
-1 & Alice Smith & 89 & 5 \\
-2 & Bob Johnson & 93 & 3 \\
-3 & Carol Davis & 95 & 2 \\
-4 & Daniel Wilson & 88 & 6 \\
-5 & Eve Thompson & 97 & 1 \\
-6 & Frank Brown & 85 & 7 \\
-7 & Grace Lee & 91 & 4 \\
-8 & Henry Miller & 80 & 9 \\
-9 & Irene Garcia & 83 & 8 \\
-10 & Jack Robinson & 78 & 10 \\
-% Repeat with more rows to make it long
-11 & Kevin Harris & 76 & 11 \\
-12 & Laura Martin & 75 & 12 \\
-13 & Michael Clark & 74 & 13 \\
-14 & Natalie Lewis & 73 & 14 \\
-15 & Olivia Walker & 72 & 15 \\
-16 & Peter Hall & 71 & 16 \\
-17 & Quinn Allen & 70 & 17 \\
-18 & Rachel Young & 69 & 18 \\
-19 & Samuel King & 68 & 19 \\
-20 & Tina Wright & 67 & 20 \\
-21 & Uma Scott & 66 & 21 \\
-22 & Victor Green & 65 & 22 \\
-23 & Wendy Adams & 64 & 23 \\
-24 & Xavier Nelson & 63 & 24 \\
-25 & Yolanda Carter & 62 & 25 \\
-26 & Zachary Perez & 61 & 26 \\
-27 & Amelia Baker & 60 & 27 \\
-28 & Benjamin Rivera & 59 & 28 \\
-29 & Charlotte Rogers & 58 & 29 \\
-30 & David Murphy & 57 & 30 \\
-31 & Ethan Cooper & 56 & 31 \\
-32 & Fiona Reed & 55 & 32 \\
-33 & George Bailey & 54 & 33 \\
-34 & Hannah Cox & 53 & 34 \\
-35 & Isaac Howard & 52 & 35 \\
-36 & Julia Ward & 51 & 36 \\
-37 & Kyle Flores & 50 & 37 \\
-38 & Lily Bell & 49 & 38 \\
-39 & Mason Sanders & 48 & 39 \\
-40 & Nora Patterson & 47 & 40 \\
-41 & Owen Ramirez & 46 & 41 \\
-42 & Penelope Torres & 45 & 42 \\
-43 & Quentin Foster & 44 & 43 \\
-44 & Rebecca Gonzales & 43 & 44 \\
-45 & Sebastian Bryant & 42 & 45 \\
-46 & Taylor Alexander & 41 & 46 \\
-47 & Ursula Russell & 40 & 47 \\
-48 & Vincent Griffin & 39 & 48 \\
-49 & William Diaz & 38 & 49 \\
-50 & Zoe Simmons & 37 & 50 \\
-% (You can easily extend this list to hundreds of rows)
-\end{longtable}
-
-\subsubsection{Rumus}
-Contoh rumus matematika dapat ditulis seperti pada Persamaan \ref{eq:contoh1} di bawah ini. 
-Penomoran persamaan diletakkan di sebelah kanan, dan rumus ditulis dalam mode \textit{display math}.
-\begin{equation}
-E = mc^2
-\label{eq:contoh1}
-\end{equation}
-
-Contoh lain penulisan rumus matematika yang lebih kompleks dapat ditulis seperti pada Persamaan \ref{eq:rumus2}.
-
-\begin{align}
-f(x) &= ax^2 + bx + c \\
-f'(x) &= \frac{d}{dx}(ax^2 + bx + c) \notag \\ % tidak menampilkan nomor pada baris ini
-      &= 2ax + b \label{eq:rumus2}
-\end{align}
-
-Jika rumus terlalu panjang untuk ditulis dalam satu baris, gunakan lingkungan \textit{multline} seperti pada Persamaan \ref{eq:rumus3} di bawah ini.
-\begin{multline} 
-y = a_0 + a_1x + a_2x^2 + a_3x^3 + a_4x^4 + a_5x^5 + a_6x^6 + a_7x^7 \\
-    + a_8x^8 + a_9x^9 + a_{10}x^{10} \label{eq:rumus3}
-\end{multline}
-
-Jika ada penurunan rumus yang terdiri dari beberapa baris, namun tidak memerlukan penomoran pada setiap baris, gunakan lingkungan \textit{align*}, misalnya:
-
-\begin{align*} 
-S &= \sum_{i=1}^{n} i^2 \\
-  &= 1^2 + 2^2 + 3^2 + \cdots + n^2 \\
-  &= \frac{n(n + 1)(2n + 1)}{6}
-\intertext{Contoh lainnya adalah rumus untuk mencari nilai rata-rata fungsi $f(x)$ pada interval $[p, q]$:}
-\bar{f} &= \frac{1}{q - p} \int_{p}^{q} f(x) \, dx \\
-        &= \frac{1}{q - p} \int_{p}^{q} (ax^2 + bx + c) \, dx \\
-        &= \frac{1}{q - p} \left[ \frac{a}{3}x^3 + \frac{b}{2}x^2 + cx \right]_p^q \\
-        &= \frac{a(q^3 - p^3)}{3(q - p)} + \frac{b(q^2 - p^2)}{2(q - p)} + c \label{eq:rumus4}
-\end{align*}
-
-
-
-\subsection{Algoritma, Pseudocode, atau Kode}
-Contoh penulisan algoritma atau pseudocode dapat ditulis seperti pada Kode \ref{alg:contoh1} di bawah ini. 
-Gunakan paket \textit{listings} untuk menulis source code dalam bahasa pemrograman tertentu, seperti pada Kode \ref{lst:contoh1}. 
-
-
-% -- Example of pseudocode and source code listing --
-% -- Gunakan minipage agar listing tidak terpotong ke halaman berikutnya --
-\begin{minipage}{\textwidth} 
-\begin{lstlisting}[frame=lines, captionpos=t, caption={Contoh pseudocode}, label={alg:contoh1}]
-ALGORITHM HelloWorld
-   PRINT "Hello, World!"
-END ALGORITHM
-\end{lstlisting}
-\end{minipage}
-
-\begin{minipage}{\textwidth}
-\begin{lstlisting}[language=Python, frame=single, caption={Contoh source code Python}, captionpos=t, label={lst:contoh1}]
-def hello_world():
-    print("Hello, World!")       
-hello_world()
-\end{lstlisting}
-\end{minipage}
-
-
-\section{Beberapa Kesalahan Penulisan yang Sering Terjadi}
-\subsection{Penggunaan Kata "di mana" atau "dimana"}
-Banyak yang menuliskan kata "di mana" atau "dimana" sebagai pengganti kata "which" dalam bahasa Inggris. 
-Padahal, penggunaan kata "di mana" atau "dimana" tidak tepat dalam konteks tersebut. Demikian juga untuk kata serupa, misalnya "yang mana".
-Kata "di mana" atau "dimana" ini harus diganti dengan kata lain, seperti "dengan", "tempat", "yang", dan sebagainya tergantung kalimatnya.
-Penjelasan lengkap dapat dilihat pada \autocite{BPBI}.
-
-\subsection{Penggunaan Kata "sedangkan" dan "sehingga"}
-
-\begin{table}[t]
-  \begin{tabular}{|c|l|l|}
-  \hline
-  Kata & Salah & Benar \\ \hline
-  sedangkan & \begin{tabular}[c]{@{}c@{}}Sedangkan sistem lama masih\\ digunakan oleh banyak pengguna.\end{tabular} & \begin{tabular}[c]{@{}c@{}}Sistem lama masih digunakan\\ oleh banyak pengguna,\\ sedangkan sistem baru belum siap.\end{tabular} \\ \hline
-  sehingga & \begin{tabular}[c]{@{}c@{}}Sehingga sistem lama masih\\ digunakan oleh banyak pengguna.\end{tabular} & \begin{tabular}[c]{@{}c@{}}Sistem lama masih digunakan\\ oleh banyak pengguna sehingga\\ sistem baru belum siap.\end{tabular} \\ \hline
-  \end{tabular}
-  \caption{Contoh penggunaan kata "sedangkan" dan "sehingga"}
-  \label{tbl:sedangkan_sehingga}
-\end{table}
-
-Kata "sedangkan" dan "sehingga" adalah kata hubung atau konjungsi. 
-Konjungsi adalah kata atau ungkapan yang menghubungkan satuan bahasa 
-(kata, frasa, klausa, dan kalimat). 
-Konjungsi dapat dibagi menjadi konjungsi intrakalimat dan antarkalimat.  
-Kata "sedangkan" menghubungkan dua klausa yang bersifat kontrasif, 
-sedangkan "sehingga" menghubungkan dua klausa yang bersifat kausal. 
-Dalam ragam formal, kata hubung “sedangkan” dan “sehingga” hanya dapat digunakan 
-sebagai konjungsi intrakalimat sehingga kedua konjungsi itu \textbf{tidak dapat diletakkan pada awal kalimat}.
-Selain itu, penggunaan kata "sedangkan" harus didahului oleh koma (,), sedangkan kata "sehingga" tidak perlu didahului oleh koma (,).
-Contoh penggunaan yang benar dan salah dapat dilihat pada Tabel \ref{tbl:sedangkan_sehingga}.
-
-
-\subsection{Penggunaan Istilah yang Tidak Baku}
-Ada beberapa istilah yang sering digunakan dalam pembicaraan sehari-hari, tetapi tidak baku dalam penulisan ilmiah.
-Beberapa istilah tersebut antara lain:
+\subsection{Prosedur Diagnostik}
+[cite_start]Evaluasi pasien dengan kecurigaan krisis hipertensi harus dilakukan dengan cepat untuk menentukan keberadaan kerusakan organ target (StatPearls 2024)[cite: 366].
+Rangkaian tes diagnostik yang direkomendasikan mencakup:
 \begin{enumerate}
-  \item analisa $\rightarrow$ analisis
-  \item eksisting atau existing $\rightarrow$ yang ada atau saat ini
-  \item bisnis proses $\rightarrow$ proses bisnis
-  \item user $\rightarrow$ pengguna
-  \item system $\rightarrow$ sistem
-  \item database $\rightarrow$ basis data
-  \item aktifitas $\rightarrow$ aktivitas
-  \item efektifitas $\rightarrow$ efektivitas
-  \item sosial media $\rightarrow$ media sosial
+    [cite_start]\item Pemeriksaan laboratorium, seperti Hitung Darah Lengkap, Panel Metabolik Lengkap untuk menilai fungsi ginjal, dan enzim jantung seperti Troponin serta BNP untuk menilai cedera miokard (BMJ Best Practice 2024)[cite: 367, 368].
+    [cite_start]\item Pemeriksaan urin untuk mengevaluasi fungsi ginjal (BMJ Best Practice 2024)[cite: 369].
+    [cite_start]\item Pemeriksaan pencitraan dan jantung: EKG dilakukan untuk menilai irama jantung, sedangkan Rontgen Dada dapat mendeteksi gagal jantung kongestif (BMJ Best Practice 2024)[cite: 370].
+    [cite_start]\item Jika ada gejala neurologis seperti nyeri kepala hebat, CT scan kepala diindikasikan untuk menyingkirkan perdarahan intrakranial atau stroke (StatPearls 2024)[cite: 371].
 \end{enumerate}
 
-\subsection{Pemisah Desimal dan Ribuan}
-Tanda pemisah desimal dalam bahasa Indonesia adalah tanda koma, contoh:
+\subsection{Prinsip Tatalaksana Hipertensi Emergensi}
+[cite_start]Tatalaksana pada Hipertensi Emergensi membutuhkan rawat inap dan pengawasan intensif, seringkali di ICU, serta pemberian obat antihipertensi secara intravena (BMJ Best Practice 2024)[cite: 373]. [cite_start]Tujuan utama terapi adalah mengurangi tekanan darah secara bertahap dan terkontrol untuk mencegah hipoperfusi pada organ yang telah terbiasa dengan TD tinggi kronis (ACCP 2018)[cite: 374]. [cite_start]Penurunan TD yang terlalu cepat harus dihindari karena berisiko memicu iskemia serebral, koroner, atau ginjal (BMJ Best Practice 2024)[cite: 375]. [cite_start]Untuk target penurunan umum, pedoman klinis merekomendasikan penurunan Tekanan Arteri Rerata atau MAP tidak lebih dari $20\%$ hingga $25\%$ dalam jam pertama (StatPearls 2024; BMJ Best Practice 2024)[cite: 376]. [cite_start]Setelahnya, TD diturunkan secara bertahap menuju 160/100-110 mmHg dalam waktu 2 hingga 6 jam berikutnya (BMJ Best Practice 2024)[cite: 377].
+
+---
+\section{Konsep Digital Twin dalam Kesehatan}
+[cite_start]Konsep Digital Twin, yang berasal dari industri manufaktur, merujuk pada representasi virtual atau kembaran digital dari sebuah objek, proses, atau sistem fisik[cite: 379]. [cite_start]Kembaran digital ini diperbarui secara dinamis menggunakan data real-time dari mitra fisiknya, memungkinkannya untuk melakukan pemantauan, analisis, dan simulasi (Emmert-Streib \& Yli-Harja, 2024)[cite: 380, 382].
+
+[cite_start]Dalam konteks kesehatan, Digital Twin berevolusi menjadi model virtual personal dari pasien[cite: 383]. [cite_start]Model ini mengintegrasikan data pasien multi-modal, termasuk data fisiologis, demografis, dan riwayat klinis, untuk mensimulasikan status kesehatan individu[cite: 384].
+
+Terdapat dua pendekatan utama dalam membangun Digital Twin kesehatan:
 \begin{enumerate}
-  \item (Salah) Akurasi naik menjadi 50.6\% 
-  \item (Benar) Akurasi naik menjadi 50,6\% 
+    [cite_start]\item Model mekanistik, yang mencoba mensimulasikan fisiologi manusia secara komprehensif menggunakan persamaan diferensial dan prinsip-prinsip biologis[cite: 385].
+    [cite_start]\item Model data-driven atau berbasis data, yang menjadi fokus penelitian ini[cite: 386].
 \end{enumerate}
+[cite_start]Penelitian ini mendefinisikan **"Digital Twin Sederhana"** sebagai sebuah purwarupa sistem interaktif yang intinya ditenagai oleh model machine learning (Laubenbacher et al., 2022)[cite: 387]. [cite_start]Model ini tidak mensimulasikan seluruh biologi, melainkan belajar dari pola data historis untuk memprediksi outcome spesifik dan memungkinkan simulasi intervensi "what-if" berbasis data[cite: 388]. [cite_start]Penerapan konsep ini terbukti relevan untuk manajemen penyakit kronis, di mana model Digital Twin telah dieksplorasi untuk memprediksi kadar glukosa pada pasien diabetes atau memantau risiko gagal jantung, menunjukkan potensinya dalam menyediakan peringatan dini yang dipersonalisasi[cite: 389].
 
-\subsection{Daftar atau \textit{List}}
-Ada beberapa aturan penulisan daftar atau \textit{list} yang perlu diperhatikan, antara lain:
-\begin{enumerate}[a)]
-\item Jika memungkinkan, hindari penggunaan “bullet points” atau sejenisnya. Sebaiknya, gunakan angka (1, 2, 3, ...) atau huruf (a, b, c, …). Dengan demikian, pembaca dapat dengan mudah melihat jumlah \textit{item} atau \textit{list}. 
-\item Jika dalam daftar hanya ada satu item, tidak perlu menggunakan nomor urut.
-\item Penjelasan atau deskripsi suatu item sebaiknya menyatu dengan judul item tersebut, tidak berbeda halaman. Contoh yang salah: judul item ada di halaman 10, namun deskripsinya di halaman 11. Sebaiknya pindahkan judul tersebut ke halaman 11.
-\item Jika penjelasan atau deskripsi suatu item cukup panjang, misalnya lebih dari 1 halaman atau terdiri atas beberapa paragraf, sebaiknya setiap item tersebut dijadikan judul subbab, kecuali jika level subbab sudah mencapai level 4. 
+---
+\section{Landasan Pemodelan Prediktif Klinis}
+[cite_start]Pengembangan model data-driven ini mengikuti alur kerja penemuan pengetahuan yang sistematis[cite: 391]. [cite_start]Alur kerja standar dalam data science, sering disebut sebagai **Knowledge Discovery in Databases (KDD)**, menyediakan kerangka kerja metodologis yang formal[cite: 392]. [cite_start]Proses KDD terdiri dari beberapa tahapan inti yang iteratif: Seleksi Data, Pra-pemrosesan, Transformasi, Data Mining (Pemodelan), dan Evaluasi atau Interpretasi (Fayyad et al., 1996)[cite: 393, 395]. [cite_start]Setiap tahap memiliki peran krusial dalam membangun model yang valid dan andal[cite: 396].
+
+\subsection{Sumber Data dan Pra-pemrosesan}
+[cite_start]Penelitian ini memanfaatkan dataset **MIMIC-IV** (Medical Information Mart for Intensive Care) sebagai sumber data[cite: 397]. [cite_start]MIMIC-IV adalah database publik berskala besar yang berisi data rekam medis elektronik de-identifikasi dari pasien yang dirawat di unit perawatan intensif (ICU) di Beth Israel Deaconess Medical Center (Johnson et al., 2023)[cite: 398]. [cite_start]Relevansi dataset ini terletak pada ketersediaan data vital sign beresolusi tinggi, yang dicatat dalam tabel \texttt{chartevents}[cite: 399]. [cite_start]Data ini memungkinkan pelacakan fluktuasi tekanan darah dari jam ke jam, yang merupakan prasyarat mutlak untuk membangun model peringatan dini proaktif[cite: 400].
+
+\subsection{Feature Engineering}
+[cite_start]Tahap Transformasi, atau Feature Engineering, adalah langkah fundamental dalam alur kerja ini[cite: 401]. [cite_start]Model machine learning klasik seperti XGBoost tidak dapat memproses data runtun waktu (\textit{time-series}) mentah secara langsung; mereka memerlukan input dalam bentuk tabel fitur yang statis[cite: 402, 403]. [cite_start]Oleh karena itu, teknik feature engineering diperlukan untuk mengekstrak informasi prediktif dari data runtun waktu (Shickel et al., 2018)[cite: 403]. [cite_start]Ini melibatkan penerapan **sliding window** (jendela geser) pada data historis pasien (misalnya, data 12 jam terakhir) untuk mengkalkulasi variabel atau fitur baru[cite: 404]. Fitur-fitur ini dapat berupa:
+\begin{itemize}
+    [cite_start]\item statistik agregat seperti "\texttt{mean\_TD\_3jam}" (rata-rata tekanan darah 3 jam terakhir)[cite: 405],
+    [cite_start]\item fitur tren seperti "\texttt{slope\_TD\_1jam}" (kemiringan grafik tekanan darah 1 jam terakhir)[cite: 405], atau
+    [cite_start]\item fitur temporal seperti "\texttt{waktu\_sejak\_obat\_terakhir}"[cite: 405].
+\end{itemize}
+[cite_start]Kualitas dari fitur-fitur inilah yang akan menentukan kinerja dari model prediktif[cite: 406].
+
+---
+\section{Model Machine Learning dan Evaluasi}
+[cite_start]Inti dari proses data mining adalah pemilihan dan penerapan algoritma machine learning[cite: 409]. [cite_start]Penelitian ini berfokus pada **model ensemble**, yang dikenal karena kinerjanya yang tinggi[cite: 410]. [cite_start]Model ensemble menggabungkan prediksi dari beberapa model yang lebih lemah untuk menghasilkan satu prediksi akhir yang kuat[cite: 411]. [cite_start]Dua metode ensemble yang paling populer adalah **Random Forest** dan **XGBoost** (Extreme Gradient Boosting) (Chen \& Guestrin, 2016)[cite: 412]. [cite_start]XGBoost seringkali menunjukkan kinerja superior pada data tabular terstruktur seperti yang akan dihasilkan dari proses feature engineering[cite: 413]. [cite_start]Keunggulannya terletak pada kemampuannya menangani data yang hilang (\textit{missing values}) secara internal dan regularisasi yang kuat untuk mencegah *overfitting*[cite: 414].
+
+\subsection{Metrik Evaluasi}
+[cite_start]Karena target luaran adalah prediksi risiko krisis hipertensi (masalah klasifikasi biner) [cite: 415][cite_start], evaluasi kinerja tidak bisa hanya bergantung pada metrik akurasi, terutama pada data medis yang seringkali tidak seimbang (\textit{imbalanced})[cite: 416]. Metrik evaluasi yang lebih relevan akan digunakan, seperti:
+\begin{itemize}
+    [cite_start]\item **Precision** (kemampuan model untuk tidak salah memberi alarm palsu)[cite: 418].
+    [cite_start]\item **Recall** (kemampuan model untuk menemukan semua kasus krisis yang sebenarnya)[cite: 418].
+    [cite_start]\item **F1-Score**[cite: 418].
+\end{itemize}
+[cite_start]Secara khusus, **Area Under the Receiver Operating Characteristic Curve (AUC-ROC)** akan digunakan sebagai metrik evaluasi utama[cite: 419]. [cite_start]AUC-ROC mengukur kemampuan diskriminatif model secara keseluruhan, yaitu seberapa baik model dapat membedakan antara pasien yang akan mengalami krisis dan yang tidak, terlepas dari ambang batas prediksi yang dipilih (Jeni et al., 2013)[cite: 420, 422].
+
+---
+\section{Explainable AI (XAI) dalam Medis}
+[cite_start]Masalah fundamental dengan model ensemble yang kuat seperti XGBoost adalah sifatnya sebagai **"kotak hitam" (\textit{black box})**[cite: 424]. [cite_start]Model ini dapat menghasilkan prediksi yang sangat akurat, namun proses pengambilan keputusannya sangat kompleks dan tidak dapat dipahami secara intuitif oleh manusia[cite: 425]. [cite_start]Dalam domain berisiko tinggi seperti kedokteran, akurasi saja tidak cukup (Ahmad et al., 2021)[cite: 426]. [cite_start]Kebutuhan akan kepercayaan (\textit{trust}), transparansi, dan akuntabilitas (\textit{accountability}) menjadikan **Explainable AI (XAI)** sebagai komponen wajib[cite: 428].
+
+[cite_start]Implementasi **SHAP** akan menghasilkan dua jenis penjelasan utama yang krusial untuk purwarupa Digital Twin[cite: 429].
+\begin{enumerate}
+    [cite_start]\item **Interpretabilitas Global** (SHAP Summary Plot): Menunjukkan fitur apa saja, seperti "\texttt{slope\_TD\_1jam}", yang memiliki dampak paling besar secara keseluruhan pada prediksi model[cite: 430].
+    [cite_start]\item **Interpretabilitas Lokal** (SHAP Force Plot atau Waterfall Plot): Menjelaskan secara rinci mengapa satu prediksi spesifik dibuat untuk satu pasien individu pada satu waktu tertentu[cite: 431].
 \end{enumerate}
+[cite_start]Kemampuan untuk memberikan alasan di balik setiap peringatan inilah yang mengubah model prediktif menjadi sistem pendukung keputusan yang dapat dipercaya[cite: 432].
 
-\subsection{Penggunaan Kata "masing-masing" dan "setiap"}
-Kata “masing-masing” digunakan di belakang kata yang diterangkan, misalnya 
-"Setiap proses menggunakan algoritma masing-masing". Kata “tiap-tiap” atau “setiap”
-ditempatkan di depan kata yang diterangkan, misalnya
-"Setiap proses menggunakan algoritma tertentu".
+---
+\section{Penelitian Terkait dan Posisi Penelitian}
+[cite_start]Penelitian ini berada di persimpangan tiga domain riset aktif: pemodelan prediktif di ICU, ensemble learning, dan XAI[cite: 435]. [cite_start]Tinjauan pustaka menunjukkan bahwa dataset MIMIC-IV telah banyak digunakan untuk pemodelan prediktif, tetapi fokusnya seringkali pada luaran lain seperti prediksi sepsis, mortalitas di ICU, atau kejadian hipotensi (Rahman et al., 2021)[cite: 436]. [cite_start]Studi-studi ini memvalidasi penggunaan MIMIC-IV untuk pemodelan runtun waktu, namun menyisakan celah pada prediksi spesifik krisis hipertensi[cite: 437].
+
+[cite_start]Kombinasi XGBoost dan SHAP telah muncul sebagai *state-of-the-art* untuk membangun model klinis yang interpretable [cite: 438][cite_start], terbukti dalam memprediksi luaran kardiovaskular seperti mortalitas pasca-infark miokard (Jia et al., 2023)[cite: 439].
+
+[cite_start]Kebaruan (\textit{novelty}) dan posisi penelitian ini terletak pada sintesis unik dari ketiga domain tersebut[cite: 441]:
+\begin{itemize}
+    [cite_start]\item **Fokus Spesifik:** Fokus secara spesifik pada **prediksi risiko krisis hipertensi** di lingkungan ICU, sebuah masalah kritis yang sering terabaikan[cite: 442].
+    [cite_start]\item **Horizon Waktu:** Mengembangkan dan membandingkan model pada beberapa horizon waktu (misalnya, prediksi jangka pendek $N$-jam vs. jangka menengah $M$-jam), yang akan memberikan wawasan klinis lebih dalam[cite: 443].
+    [cite_start]\item **Kontribusi Utama:** Pengembangan purwarupa Digital Twin fungsional yang menyajikan peringatan dini yang **dapat dijelaskan dan ditindaklanjuti** (\textit{explainable and actionable insights}) secara *real-time* (tersimulasi) menggunakan SHAP[cite: 444, 446].
+\end{itemize}
+
+Apakah Anda ingin saya melanjutkan ke Bab III atau ada bagian lain dari file LaTeX Anda yang ingin Anda periksa?
