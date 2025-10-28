@@ -3,36 +3,80 @@
 % ==========================================
 \chapter{PENDAHULUAN}
 \label{chap:pendahuluan}
+
 % --- Latar Belakang ---
 \section{Latar Belakang}
-Hipertensi merupakan tantangan kesehatan masyarakat global dan faktor risiko utama yang berkontribusi pada morbiditas dan mortalitas akibat penyakit kardiovaskular, seperti stroke dan gagal jantung (Reges et al., 2020). Data WHO (2023) mengindikasikan bahwa 1,28 miliar orang dewasa di seluruh dunia hidup dengan hipertensi, sebuah angka yang sejalan dengan tingginya prevalensi di Indonesia. Permasalahan fundamental dalam manajemen hipertensi saat ini terletak pada paradigmanya yang bersifat reaktif. Intervensi klinis sering kali baru dilakukan setelah diagnosis ditegakkan atau setelah terjadi fluktuasi tekanan darah (TD) yang signifikan (Savoia et al., 2017; Carey et al., 2018).. Kelemahan dari pendekatan reaktif ini adalah kegagalannya dalam mengantisipasi dan mencegah episode akut yang paling berbahaya yaitu krisis hipertensi. Kondisi darurat medis ini terjadi ketika tekanan darah sistolik dan diastolik melebihi 180/120 mmHg, yang secara langsung berpotensi menyebabkan kerusakan pada organ target (Talle et al., 2023)
-\begin{enumerate}
-\item	Kondisi atau situasi topik yang dibahas beserta permasalahannya, misalnya tentang pengelolaan informasi di puskesmas daerah pedesaan dan masalah yang dihadapi.
-\item	Berbagai solusi yang telah diterapkan atau solusi yang tersedia dan memungkinkan untuk diterapkan untuk menyelesaikan masalah tersebut.
-\end{enumerate}
+Hipertensi merupakan tantangan kesehatan masyarakat global dan faktor risiko utama yang berkontribusi pada morbiditas dan mortalitas akibat penyakit kardiovaskular, seperti stroke dan gagal jantung (Reges et al., 2020). Data WHO (2023) mengindikasikan bahwa 1,28 miliar orang dewasa di seluruh dunia hidup dengan hipertensi, sebuah angka yang sejalan dengan tingginya prevalensi di Indonesia.
+
+Permasalahan fundamental dalam manajemen hipertensi saat ini terletak pada paradigmanya yang bersifat reaktif. Intervensi klinis sering kali baru dilakukan setelah diagnosis ditegakkan atau setelah terjadi fluktuasi tekanan darah (TD) yang signifikan (Savoia et al., 2017; Carey et al., 2018).. Kelemahan dari pendekatan reaktif ini adalah kegagalannya dalam mengantisipasi dan mencegah episode akut yang paling berbahaya yaitu krisis hipertensi. Kondisi darurat medis ini terjadi ketika tekanan darah sistolik dan diastolik melebihi 180/120 mmHg, yang secara langsung berpotensi menyebabkan kerusakan pada organ target (Talle et al., 2023).
+
+Peluang untuk transisi menuju manajemen proaktif kini terbuka melalui pemanfaatan machine learning (ML) pada data runtun waktu (time-series) klinis. Dataset publik beresolusi tinggi, seperti MIMIC-IV (Medical Information Mart for Intensive Care), menyediakan rekaman data vital sign seperti nilai TD per jam, dan intervensi medis secara longitudinal (Johnson et al., 2023). Data ini memungkinkan pelatihan model prediktif. Secara khusus, model ensemble seperti Random Forest (RF) atau XGBoost telah menunjukkan performa state-of-the-art dalam menangani data tabular kompleks yang dihasilkan dari proses feature engineering pada data runtun waktu untuk memprediksi luaran klinis (S et al., 2024; Izonin et al., 2024).
+
+Meskipun demikian, akurasi prediktif yang tinggi (high-fidelity) saja belum mencukupi untuk adopsi klinis. Hambatan utama dalam implementasi machine learning di lingkungan berisiko tinggi seperti perawatan kesehatan adalah sifat "black box". Masalah "black box" pada machine learning di bidang kesehatan merujuk pada kurangnya transparansi dan interpretabilitas dari model-model kompleks seperti deep learning, sehingga sulit bagi klinisi dan pasien untuk memahami alasan di balik prediksi atau rekomendasi yang dihasilkan (Poon \& Sung, 2021; Rudin, 2018). Model-model ini sering kali kurang memiliki transparansi internal karena meskipun mampu menghasilkan prediksi (output) yang akurat, model tersebut tidak dapat memberikan justifikasi yang mudah dipahami manusia atas keputusan yang diambil (Elshawi et al., 2019). Kurangnya transparansi internal pada model dapat menghambat kepercayaan dan akuntabilitas, sehingga penting untuk mengembangkan sistem yang memungkinkan penelusuran dan verifikasi alasan di balik setiap rekomendasi atau peringatan otomatis (Visco et al., 2023).
+
+Untuk mengatasi kesenjangan antara akurasi dan interpretabilitas ini, disiplin Explainable AI (XAI) menjadi sangat krusial. Metode XAI, khususnya metode atribusi post-hoc seperti SHAP (SHapley Additive exPlanations), menawarkan solusi yang kuat. SHAP, yang didasarkan pada teori permainan kooperatif, mampu mengkalkulasi kontribusi spesifik dari setiap fitur masukan terhadap deviasi prediksi model dari nilai dasarnya (Khan et al., 2024; Ali et al., 2023). Pendekatan ini secara efektif memberikan penjelasan yang terukur mengenai alasan di balik terbentuknya suatu prediksi tertentu (Nohara et al., 2021).
+
+Oleh karena itu, penelitian ini mengusulkan pengembangan Digital Twin berbasis data sebagai purwarupa sistem pendukung keputusan klinis (CDSS) yang dirancang untuk memadukan akurasi dan transparansi. Konsep ini merujuk pada model yang digerakkan oleh algoritma machine learning seperti Random Forest dan XGBoost, bukan pada simulasi fisiologis mekanistik yang bersifat menyeluruh. Melalui integrasi antara model prediktif yang andal dan metode penjelasan SHAP, penelitian ini bertujuan menjembatani kesenjangan dalam adopsi sistem cerdas dengan menghadirkan alat yang mampu memberikan peringatan tentang apa yang diprediksi sekaligus menjelaskan alasan di balik prediksi tersebut.
 
 % --- Rumusan Masalah ---
 \section{Rumusan Masalah}
-Rumusan Masalah berisi masalah utama yang dibahas dalam tugas akhir. Rumusan masalah yang baik memiliki struktur sebagai berikut:
+Berdasarkan latar belakang di atas, rumusan masalah dalam penelitian ini adalah:
 \begin{enumerate}
-\item	Pokok persoalan dari kondisi atau situasi yang ada saat ini. Dengan kata lain, jelaskan kelemahan atau kekurangan dari kondisi, situasi, atau solusi yang dijelaskan pada latar belakang. Ini merupakan pokok rumusan masalah.
-\item	Elaborasi lebih lanjut urgensi penyelesaian masalah tersebut (mengapa penting untuk diselesaikan dan akibat yang dapat terjadi jika tidak diselesaikan).
-\item	Usulan singkat terkait dengan solusi yang ditawarkan untuk menyelesaikan persoalan.
-Penting untuk diperhatikan bahwa persoalan yang dideskripsikan pada subbab ini akan dipertanggungjawabkan di bab Evaluasi (apakah terselesaikan atau tidak).
+\item Bagaimana merancang proses feature engineering untuk mengubah data runtun waktu (time-series) berfrekuensi tinggi dari MIMIC-IV menjadi set fitur tabular yang relevan untuk memprediksi krisis hipertensi?
+\item Bagaimana mengembangkan dan mengevaluasi model machine learning (XGBoost/RF) untuk mencapai akurasi prediksi risiko krisis hipertensi jangka pendek yang optimal?
+\item Bagaimana mengimplementasikan metode SHAP untuk menganalisis model yang telah dilatih dan memberikan penjelasan yang dapat ditafsirkan (interpretable) untuk setiap prediksi risiko individu?
+\item Bagaimana Purwarupa Digital Twin Hipertensi berbasis machine learning dapat dirancang untuk menampilkan hasil prediksi dan rasionalisasi SHAP secara user-friendly bagi pengguna?
 \end{enumerate}
 
 % --- Tujuan ---
 \section{Tujuan}
-Tuliskan tujuan utama dan/atau tujuan detail yang akan dicapai dalam pelaksanaan tugas akhir. Fokuskan pada hasil akhir yang ingin diperoleh setelah tugas akhir diselesaikan, terkait dengan penyelesaian persoalan pada rumusan masalah. Penting untuk diperhatikan bahwa tujuan yang dideskripsikan pada subbab ini akan dipertanggungjawabkan di akhir pelaksanaan tugas akhir apakah tercapai atau tidak. Tuliskan kriteria keberhasilan tugas akhir ini.
+Tujuan utama pelaksanaan Tugas Akhir ini adalah:
+\begin{enumerate}
+\item Mengekstraksi kohort pasien yang relevan dan membangun pipeline feature engineering untuk memproses data runtun waktu dari MIMIC-IV.
+\item Mengembangkan dan memvalidasi model prediktif (XGBoost/RF) yang akurat untuk memberikan peringatan dini (early warning) krisis hipertensi.
+\item Mengaplikasikan SHAP untuk mengidentifikasi faktor-faktor klinis utama/fitur yang paling berkontribusi terhadap prediksi risiko tinggi, sehingga memberikan transparansi pada keluaran model.
+\item Merancang dan membangun Purwarupa Digital Twin sederhana dan interaktif untuk mendemonstrasikan hasil prediksi dan rasionalisasi SHAP secara user-friendly bagi pengguna.
+\end{enumerate}
 
 % --- Batasan Masalah ---
 \section{Batasan Masalah}
-Tuliskan batasan-batasan yang diambil dalam pelaksanaan tugas akhir. Batasan ini dapat dihindari (bersifat opsional, tidak perlu ada) jika topik atau judul tugas akhir dibuat cukup spesifik.
+Batasan-batasan masalah yang diambil dalam pelaksanaan tugas akhir ini adalah sebagai berikut:
+\begin{enumerate}
+\item Penelitian ini berfokus pada perancangan, pengembangan, dan evaluasi purwarupa dalam lingkungan simulasi. Penelitian ini tidak mencakup implementasi klinis di rumah sakit atau uji coba prospektif pada pasien nyata.
+\item Sumber data difokuskan namun tidak terbatas pada dataset publik anonim MIMIC-IV. Kohort pasien berasal dari lingkungan ICU, sehingga generalisasi model ke populasi hipertensi umum (rawat jalan) memerlukan validasi lebih lanjut.
+\item Model Digital Twin yang dimaksud penulis merujuk pada model prediktif berbasis data (XGBoost/RF), bukan model simulasi fisiologis mekanistik yang komprehensif.
+\item Eksplorasi model terbatas pada algoritma Machine Learning. Metode Explainable Al yang diimplementasikan adalah SHAP (SHapley Additive Explanations) namun kajian lebih dalam untuk validasi tetap diperlukan.
+\item Keluaran sistem adalah skor risiko dan penjelasan fitur (SHAP values), yang berfungsi sebagai pendukung keputusan, bukan sebagai diagnosis medis otomatis.
+\end{enumerate}
 
 % --- Metodologi Pengerjaan TA ---
 \section{Metodologi}
-Tuliskan semua tahapan yang akan dilalui selama pelaksanaan tugas akhir. Tahapan ini spesifik untuk menyelesaikan persoalan tugas akhir. Khusus untuk penyusunan proposal ini, jelaskan secara detail:
+Penelitian ini menggunakan pendekatan kuantitatif dengan desain studi berupa pemodelan komputasi dan analisis data sekunder. Alur penelitian (research workflow) dirancang secara sistematis dalam beberapa tahapan utama yang saling berurutan untuk mencapai tujuan yang telah ditetapkan. Tahapan-tahapan tersebut akan dielaborasi secara rinci dalam Bab 3, namun secara garis besar adalah sebagai berikut:
+
 \begin{enumerate}
-\item	Tahapan investigasi pengumpulan fakta di latar belakang untuk merumuskan masalah.
-\item	Langkah-langkah pencarian, pengelompokan, dan penapisan literatur atau sumber informasi untuk mengumpulkan informasi yang relevan tentang topik yang diangkat, termasuk teori (konsep atau teori apa saja yang perlu dicari), hal-hal yang telah dicapai oleh orang lain (cara mencari dan kata kuncinya), dan berbagai informasi pendukung, untuk mencari solusi terhadap masalah yang dibahas. Gunakan metodologi yang tepat dalam menggali informasi dan dokumentasikan prosesnya (termasuk rekaman wawancara atau survei) di dalam Lampiran, termasuk tautan ke video atau foto. Hasil penggalian informasi ini akan dijelaskan secara sistematis di Bab II Studi Literatur.
+    \item \textbf{Studi Literatur dan Akuisisi Data}
+    Tahap awal penelitian mencakup studi literatur mendalam mengenai hipertensi, krisis hipertensi, arsitektur Digital Twin di bidang kesehatan, model machine learning (khususnya XGBoost/RF), dan implementasi Explainable AI (XAI) menggunakan SHAP. Secara paralel, dilakukan proses akuisisi data dengan mengakses dan mengunduh dataset anonim MIMIC-IV dari PhysioNet, setelah memenuhi persyaratan etika data.
+
+    \item \textbf{Pra-Pemrosesan dan Ekstraksi Kohort}
+    Data mentah MIMIC-IV yang berukuran sangat besar akan diproses. Tahap ini berfokus pada:
+    \begin{itemize}
+        \item Ekstraksi Kohort: Mendefinisikan kriteria inklusi dan eksklusi (misalnya, pasien dewasa dengan diagnosis hipertensi, ketersediaan data vital sign minimal 24 jam) untuk menyaring dan memilih populasi studi yang relevan.
+        \item Pembersihan Data: Menangani data yang hilang (missing values), data yang tidak konsisten, dan normalisasi data.
+    \end{itemize}
+
+    \item \textbf{Feature Engineering}
+    Ini adalah tahap krusial untuk mengubah data runtun waktu (time-series) berfrekuensi tinggi menjadi format data tabular yang statis dan siap digunakan oleh model ML. Proses ini mencakup ekstraksi fitur-fitur yang relevan secara klinis, seperti fitur agregat (misal, rata-rata, min, maks TD dalam 3 jam), fitur tren (misal, slope atau kemiringan grafik TD dalam 1 jam terakhir), dan fitur temporal (misal, waktu sejak pemberian obat anti-hipertensi terakhir).
+
+    \item \textbf{Pengembangan Model Prediktif}
+    Pada tahap ini, data tabular yang telah bersih dibagi menjadi data latih (training set) dan data uji (testing set). Model ensemble (diprioritaskan XGBoost atau Random Forest) akan dilatih menggunakan data latih untuk memprediksi target outcome yang telah didefinisikan (misalnya, probabilitas terjadinya krisis hipertensi dalam $N$ jam ke depan).
+
+    \item \textbf{Evaluasi Kinerja dan Analisis Penjelasan (XAI)}
+    Model yang telah dilatih akan dievaluasi kinerjanya menggunakan data uji dengan metrik standar seperti Area Under the Receiver Operating Characteristic Curve (AUC-ROC), Akurasi, Presisi, dan Recall. Setelah model divalidasi, metode SHAP akan diaplikasikan untuk:
+    \begin{itemize}
+        \item Secara Global: Mengidentifikasi fitur apa yang paling berpengaruh secara umum terhadap prediksi model (SHAP Summary Plot).
+        \item Secara Lokal: Menganalisis prediksi individu untuk memahami kontribusi spesifik setiap fitur pada kasus pasien tertentu (SHAP Force Plot).
+    \end{itemize}
+
+    \item \textbf{Perancangan Purwarupa dan Visualisasi}
+    Sebagai tahap akhir, sebuah purwarupa (prototype) dashboard visualisasi sederhana akan dikembangkan (misalnya menggunakan Streamlit atau Dash). Dashboard ini akan mensimulasikan fungsionalitas Digital Twin dengan menampilkan prediksi risiko (output model) beserta penjelasannya (output SHAP) secara interpretable.
 \end{enumerate}
