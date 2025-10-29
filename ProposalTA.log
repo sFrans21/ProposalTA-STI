@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2025.10.28)  28 OCT 2025 22:28
+This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2025.10.28)  29 OCT 2025 15:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -948,12 +948,7 @@ Package csquotes Warning: No style for language 'indonesian'.
 (csquotes)                Using fallback style on input line 178.
 
 Package csquotes Info: Redefining alias 'default' -> 'fallback'.
-(ProposalTA.aux
-(C:\Users\Samuel\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/en\babe
-l-english.tex)
-Package babel Info: Importing data for english
-(babel)             from babel-en.ini. Reported on input line 52.
-)
+(ProposalTA.aux)
 \openout1 = `ProposalTA.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 178.
@@ -1094,4 +1089,265 @@ Package: color 2025/01/14 v1.3e Standard LaTeX Color (DPC)
 (C:\Users\Samuel\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
-Package color Info: Driver fil
+Package color Info: Driver file: xetex.def on input line 149.
+
+(C:\Users\Samuel\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx
+))
+Package hyperref Info: Link coloring ON on input line 178.
+ (ProposalTA.out) (ProposalTA.out)
+\@outlinefile=\write4
+\openout4 = `ProposalTA.out'.
+
+
+(C:\Users\Samuel\AppData\Local\Programs\MiKTeX\tex/latex/floatrow\fr-longtable.
+sty
+Package: fr-longtable 2007/11/28 v0.1b (beta) floatrow: additions for longtable
+
+\flrow@LT@lasthead=\box68
+\flrow@LT@prelastfoot=\box69
+\c@FBLTpage=\count498
+)
+\c@lstlisting=\count499
+Package biblatex Info: Trying to load language 'indonesian'...
+Package biblatex Info: ... file 'indonesian.lbx' not found.
+
+
+Package biblatex Warning: Language 'indonesian' not supported.
+(biblatex)                Using dummy definitions on input line 178.
+
+Package biblatex Info: XeTeX detected.
+(biblatex)             Assuming input encoding 'utf8'.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+\openout3 = `ProposalTA.bcf'.
+
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'ProposalTA.bbl' found.
+(ProposalTA.bbl)
+Package biblatex Info: Reference section=0 on input line 178.
+Package biblatex Info: Reference segment=0 on input line 178.
+File: image/ganesha.jpg Graphic file (type bmp)
+<image/ganesha.jpg>
+
+
+Package datetime2 Warning: Region `bahasai' has ignored 
+(datetime2)                the following settings:
+(datetime2)                showmonthname=true
+ on input line 220.
+
+
+
+[1
+
+
+]
+
+[1] (ProposalTA.toc
+LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
+
+(C:\Users\Samuel\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
+
+(C:\Users\Samuel\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+
+[2
+
+])
+\tf@toc=\write5
+\openout5 = `ProposalTA.toc'.
+
+
+
+[3] (ProposalTA.lof)
+\tf@lof=\write6
+\openout6 = `ProposalTA.lof'.
+
+
+
+[4] (ProposalTA.lot)
+\tf@lot=\write7
+\openout7 = `ProposalTA.lot'.
+
+
+
+[5] (ProposalTA.lol)
+\tf@lol=\write8
+\openout8 = `ProposalTA.lol'.
+
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<let>-command' on input line 333.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\\' on input line 333.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@centercr' on input line 333.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\rightskip' on input line 333.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@flushglue' on input line 333.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leftskip' on input line 333.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@flushglue' on input line 333.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\finalhyphendemerits' on input line 333.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\z@' on input line 333.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\parindent' on input line 333.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\z@' on input line 333.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\parfillskip' on input line 333.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\z@skip' on input line 333.
+
+
+
+[6
+
+] (Bab I - Pendahuluan.tex
+Bab I.
+
+
+[1
+
+
+]
+
+[2]
+Overfull \hbox (14.19852pt too wide) in paragraph at lines 26--27
+[]\TU/TimesNewRoman(0)/m/n/12 Bagaimana mengembangkan dan mengevaluasi model ma
+chine learning (XGBo-
+ []
+
+
+
+[3]
+
+[4]) (Bab II - Studi-Literatur.tex
+
+[5]
+Bab II.
+
+
+[6
+
+]
+
+[7]
+
+[8]
+
+[9]
+
+[10]
+
+[11]) (Bab III - Analisis-Masalah.tex
+
+[12]
+Bab III.
+
+LaTeX Warning: Citation 'laudon2020' on page 13 undefined on input line 10.
+
+
+LaTeX Warning: Citation '' on page 13 undefined on input line 10.
+
+
+LaTeX Warning: Citation 'pressman2019' on page 13 undefined on input line 10.
+
+
+
+[13
+
+]) (Bab IV - Desain-Konsep-Solusi.tex
+
+[14]
+
+[15]
+Bab IV.
+) (Bab V - Rencana-Selanjutnya.tex
+
+[16
+
+]
+Bab V.
+)
+
+[17
+
+]
+
+LaTeX Warning: Empty bibliography on input line 378.
+
+
+Package caption Warning: Unused \captionsetup[figure] on input line 355.
+See the caption package documentation for explanation.
+
+
+Package caption Warning: Unused \captionsetup[table] on input line 356.
+See the caption package documentation for explanation.
+
+
+Package caption Warning: Unused \captionsetup[lstlisting] on input line 358.
+See the caption package documentation for explanation.
+
+(ProposalTA.aux)
+ ***********
+LaTeX2e <2025-06-01> patch level 1
+L3 programming layer <2025-10-09>
+ ***********
+
+
+LaTeX Warning: There were undefined references.
+
+Package rerunfilecheck Info: File `ProposalTA.out' has not changed.
+(rerunfilecheck)             Checksum: DC5C027EFA6A68EFB0B8C51C2A5CCB0E;6045.
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                ProposalTA
+(biblatex)                and rerun LaTeX afterwards.
+
+Package logreq Info: Writing requests to 'ProposalTA.run.xml'.
+\openout1 = `ProposalTA.run.xml'.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 29720 strings out of 403196
+ 582113 string characters out of 5455712
+ 1946834 words of memory out of 5000000
+ 57907 multiletter control sequences out of 15000+600000
+ 632918 words of font info for 83 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 73i,6n,93p,1269b,1798s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+Output written on ProposalTA.pdf (24 pages).
