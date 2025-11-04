@@ -1,4 +1,4 @@
-\babel@toc {indonesian}{}\relax 
+\babel@toc {bahasa}{}\relax 
 \contentsline {chapter}{DAFTAR GAMBAR}{iv}{figure.caption.1}%
 \contentsline {chapter}{DAFTAR TABEL}{v}{figure.caption.1}%
 \contentsline {chapter}{\centering \normalsize DAFTAR KODE}{vi}{chapter*.2}%

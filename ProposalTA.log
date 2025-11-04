@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2025.10.28)  29 OCT 2025 15:34
+This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2025.10.28)  29 OCT 2025 16:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -176,8 +176,14 @@ File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
  babel
 )
 (C:\Users\Samuel\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/id\babe
-l-indonesian.tex)
-Package babel Info: Importing font and identification data for indonesian
+l-bahasa.tex
+
+Package babel Warning: Name 'bahasa' is deprecated.
+(babel)                Use 'indonesian' instead.
+(babel)                Reported on input line 19.
+
+)
+Package babel Info: Importing font and identification data for bahasa
 (babel)             from babel-id.ini. Reported on input line 4295.
 
 (C:\Users\Samuel\AppData\Local\Programs\MiKTeX\tex/latex/babel-indonesian\indon
@@ -649,10 +655,10 @@ Package: tracklang 2025/03/11 v1.6.6 (NLCT) Track Languages
 
 (C:\Users\Samuel\AppData\Local\Programs\MiKTeX\tex/generic/tracklang\tracklang.
 tex)
-Package tracklang Info: Tracking dialect `indonesian' (language `bahasai') on i
-nput line 264.
-Package tracklang Info: Tracking dialect `indonesian' (language `bahasai') on i
-nput line 264.
+Package tracklang Info: Tracking dialect `bahasa' (language `bahasai') on input
+ line 264.
+Package tracklang Info: Tracking dialect `bahasa' (language `bahasai') on input
+ line 264.
 )
 (C:\Users\Samuel\AppData\Local\Programs\MiKTeX\tex/latex/xkeyval\xkeyval.sty
 Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
@@ -944,7 +950,7 @@ Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 
 
-Package csquotes Warning: No style for language 'indonesian'.
+Package csquotes Warning: No style for language 'bahasa'.
 (csquotes)                Using fallback style on input line 178.
 
 Package csquotes Info: Redefining alias 'default' -> 'fallback'.
@@ -1108,11 +1114,11 @@ Package: fr-longtable 2007/11/28 v0.1b (beta) floatrow: additions for longtable
 \c@FBLTpage=\count498
 )
 \c@lstlisting=\count499
-Package biblatex Info: Trying to load language 'indonesian'...
-Package biblatex Info: ... file 'indonesian.lbx' not found.
+Package biblatex Info: Trying to load language 'bahasa'...
+Package biblatex Info: ... file 'bahasa.lbx' not found.
 
 
-Package biblatex Warning: Language 'indonesian' not supported.
+Package biblatex Warning: Language 'bahasa' not supported.
 (biblatex)                Using dummy definitions on input line 178.
 
 Package biblatex Info: XeTeX detected.
@@ -1342,10 +1348,10 @@ Package logreq Info: Writing requests to 'ProposalTA.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 29720 strings out of 403196
- 582113 string characters out of 5455712
- 1946834 words of memory out of 5000000
- 57907 multiletter control sequences out of 15000+600000
+ 29721 strings out of 403196
+ 581870 string characters out of 5455712
+ 1946775 words of memory out of 5000000
+ 57908 multiletter control sequences out of 15000+600000
  632918 words of font info for 83 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  73i,6n,93p,1269b,1798s stack positions out of 10000i,1000n,20000p,200000b,200000s
