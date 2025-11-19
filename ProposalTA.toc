@@ -25,12 +25,14 @@
 \contentsline {section}{\numberline {II.6}Penelitian Terkait dan Posisi Penelitian}{11}{section.2.6}%
 \contentsline {chapter}{\numberline {III}ANALISIS MASALAH}{13}{chapter.3}%
 \contentsline {section}{\numberline {III.1}Analisis Kondisi Saat Ini}{13}{section.3.1}%
-\contentsline {section}{\numberline {III.2}Analisis Kebutuhan}{13}{section.3.2}%
-\contentsline {subsection}{\numberline {III.2.1}Identifikasi Masalah Pengguna}{13}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {III.2.2}Kebutuhan Fungsional}{14}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {III.2.3}Kebutuhan Nonfungsional}{14}{subsection.3.2.3}%
-\contentsline {section}{\numberline {III.3}Analisis Pemilihan Solusi}{14}{section.3.3}%
-\contentsline {subsection}{\numberline {III.3.1}Alternatif Solusi}{14}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {III.3.2}Analisis Penentuan Solusi}{14}{subsection.3.3.2}%
-\contentsline {chapter}{\numberline {IV}DESAIN KONSEP SOLUSI}{16}{chapter.4}%
-\contentsline {chapter}{\numberline {V}RENCANA SELANJUTNYA}{17}{chapter.5}%
+\contentsline {subsection}{\numberline {III.1.1}Analisis Kesenjangan}{15}{subsection.3.1.1}%
+\contentsline {section}{\numberline {III.2}Analisis Kebutuhan}{17}{section.3.2}%
+\contentsline {subsection}{\numberline {III.2.1}Identifikasi Masalah Pengguna}{17}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {III.2.2}Kebutuhan Fungsional}{18}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {III.2.3}Kebutuhan Nonfungsional}{19}{subsection.3.2.3}%
+\contentsline {section}{\numberline {III.3}Analisis Pemilihan Solusi}{20}{section.3.3}%
+\contentsline {subsection}{\numberline {III.3.1}Alternatif Solusi}{21}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {III.3.2}Analisis Penentuan Solusi}{23}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {III.3.3}Solusi Terpilih}{24}{subsection.3.3.3}%
+\contentsline {chapter}{\numberline {IV}DESAIN KONSEP SOLUSI}{25}{chapter.4}%
+\contentsline {chapter}{\numberline {V}RENCANA SELANJUTNYA}{26}{chapter.5}%

@@ -1,19 +1,9 @@
 [0] Config.pm:328> INFO - This is Biber 2.21
 [0] Config.pm:331> INFO - Logfile is 'ProposalTA.blg'
-[215] biber-MSWIN64:342> INFO - === 
-[290] Biber.pm:421> INFO - Reading 'ProposalTA.bcf'
-[733] Biber.pm:1002> INFO - Found 2 citekeys in bib section 0
-[764] Biber.pm:4487> INFO - Processing section 0
-[785] Biber.pm:4678> INFO - Looking for bibtex file 'daftar-pustaka.bib' for section 0
-[882] bibtex.pm:1713> INFO - LaTeX decoding ...
-[960] bibtex.pm:1519> INFO - Found BibTeX data source 'daftar-pustaka.bib'
-[991] UCollate.pm:68> INFO - Overriding locale 'id-ID' defaults 'level = 4' with 'level = 2'
-[991] UCollate.pm:68> INFO - Overriding locale 'id-ID' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[991] UCollate.pm:68> INFO - Overriding locale 'id-ID' defaults 'variable = shifted' with 'variable = non-ignorable'
-[991] Biber.pm:4307> INFO - Sorting list 'cms/global//global/global/global' of type 'entry' with template 'cms' and locale 'id-ID'
-[991] Biber.pm:4313> INFO - No sort tailoring available for locale 'id-ID'
-[992] bbl.pm:676> INFO - Writing 'ProposalTA.bbl' with encoding 'UTF-8'
-[993] bbl.pm:779> INFO - Output to ProposalTA.bbl
-[993] Biber.pm:132> WARN - I didn't find a database entry for 'laudon2020' (section 0)
-[994] Biber.pm:132> WARN - I didn't find a database entry for 'pressman2019' (section 0)
-[994] Biber.pm:134> INFO - WARNINGS: 2
+[239] biber-MSWIN64:342> INFO - === 
+[327] Biber.pm:421> INFO - Reading 'ProposalTA.bcf'
+[830] Biber.pm:1002> INFO - Found 0 citekeys in bib section 0
+[865] bbl.pm:676> INFO - Writing 'ProposalTA.bbl' with encoding 'UTF-8'
+[866] bbl.pm:779> INFO - Output to ProposalTA.bbl
+[866] Biber.pm:132> WARN - The file 'ProposalTA.bcf' does not contain any citations!
+[867] Biber.pm:134> INFO - WARNINGS: 1
