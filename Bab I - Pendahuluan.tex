@@ -6,11 +6,8 @@
 
 % --- Latar Belakang ---
 \section{Latar Belakang}
-\subsection{Urgensi Global dan Nasional Penanggulangan Hipertensi}
-Penyakit kardiovaskular tetap menjadi penyebab utama kematian secara global, di mana hipertensi atau tekanan darah tinggi bertindak sebagai faktor risiko modifikasi yang paling signifikan namun seringkali terabaikan. Dalam lanskap kesehatan global kontemporer, hipertensi telah berevolusi dari sekadar masalah klinis menjadi krisis kesehatan masyarakat yang mendesak.
-
-Laporan terbaru dari Organisasi Kesehatan Dunia (WHO) pada tahun 2024 melukiskan gambaran statistik yang mengkhawatirkan: diperkirakan 1,4 miliar orang dewasa berusia 30-79 tahun di seluruh dunia hidup dengan kondisi hipertensi. Angka ini merepresentasikan sekitar 33\% dari populasi dalam rentang usia tersebut (World Health Organization, 2024). Ironisnya, meskipun prevalensinya sangat masif, efektivitas pengendaliannya masih sangat rendah. Data global menunjukkan bahwa hanya sekitar 23\% dari penderita hipertensi yang berhasil mengendalikan tekanan darah mereka, sementara 44\% lainnya bahkan tidak menyadari bahwa mereka menderita kondisi tersebut. Fenomena ini mengukuhkan julukan hipertensi sebagai \textit{the silent killer}.
-
+Hipertensi merupakan tantangan kesehatan masyarakat global dan faktor risiko utama yang berkontribusi pada morbiditas dan mortalitas akibat penyakit kardiovaskular, seperti stroke dan gagal jantung (Reges et al., 2020). 
+Data WHO (2023) mengindikasikan bahwa 1,28 miliar orang dewasa di seluruh dunia hidup dengan hipertensi, sebuah angka yang sejalan dengan tingginya prevalensi di Indonesia.
 Di Indonesia, transisi epidemiologi penyakit tidak menular ini menunjukkan tren yang paralel dengan situasi global, namun dengan karakteristik demografis yang semakin mengkhawatirkan. Berdasarkan hasil Survei Kesehatan Indonesia (SKI) tahun 2023, terjadi pergeseran kerentanan yang signifikan ke arah populasi yang lebih muda. Data SKI 2023 mencatat prevalensi hipertensi berdasarkan pengukuran fisik mencapai 10,7\% pada kelompok usia remaja akhir hingga dewasa muda (18-24 tahun) dan melonjak menjadi 17,4\% pada kelompok usia produktif awal (25-34 tahun) (Bkpk, 2024).
 
 Lebih jauh lagi, terdapat disparitas yang tajam antara hipertensi yang terdiagnosis oleh tenaga kesehatan dengan hipertensi yang terdeteksi melalui pengukuran survei. Pada kelompok usia 18-24 tahun, prevalensi berdasarkan diagnosis dokter hanya tercatat sebesar 0,4\%, sangat jauh di bawah angka hasil pengukuran aktual sebesar 10,7\%. Kesenjangan data yang lebar ini (\textit{"gap of awareness"}) mengindikasikan kegagalan sistemik dalam strategi deteksi dini konvensional.
@@ -32,31 +29,28 @@ Lebih jauh lagi, terdapat disparitas yang tajam antara hipertensi yang terdiagno
 
 Data pada Tabel \ref{tab:statistik-hipertensi} menegaskan bahwa tantangan utama di Indonesia bukan hanya pada pengobatan, melainkan pada deteksi dini. Metode skrining yang ada saat ini terbukti tidak efektif menjangkau populasi muda yang merasa dirinya sehat (Nong et al., 2024).
 
-\subsection{Limitasi Model Prediksi Konvensional dan Potensi Machine Learning}
 Dalam praktik klinis tradisional, penilaian risiko penyakit kardiovaskular sering kali bergantung pada sistem skor standar seperti \textit{Framingham Risk Score} (FRS). Meskipun metode ini telah digunakan secara luas, berbagai studi menunjukkan keterbatasan validitasnya ketika diterapkan pada populasi Asia, termasuk Indonesia (Kasim et al., 2023). Model-model ini dikembangkan berdasarkan data kohort populasi Barat yang memiliki profil genetik dan pola diet berbeda. Populasi Asia cenderung memiliki sensitivitas garam yang lebih tinggi dan risiko stroke yang lebih dominan.
 
-Pendekatan berbasis kecerdasan buatan, khususnya \textit{Machine Learning} (ML), menawarkan alternatif yang menjanjikan. Algoritma ML seperti XGBoost atau \textit{Random Forest} memiliki kemampuan superior dalam memodelkan hubungan non-linier yang kompleks antara berbagai variabel risiko (Tarimana et al., 2024). Studi terbaru menunjukkan bahwa model ML mampu mencapai akurasi klasifikasi risiko yang jauh lebih tinggi dibandingkan regresi logistik tradisional.
+Pendekatan berbasis kecerdasan buatan, khususnya \textit{Machine Learning} (ML), menawarkan alternatif yang menjanjikan. Algoritma ML terkini memiliki kemampuan superior dalam memodelkan hubungan non-linier yang kompleks antara berbagai variabel risiko (Tarimana et al., 2024). Studi terbaru menunjukkan bahwa model ML mampu mencapai akurasi klasifikasi risiko yang jauh lebih tinggi dibandingkan regresi logistik tradisional.
 
-\subsection{Kesenjangan Transparansi dan Solusi Chatbot Generatif}
-Meskipun ML menawarkan performa tinggi, adopsi teknologi ini terhambat oleh masalah \textit{"black box"}, di mana model menghasilkan prediksi tanpa menyertakan alasan yang dapat dipahami manusia. Dalam konteks medis, opasitas ini memunculkan masalah kepercayaan. Metode \textit{Explainable AI} (XAI), khususnya SHAP (\textit{SHapley Additive exPlanations}), menjadi krusial untuk menjembatani kesenjangan ini dengan memberikan visualisasi dampak spesifik dari setiap variabel (Feretzakis et al., 2024).
+Meskipun ML menawarkan performa tinggi, adopsi teknologi ini terhambat oleh masalah \textit{"black box"}, di mana model menghasilkan prediksi tanpa menyertakan alasan yang dapat dipahami manusia. Dalam konteks medis, opasitas ini memunculkan masalah kepercayaan. Metode \textit{Explainable AI} (XAI), menjadi krusial untuk menjembatani kesenjangan ini dengan memberikan visualisasi dampak spesifik dari setiap variabel (Feretzakis et al., 2024).
 
-Selain prediksi, keberhasilan manajemen hipertensi bergantung pada edukasi. Kemajuan \textit{Large Language Models} (LLM) memungkinkan adanya asisten kesehatan virtual. Namun, LLM memiliki risiko halusinasi. Solusi yang lebih tangguh adalah arsitektur \textit{Retrieval-Augmented Generation} (RAG), yang menggabungkan kemampuan generatif LLM dengan sistem pencarian informasi berbasis dokumen medis terverifikasi (Nishisako et al., 2025).
-
-Penelitian ini mengusulkan sistem informasi terintegrasi yang menggabungkan tiga pilar: ML untuk prediksi presisi, XAI (SHAP) untuk transparansi, dan Chatbot RAG untuk edukasi kesehatan yang akurat.
+Selain prediksi, keberhasilan manajemen hipertensi bergantung pada edukasi. Kemajuan \textit{Large Language Models} (LLM) memungkinkan adanya asisten kesehatan virtual. Namun, LLM memiliki risiko halusinasi. Solusi yang lebih tangguh adalah arsitektur \textit{Retrieval-Augmented Generation} (RAG), yang menggabungkan kemampuan generatif LLM dengan sistem pencarian informasi berbasis dokumen medis terverifikasi (Nishisako et al., 2025). Oleh karena itu, penelitian ini mengusulkan sistem informasi terintegrasi yang menggabungkan tiga pilar, yaitu ML untuk prediksi presisi, XAI (SHAP) untuk transparansi, dan Chatbot RAG untuk edukasi kesehatan yang akurat.
 
 % --- Rumusan Masalah ---
 \section{Rumusan Masalah}
 Berdasarkan latar belakang di atas, rumusan masalah dalam penelitian ini adalah:
-\begin{enumerate}
+\begin{enumerate}[itemsep=1em]
     \item Bagaimana merancang dan melatih model \textit{Machine Learning} yang mampu mengolah variabel demografis, fisiologis, dan gaya hidup untuk memprediksi risiko hipertensi dengan tingkat akurasi, presisi, dan sensitivitas yang lebih tinggi dibandingkan metode deteksi konvensional?
     \item Bagaimana mengimplementasikan metode \textit{Explainable AI} (XAI) untuk menghasilkan visualisasi interpretasi yang transparan baik secara global maupun lokal per individu, sehingga faktor determinan risiko dapat dipahami dan diverifikasi oleh pengguna?
     \item Bagaimana mengembangkan arsitektur chatbot cerdas menggunakan teknik \textit{Retrieval-Augmented Generation} (RAG) yang terintegrasi dengan basis pengetahuan dokumen medis terverifikasi untuk meminimalkan halusinasi dan menyediakan jawaban edukatif yang akurat?
+    \item Bagaimana kinerja sistem prediksi risiko hipertensi berbasis machine learning yang diintegrasikan dengan chatbot LLM berbasis Retrieval-Augmented Generation (RAG) jika dievaluasi secara komprehensif berdasarkan aspek performa prediksi, transparansi model (explainability), serta kualitas layanan informasi yang diberikan kepada pengguna?
 \end{enumerate}
 
 % --- Tujuan ---
 \section{Tujuan}
 Tujuan utama pelaksanaan Tugas Akhir ini adalah:
-\begin{enumerate}
+\begin{enumerate}[itemsep=1em]
     \item Membangun dan mengoptimasi model klasifikasi risiko hipertensi menggunakan algoritma \textit{Machine Learning} terpilih (seperti XGBoost/Random Forest) dengan target metrik evaluasi (Akurasi, F1-Score, AUC-ROC) melampaui 85\%.
     \item Mengintegrasikan pustaka SHAP ke dalam alur kerja prediksi untuk menghasilkan penjelasan intuitif berupa \textit{Force Plot} (lokal) dan \textit{Summary Plot} (global).
     \item Merancang sistem chatbot yang memanfaatkan LLM dengan arsitektur RAG, difokuskan pada mekanisme \textit{retrieval} yang efisien dari korpus dokumen kesehatan resmi untuk meminimalkan halusinasi.
@@ -66,7 +60,7 @@ Tujuan utama pelaksanaan Tugas Akhir ini adalah:
 % --- Batasan Masalah ---
 \section{Batasan Masalah}
 Batasan-batasan masalah yang diambil dalam pelaksanaan tugas akhir ini adalah sebagai berikut:
-\begin{enumerate}
+\begin{enumerate}[itemsep=1em]
     \item Penelitian ini menggunakan data sekunder yang bersifat publik dan telah dianonimisasi (seperti dataset dari Kaggle atau repositori UCI) untuk melindungi privasi. Penggunaan data rekam medis riil rumah sakit tidak dilakukan karena kendala etika dan perizinan.
     \item Eksplorasi algoritma dibatasi pada metode \textit{Supervised Learning} pada data tabular. Tidak membahas \textit{Deep Learning} untuk citra medis.
     \item Fitur chatbot dikembangkan khusus untuk domain edukasi hipertensi, pencegahan, dan gaya hidup sehat. Basis pengetahuan dibatasi pada dokumen resmi (Kemenkes/WHO). Sistem bukan pengganti diagnosis medis dokter.
@@ -75,7 +69,37 @@ Batasan-batasan masalah yang diambil dalam pelaksanaan tugas akhir ini adalah se
 
 % --- Metodologi Pengerjaan TA ---
 \section{Metodologi}
-Penelitian ini mengadopsi kerangka kerja metodologi \textit{CRISP-DM (Cross-Industry Standard Process for Data Mining)} yang diintegrasikan dengan siklus pengembangan perangkat lunak.
+Penelitian ini mengadopsi kerangka kerja metodologi \textit{CRISP-DM (Cross-Industry Standard Process for Data Mining)} yang diintegrasikan dengan siklus pengembangan perangkat lunak. Berikut adalah rincian tahapan metodologi yang akan dilaksanakan:
+
+\begin{enumerate}[itemsep=1em]
+    \item \textbf{Pemahaman Bisnis dan Masalah (\textit{Business Understanding})} \\
+    Tahap inisiasi ini berfokus pada pendalaman konteks masalah hipertensi di Indonesia. Kegiatan yang dilakukan meliputi studi literatur pada epidemiologis penyakit hipertensi, di mana penulis menganalisis laporan SKI 2023 dan dokumen WHO 2024 untuk memetakan tren prevalensi, kesenjangan deteksi, dan demografi risiko (World Health Organization, 2025). Ini penting untuk menentukan variabel apa saja yang krusial untuk dimasukkan ke dalam model prediksi. Penulis menetapkan metrik keberhasilan kuantitatif, seperti target akurasi model lebih tinggi dari 85\%, tingkat sensitivitas (\textit{Recall}) yang tinggi untuk meminimalkan pasien berisiko yang tidak terdeteksi (\textit{False Negative}), serta kriteria penerimaan untuk respon chatbot agar bebas dari halusinasi fatal.
+    
+    \item \textbf{Pemahaman Data (\textit{Data Understanding})} \\
+    Tahap ini melibatkan akuisisi dan eksplorasi data mentah untuk memastikan kualitasnya sebelum pemrosesan lebih lanjut. Pada tahap ini, dilakukan pengunduhan dataset prediksi risiko hipertensi dari repositori publik seperti Kaggle atau dari sumber ternama seperti UCI Machine Learning Repository atau Indonesia Family Life Survey (IFLS). Setelahnya, dilakukan analisis statistik deskriptif dan visualisasi data untuk memahami distribusi setiap fitur seperti usia, BMI, dan fitur-fitur relevan lainnya. Setelahnya, analisis korelasi dilakukan untuk melihat hubungan antar variabel dan mengidentifikasi multikolinearitas atau korelasi kuat intens antar dua variabel tersebut yang mempersulit menentukan pengaruh unik dari masing-masing variabel. Pengecekan keseimbangan kelas target, khususnya pada proporsi pasien hipertensi dan normal juga dilakukan untuk menentukan strategi penanganan data yang tidak seimbang (\textit{imbalanced data}) nantinya.
+    
+    \item \textbf{Persiapan Data (\textit{Data Preparation})} \\
+    Ini adalah tahap paling krusial dan memakan waktu, bertujuan mengubah data mentah menjadi format yang siap dilatih oleh model ML. Pada tahap ini, ditangani nilai yang hilang (\textit{missing values}) dengan metode imputasi yang relevan seperti mean/median/mode atau KNN imputation dan membuang data duplikat atau outlier ekstrim yang tidak masuk akal secara medis (Park et al., 2024). Setelahnya, dilakukan normalisasi atau standarisasi pada fitur numerik seperti usia dan tekanan darah agar memiliki skala yang seragam. Fitur kategorikal seperti jenis kelamin dan status merokok akan diubah menjadi format numerik menggunakan teknik \textit{One-Hot Encoding} atau \textit{Label Encoding}. Setelahnya, dilakukan pembagian data (\textit{Data Splitting}) di mana dataset dibagi menjadi tiga bagian: data latih (\textit{training set}) sekitar 70-80\%, data validasi sekitar 10-15\%, dan data uji (\textit{test set}) sekitar 10-15\% untuk dievaluasi secara objektif. Teknik \textit{Stratified Sampling} akan digunakan untuk menjaga proporsi kelas target yang seimbang di setiap bagian.
+    
+    \item \textbf{Pemodelan dan Pengembangan XAI (\textit{Modeling \& Explainability})} \\
+    Ini adalah tahap inti di mana algoritma cerdas dibangun dan dilatih.
+    \begin{itemize}
+        \item Pada tahap ini dilakukan pelatihan model dengan beberapa algoritma kandidat yaitu Logistic Regression, Random Forest, dan XGBoost menggunakan data latih. Teknik \textit{Cross-Validation} (misalnya k-fold) diterapkan untuk mencegah \textit{overfitting} dan memastikan generalisasi model (Kutlu et al., 2024).
+        \item Selanjutnya, dilakukan optimasi model dengan melakukan \textit{Hyperparameter Tuning} menggunakan \textit{Grid Search} atau \textit{Random Search} untuk mencari konfigurasi parameter terbaik bagi algoritma terpilih guna memaksimalkan metrik performa.
+        \item Setelah itu, algoritma \textit{TreeExplainer} akan diaplikasikan khusus untuk model berbasis pohon dari pustaka SHAP pada model yang telah dilatih. Proses ini akan menghasilkan SHAP values untuk setiap instans data, yang kemudian digunakan untuk membangkitkan visualisasi \textit{Summary Plot} untuk menggambarkan fitur global, dan \textit{Force/Waterfall Plot} untuk menjelaskan kontribusi setiap fitur pada prediksi lokal (Feretzakis et al., 2024).
+    \end{itemize}
+    
+    \item \textbf{Pengembangan Chatbot RAG (\textit{RAG Chatbot Development})} \\
+    Pengembangan modul chatbot dilakukan secara paralel dengan pemodelan ML. Pertama-tama, penulis melakukan konstruksi basis pengetahuan, di mana penulis mengumpulkan dokumen PDF terpercaya seperti pedoman Kemenkes atau WHO fact sheets. Dokumen ini kemudian dipecah menjadi potongan-potongan teks kecil (\textit{chunking}). Potongan-potongan tersebut akan akan dikonversi menjadi representasi vektor (\textit{embeddings}) menggunakan model embedding dan menyimpannya dalam basis data vektor yaitu \textit{Vector Database} (InterSystems, 2025). Selanjutnya adalah tahap implementasi proses \textit{retrieval} dan \textit{generation}, di mana penulis membangun logika sistem untuk pertanyaan pengguna (\textit{query}) diubah menjadi vektor, dicocokkan dengan vektor dokumen yang paling relevan di basis data (\textit{semantic search}), dan kemudian diteruskan bersama \textit{prompt} instruksi ke LLM untuk menghasilkan jawaban (Makebot, 2025).
+    
+    \item \textbf{Evaluasi (\textit{Evaluation})} \\
+    Tahap ini berisikan tahap verifikasi menyeluruh sebelum sistem dianggap layak. Pertama-tama dilakukan evaluasi pada model ML, di mana dilakukan pengujian performa model pada data uji menggunakan metrik Akurasi, Presisi, Recall, F1-Score, dan AUC-ROC. Fokus khusus diberikan pada \textit{Recall} untuk meminimalkan risiko tidak terdeteksinya kasus positif hipertensi (Yaseen \& Rashid, 2025). Selanjutnya dilakukan evaluasi RAG Chatbot, di mana kualitas jawaban chatbot diuji. Evaluasi akan menggunakan pendekatan kualitatif yaitu penilaian manusia/pakar terhadap relevansi dan kebenaran fakta atau metrik otomatis seperti RAGAS score untuk \textit{faithfulness} dan \textit{answer relevance} guna memastikan minimnya halusinasi (Primawan, 2025). Lalu dilakukan evaluasi antarmuka di mana dilakukan pengujian fungsionalitas dari aplikasi web untuk memastikan visualisasi SHAP muncul dengan benar dan interaksi chatbot berjalan lancar melalui \textit{User Acceptance Testing}.
+    
+    \item \textbf{Penyebaran (\textit{Deployment}) - Tahap Prototype} \\
+    Langkah terakhir dalam lingkup tugas akhir ini adalah mengemas model dan chatbot ke dalam antarmuka aplikasi web sehingga dapat didemonstrasikan dan diakses oleh pengguna akhir secara simulasi. Sistem ini akan menampilkan formulir input data kesehatan, hasil prediksi risiko beserta grafik penjelasan SHAP, dan jendela obrolan untuk konsultasi lanjutan.
+\end{enumerate}
+
+Tabel \ref{tab:metodologi-crispdm} berikut merangkum pemetaan antara tahapan metodologi CRISP-DM dengan aktivitas spesifik penelitian ini.
 
 \begin{table}[h!]
     \centering
@@ -92,14 +116,3 @@ Penelitian ini mengadopsi kerangka kerja metodologi \textit{CRISP-DM (Cross-Indu
     \textit{Deployment} & Integrasi ke Web App (Streamlit/Flask). & Prototipe Sistem Informasi. \\ \hline
     \end{tabular}
 \end{table}
-
-Tahapan rinci meliputi:
-\begin{enumerate}
-    \item \textbf{Pemahaman Bisnis:} Analisis epidemiologi hipertensi dan penetapan metrik keberhasilan (Akurasi >85\%, Recall tinggi).
-    \item \textbf{Pemahaman Data:} Akuisisi dataset publik, analisis statistik deskriptif, dan pengecekan keseimbangan kelas.
-    \item \textbf{Persiapan Data:} Penanganan \textit{missing values}, normalisasi fitur numerik, dan pembagian data (\textit{splitting}) menjadi data latih dan uji.
-    \item \textbf{Pemodelan dan XAI:} Pelatihan algoritma (XGBoost, RF, Logistic Regression), \textit{Hyperparameter Tuning}, dan aplikasi SHAP \textit{TreeExplainer}.
-    \item \textbf{Pengembangan Chatbot RAG:} Konstruksi basis pengetahuan (PDF Kemenkes/WHO), proses \textit{chunking}, \textit{embedding}, dan implementasi \textit{retrieval-augmented generation}.
-    \item \textbf{Evaluasi:} Pengujian performa ML (AUC-ROC, F1-Score) dan evaluasi chatbot (RAGAS score).
-    \item \textbf{Penyebaran:} Pembuatan antarmuka web untuk demonstrasi simulasi.
-\end{enumerate}
