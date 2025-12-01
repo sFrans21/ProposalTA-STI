@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2025.10.28)  2 DEC 2025 01:03
+This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2025.10.28)  2 DEC 2025 01:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1264,29 +1264,6 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 ] (Bab I - Pendahuluan.tex
 Bab I.
 
-Underfull \hbox (badness 10000) in paragraph at lines 21--21
-[]|\TU/TimesNewRoman(0)/b/n/12 Global (WHO
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 21--21
-[]|\TU/TimesNewRoman(0)/b/n/12 Indonesia Usia
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 21--21
-[]|\TU/TimesNewRoman(0)/b/n/12 Indonesia Usia
- []
-
-
-Overfull \hbox (18.04477pt too wide) in paragraph at lines 19--28
- [][] 
- []
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
 
 [1
 
@@ -1294,76 +1271,29 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 ]
 
 [2]
-Overfull \hbox (1.14185pt too wide) in paragraph at lines 45--46
-[]\TU/TimesNewRoman(0)/m/n/12 Bagaimana mengimplementasikan metode \TU/TimesNew
-Roman(0)/m/it/12 Explainable AI \TU/TimesNewRoman(0)/m/n/12 (XAI) untuk meng-
- []
-
-
 
 [3]
 
 [4]
-
-[5]
-Overfull \hbox (2.41647pt too wide) in paragraph at lines 87--88
-\TU/TimesNewRoman(0)/m/n/12 kandidat yaitu Logistic Regression, Random Forest, 
-dan XGBoost meng-
+Overfull \hbox (4.46805pt too wide) in paragraph at lines 61--62
+\TU/TimesNewRoman(0)/m/n/12 tode \TU/TimesNewRoman(0)/m/it/12 state-of-the-art 
+\TU/TimesNewRoman(0)/m/n/12 dengan menggunakan kata kunci spesifik pada kompone
+n-
  []
 
 
+
+[5]) (Bab II - Studi-Literatur.tex
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 111--111
-[]|\TU/TimesNewRoman(0)/m/it/12 Business Understan-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 111--111
-[]|\TU/TimesNewRoman(0)/m/n/12 Studi literatur hipertensi
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 111--111
-\TU/TimesNewRoman(0)/m/n/12 (WHO/SKI), penentuan
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 111--111
-[]|\TU/TimesNewRoman(0)/m/n/12 Definisi masalah &
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 114--114
-[]|\TU/TimesNewRoman(0)/m/n/12 Training XGBoost/RF, Tu-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 114--114
-\TU/TimesNewRoman(0)/m/n/12 ning parameter, Integrasi
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 115--115
-[]|\TU/TimesNewRoman(0)/m/n/12 Laporan performa &
- []
-
-
-Overfull \hbox (9.1472pt too wide) in paragraph at lines 108--118
- [][] 
- []
-
-) (Bab II - Studi-Literatur.tex
-
-[7]
 Bab II.
 
 
-[8
+[7
 
 ]
 
-[9]
+[8]
 Overfull \hbox (0.24539pt too wide) in paragraph at lines 57--59
 \TU/TimesNewRoman(0)/m/n/12 Studi menunjukkan bahwa pria memiliki prevalensi hi
 pertensi yang lebih ting-
@@ -1371,7 +1301,7 @@ pertensi yang lebih ting-
 
 
 
-[10]
+[9]
 Overfull \hbox (0.22pt too wide) in paragraph at lines 69--71
 \TU/TimesNewRoman(0)/m/n/12 Konsumsi natrium yang berlebihan adalah penyebab ut
 ama hipertensi sensitif-
@@ -1385,6 +1315,8 @@ epasan katekolamin yang
 
 
 
+[10]
+
 [11]
 
 [12]
@@ -1392,8 +1324,6 @@ epasan katekolamin yang
 [13]
 
 [14]
-
-[15]
 Overfull \hbox (0.48367pt too wide) in paragraph at lines 144--145
 []\TU/TimesNewRoman(0)/m/n/12 Model-model ini dilatih menggunakan pendekatan \T
 U/TimesNewRoman(0)/m/it/12 Unsupervised Learning \TU/TimesNewRoman(0)/m/n/12 at
@@ -1402,9 +1332,9 @@ au \TU/TimesNewRoman(0)/m/it/12 Self-
 
 
 
-[16]
+[15]
 
-[17]
+[16]
 Overfull \hbox (14.08017pt too wide) in paragraph at lines 182--184
 \TU/TimesNewRoman(0)/m/n/12 Saat pengguna memasukkan kueri (misalnya dalam bent
 uk teks), sistem pertama-
@@ -1412,7 +1342,7 @@ uk teks), sistem pertama-
 
 
 
-[18]
+[17]
 Overfull \hbox (2.87135pt too wide) in paragraph at lines 205--206
 \TU/TimesNewRoman(0)/m/n/12 Metode ini mengatasi keterbatasan pengetahuan stati
 s yang dimiliki oleh LLM pasca-
@@ -1420,11 +1350,11 @@ s yang dimiliki oleh LLM pasca-
 
 
 
+[18]
+
 [19]
 
 [20]
-
-[21]
 Overfull \hbox (11.5364pt too wide) in paragraph at lines 256--257
 \TU/TimesNewRoman(0)/m/n/12 sarkan fokus evaluasinya yang terbagi menjadi metri
 k berbasis komponen (\TU/TimesNewRoman(0)/m/it/12 component-
@@ -1432,9 +1362,9 @@ k berbasis komponen (\TU/TimesNewRoman(0)/m/it/12 component-
 
 
 
-[22]
+[21]
 
-[23]
+[22]
 Overfull \hbox (398.3386pt too wide) detected at line 304
 []
  []
@@ -1974,9 +1904,9 @@ Overfull \hbox (68.22633pt too wide) in alignment at lines 321--347
 [] [] [] [] []
  []
 
-[24] [25])
+[23] [24])
 
-[26]
+[25]
 
 LaTeX Warning: Empty bibliography on input line 293.
 
@@ -1996,12 +1926,12 @@ Package logreq Info: Writing requests to 'ProposalTA.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 29668 strings out of 403196
- 580063 string characters out of 5455712
- 1959433 words of memory out of 5000000
- 57859 multiletter control sequences out of 15000+600000
+ 29658 strings out of 403196
+ 579790 string characters out of 5455712
+ 1959279 words of memory out of 5000000
+ 57849 multiletter control sequences out of 15000+600000
  632926 words of font info for 84 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 73i,11n,93p,1464b,646s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 73i,9n,93p,1464b,644s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on ProposalTA.pdf (33 pages).
+Output written on ProposalTA.pdf (32 pages).
