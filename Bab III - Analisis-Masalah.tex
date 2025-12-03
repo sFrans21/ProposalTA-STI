@@ -1,237 +1,254 @@
 % ============================================================================================
 % BAB III ANALISIS MASALAH
-% VERSI PERBAIKAN (04-Nov-2025)
-% FIX:
-% 1. Mengganti float '[t]' (top) menjadi '[H]' (Here) dari paket 'float'.
-%    Ini "memaksa" tabel untuk tampil persis di tempat kode diletakkan
-%    dan tidak mengambang ke bawah halaman.
-%
-% PENTING: Pastikan Anda sudah menambahkan \usepackage{float} di file .tex utama!
+% Pembagian subbab tidak rigid dan dapat bervariasi.
+% Bab ini minimal berisi analisis kebutuhan fungsional dan nonfungsional, 
+% analisis berbagai alternatif solusi yang dapat ditawarkan, dan metode pemilihan solusi yang diusulkan.
 % ============================================================================================
+
 \chapter{ANALISIS MASALAH}
 \label{chap:analisis-masalah}
 
 \section{Analisis Kondisi Saat Ini}
-\label{sec:analisis-kondisi-saat-ini}
+Saat ini, prosedur diagnosis dan prediksi risiko hipertensi di fasilitas kesehatan maupun dalam penelitian epidemiologi sebagian besar masih bergantung pada pengukuran klinis konvensional dan penilaian manual oleh tenaga medis. Pasien umumnya datang ke fasilitas kesehatan, melakukan pengukuran tekanan darah (TD) sesaat, dan dokter akan melakukan anamnesis untuk menggali riwayat kesehatan serta faktor risiko. Data ini kemudian diolah berdasarkan pedoman klinis standar untuk menentukan status kesehatan pasien sebagaimana digambarkan pada Gambar III.1. Dalam praktiknya, pendekatan ini sering kali bersifat reaktif, di mana intervensi medis baru diberikan setelah pasien menunjukkan gejala klinis yang nyata atau tekanan darah yang sudah melampaui ambang batas normal secara persisten (Mills et al., 2020).
 
-% --- Gambar Alur Proses As-Is ---
-% FIX: Menggunakan [H] agar gambar tidak mengambang
-\begin{figure}[H] 
-	\centering
-  \captionsetup{justification=centering}
+Keterbatasan waktu konsultasi dan kompleksitas interaksi antar faktor risiko sering menyebabkan penilaian risiko menjadi kurang komprehensif. Hal ini diperburuk dengan fakta bahwa hipertensi sering dijuluki sebagai \textit{silent killer}, di mana banyak pasien tidak menyadari kondisi mereka hingga terjadi komplikasi serius. Kebutuhan akan alat bantu prediksi yang lebih dini dan akurat memunculkan tren penggunaan algoritma \textit{Machine Learning} (ML). Namun, penerapan model ML konvensional, seperti \textit{Neural Networks} atau \textit{Ensemble Trees}, sering kali menghadapi kendala transparansi. Model tersebut bekerja sebagai kotak hitam atau biasa disebut juga dengan \textit{black box}, memberikan skor risiko tanpa disertai alasan medis yang jelas. Kondisi ini menciptakan keraguan di kalangan praktisi medis untuk mengadopsi hasil prediksi komputer dalam pengambilan keputusan klinis (Amann et al., 2020).
+
+\begin{figure}[htbp]
+    \centering
+    % Ganti nama file gambar sesuai dengan file asli Anda
     \includegraphics[width=0.9\textwidth]{image/gambar1.png} 
-	\caption{Alur proses 'As-Is' manajemen klinis hipertensi}
-	\label{gambar:alur-as-is}
+    \caption{Alur Diagnosis Hipertensi Konvensional di Fasilitas Kesehatan Tingkat Pertama (FKTP)}
+    \label{fig:alur-konvensional}
 \end{figure}
 
-Proses manajemen klinis untuk pasien hipertensi saat ini beroperasi pada paradigma yang fundamentalnya bersifat reaktif. Alur kerja konvensional ini, seperti yang telah dimodelkan, bergantung pada intervensi yang baru dilakukan setelah diagnosis ditegakkan atau setelah terjadi fluktuasi tekanan darah (TD) yang signifikan. Kelemahan utama dari pendekatan ini adalah kegagalannya dalam mengantisipasi dan mencegah episode akut yang paling berbahaya, yaitu krisis hipertensi. Krisis hipertensi didefinisikan sebagai kondisi darurat medis di mana tekanan darah melonjak melebihi 180/120 mmHg. Kondisi ini secara langsung berpotensi menyebabkan kerusakan pada organ target, seperti stroke atau gagal jantung, sehingga menjadikannya tantangan serius bagi kesehatan masyarakat. Dengan demikian, alur kerja yang hanya menunggu terjadinya krisis adalah model yang secara inheren berisiko tinggi dan tidak memadai.
+Dalam upaya mengatasi masalah transparansi tersebut, penelitian terkini mulai mengintegrasikan \textit{Explainable Artificial Intelligence} (\textit{XAI}). Meskipun demikian, luaran dari \textit{XAI} umumnya masih berupa grafik fitur atau nilai matematis (seperti \textit{SHAP values}) yang sulit dipahami oleh pasien awam. Kesenjangan komunikasi ini menjadi tantangan baru dalam menyampaikan risiko kesehatan kepada pasien secara efektif. Di sisi lain, kemunculan \textit{Large Language Model} (\textit{LLM}) menawarkan potensi untuk menarasikan data tersebut, namun penggunaannya yang tanpa pengawasan rentan menghasilkan informasi yang tidak valid atau halusinasi medis (Singhal \textit{et al}., 2023). Oleh karena itu, kondisi saat ini menunjukkan adanya fragmentasi antara kemampuan prediksi yang tinggi, kebutuhan akan transparansi (\textit{explainability}), dan penyajian informasi yang akurat secara medis.
 
-Urgensi untuk mengatasi masalah ini diperkuat oleh definisi klinis dari krisis hipertensi itu sendiri. Kondisi ini diklasifikasikan sebagai Hypertensive Emergency (Hipertensi Emergensi) ketika lonjakan TD yang parah (melebihi 180/120 mmHg) disertai dengan bukti adanya kerusakan organ target akut. Kerusakan ini dapat bermanifestasi secara cepat dan parah, meliputi perubahan status mental, infark miokard, gagal ginjal akut, atau diseksi aorta. Dalam paradigma "As-Is", alarm atau eskalasi ke dokter baru terjadi setelah kondisi yang mengancam jiwa ini dimulai, sehingga waktu penanganan yang krusial telah hilang. Identifikasi dan tatalaksana yang segera sangat penting untuk mencegah kerusakan organ permanen atau risiko kematian. Oleh karena itu, jelas bahwa sistem yang hanya "bereaksi" terhadap krisis yang sudah terjadi secara fundamental gagal dalam misi preventif.
 
-Kebutuhan untuk bertransisi menuju manajemen proaktif kini menjadi mungkin berkat kemajuan dalam pengumpulan data dan machine learning. Ketersediaan dataset publik beresolusi tinggi, seperti MIMIC-IV, menyediakan rekaman data longitudinal yang rinci, termasuk data runtun waktu (time-series) dari tanda-tanda vital seperti nilai TD per jam. Data historis yang kaya ini merupakan prasyarat mutlak yang memungkinkan pelatihan model prediktif untuk memantau fluktuasi tekanan darah dari jam ke jam. Dengan memanfaatkan data ini, sebuah sistem dapat dikembangkan untuk memberikan peringatan dini. Tujuan utamanya adalah untuk memprediksi probabilitas terjadinya krisis hipertensi sebelum ambang batas 180/120 mmHg terlampaui, sehingga memungkinkan intervensi preventif.
+\subsection{Kesenjangan Transparansi dan Kepercayaan Klinis (Trust Gap)}
+Masalah paling fundamental dalam adopsi teknologi prediksi risiko saat ini terletak pada asimetri pemahaman antara cara kerja model komputasi dan logika klinis dokter. Model \textit{Machine Learning} yang memiliki performa akurasi tinggi sering kali memiliki struktur internal yang sangat kompleks dan tidak dapat ditafsirkan secara langsung. Hal ini menciptakan dua hambatan utama dalam implementasi klinis:
 
-Meskipun model machine learning (ML) seperti ensemble (Random Forest atau XGBoost) telah menunjukkan kinerja state-of-the-art dalam menangani data tabular kompleks, akurasi prediktif yang tinggi (high-fidelity) saja belum mencukupi untuk adopsi klinis. Hambatan utama dalam implementasi machine learning di lingkungan berisiko tinggi seperti perawatan kesehatan adalah sifat alaminya sebagai "kotak hitam" (black box). Masalah "black box" ini merujuk pada kurangnya transparansi dan interpretabilitas dari model-model kompleks. Meskipun model tersebut mampu menghasilkan prediksi (keluaran) yang sangat akurat, model tersebut tidak dapat memberikan justifikasi yang mudah dipahami manusia atas keputusan yang diambil. Opasitas ini menjadi masalah kritis di bidang kedokteran, di mana setiap rekomendasi otomatis harus dapat diverifikasi dan dipertanggungjawabkan.
+\begin{enumerate}
+    \item \textbf{Skeptisisme Tenaga Medis}\\
+    Dokter dan tenaga kesehatan memegang tanggung jawab etis dan hukum atas keputusan yang diambil. Mereka enggan menggunakan prediksi dari sistem yang tidak dapat menjelaskan "mengapa" seorang pasien dikategorikan berisiko tinggi, terutama jika prediksi tersebut bertentangan dengan intuisi klinis mereka. Ketiadaan kausalitas yang dapat diobservasi menyebabkan rendahnya tingkat kepercayaan terhadap sistem pendukung keputusan berbasis AI (Linardatos et al., 2021).
+    
+    \item \textbf{Kebingungan Pasien terhadap Hasil Prediksi}\\
+    Bagi pasien, menerima diagnosis atau prediksi risiko tanpa penjelasan yang personal dapat menimbulkan kecemasan atau justru penyangkalan. Pasien membutuhkan narasi yang menghubungkan gaya hidup mereka (misalnya, merokok atau IMT tinggi) dengan kenaikan risiko yang diprediksi, bukan sekadar angka probabilitas statistik. Tanpa penjelasan yang memadai, kepatuhan pasien terhadap saran preventif cenderung rendah.
 
-Konsekuensi langsung dari masalah "black box" adalah terhambatnya kepercayaan dan akuntabilitas dari pengguna akhir, yaitu para klinisi. Seorang dokter tidak dapat memercayai atau menindaklanjuti sebuah peringatan "Risiko Krisis 85\%" jika sistem tidak dapat memberikan justifikasi yang masuk akal dan dapat ditindaklanjuti secara klinis. Kurangnya transparansi internal ini menciptakan keraguan, karena pengguna tidak dapat memverifikasi alasan di balik peringatan tersebut. Dalam domain di mana keputusan dapat berarti antara hidup dan mati, sistem yang tidak dapat dipertanggungjawabkan tidak akan pernah diadopsi sepenuhnya, tidak peduli seberapa akurat prediksinya. Kesenjangan kepercayaan ini adalah penghalang adopsi yang sama seriusnya dengan masalah paradigma reaktif itu sendiri.
+\end{enumerate}
 
-Untuk menjembatani kesenjangan antara akurasi prediktif dan adopsi klinis, disiplin AI yang dapat dijelaskan (Explainable AI atau XAI) menjadi komponen yang krusial dan wajib ada. XAI menawarkan solusi untuk "membuka" kotak hitam dan memberikan transparansi yang dibutuhkan. Metode atribusi post-hoc yang kuat seperti SHAP (SHapley Additive exPlanations) secara khusus dirancang untuk mengatasi masalah ini. SHAP, yang didasarkan pada teori permainan kooperatif, mampu mengkalkulasi kontribusi spesifik dari setiap fitur (misalnya, 'usia', 'TD 3 jam terakhir') terhadap deviasi prediksi model dari nilai dasarnya. Metode ini secara efektif memberikan penjelasan yang terukur (baik secara global maupun lokal per individu) mengenai alasan di balik terbentuknya suatu prediksi risiko. Kemampuan untuk menyediakan rasionalisasi inilah yang akan mengubah model ML dari sekadar alat prediksi menjadi sistem pendukung keputusan yang dapat dipercaya.
+\subsection{Risiko Halusinasi dan Inkonsistensi Informasi Medis}
+Dari perspektif teknologi \textit{generative AI} yang mulai marak digunakan, tantangannya bersifat validitas data. Meskipun \textit{LLM} mampu menghasilkan teks yang sangat koheren dan menyerupai bahasa manusia, model ini memiliki kecenderungan inheren untuk menghasilkan fakta yang salah atau "berhalusinasi" ketika tidak memiliki konteks yang cukup. Dalam domain medis yang berisiko tinggi, hal ini menciptakan bahaya laten sebagai berikut:
 
-% --- Subseksi Analisis Kesenjangan ditambahkan berdasarkan PDF baru ---
-\subsection{Analisis Kesenjangan}
-Dilakukan analisis kesenjangan berikut ini untuk memetakan secara terstruktur kondisi saat ini (As-Is) dengan kondisi ideal (To-Be) yang diharapkan dari solusi yang diusulkan. Pemetaan ini merangkum permasalahan inti yang dijabarkan dalam Tabel \ref{tbl:gap-analysis} ini.
+\begin{enumerate}
+    \item \textbf{Fabrikasi Saran Medis}\\
+    Tanpa batasan basis pengetahuan yang ketat, LLM dapat memberikan saran kesehatan yang terlihat meyakinkan namun tidak memiliki dasar ilmiah atau bertentangan dengan pedoman medis resmi. Misalnya, model mungkin menyarankan dosis obat atau interpretasi gejala yang salah (Li \textit{et al}., 2023). Hal ini sangat berbahaya jika dijadikan rujukan oleh pengguna awam tanpa verifikasi.
+    
+    \item \textbf{Inkonsistensi Narasi}\\
+    Penjelasan yang dihasilkan oleh model bahasa standar dapat bervariasi secara signifikan meskipun diberikan input data yang sama pada waktu yang berbeda. Ketidakkonsistenan ini mengurangi reliabilitas sistem sebagai alat edukasi pasien yang terstandarisasi. Tidak adanya mekanisme validasi silang (\textit{cross-validation}) dengan dokumen medis terpercaya membuat luaran model sulit dipertanggungjawabkan (Zhang et al., 2023).
+\end{enumerate}
 
-% --- Tabel Analisis Kesenjangan ---
-% FIX: Menggunakan [H] agar tabel tidak mengambang
-\begin{table}[H] 
-  \begin{tabularx}{\textwidth}{ | l | X | X | X |}
-	\hline
-	\textbf{Domain Masalah} & \textbf{Kondisi Saat ini (As-Is)} & \textbf{Kesenjangan (Gap)} & \textbf{Kondisi Ideal (To-Be)} \\
-	\hline
-	Manajemen Klinis (Proses) & 
-    Paradigma intervensi bersifat reaktif. Tindakan medis darurat baru diambil setelah pasien mengalami krisis hipertensi (TD $> 180/120$ mmHg). & 
-    Keterlambatan intervensi kritis dan risiko kerusakan organ target (stroke, gagal jantung) yang tidak terantisipasi karena kegagalan mendeteksi risiko lebih awal. & 
-    Paradigma manajemen bersifat proaktif. Klinisi mendapatkan peringatan dini yang akurat untuk mengantisipasi risiko krisis sebelum terjadi. \\
-	\hline
-	Adopsi Teknologi & 
-    Model machine learning (ML) yang akurat bersifat "black box". Klinisi tidak dapat memahami atau memverifikasi alasan di balik sebuah peringatan risiko. & 
-    Hambatan adopsi dan kurangnya kepercayaan (trust) pada sistem cerdas. Sistem tidak akuntabel sehingga sulit diimplementasikan di lingkungan berisiko tinggi. & 
-    Model ML bersifat transparan dan dapat dijelaskan. Sistem mampu memberikan justifikasi (via SHAP) untuk setiap prediksi risiko individu, sehingga membangun kepercayaan klinis. \\
-	\hline
-	Pemanfaatan Data (Sistem) & 
-    Data runtun waktu (time-series) klinis beresolusi tinggi (dari MIMIC-IV) ada, namun belum dimanfaatkan secara optimal untuk prediksi antisipatif. & 
-    Peluang yang terlewatkan. Data historis yang kaya hanya digunakan untuk analisis retrospektif, bukan untuk memprediksi dan mencegah outcome buruk secara proaktif. & 
-    Data time-series diproses melalui alur kerja (pipeline) rekayasa fitur untuk melatih model ML yang mampu mengubah data historis menjadi peringatan dini yang dapat ditindaklanjuti. \\
-	\hline
-  \end{tabularx}
-  \caption{Analisis Kesenjangan (Gap Analysis)}
-  \label{tbl:gap-analysis}
+\subsection{Tantangan Kompleksitas Data Multidimensi}
+Pada konteks teknis pengolahan data, masalah diperparah dengan sifat data kesehatan yang heterogen dan non-linier. Faktor risiko hipertensi melibatkan interaksi yang rumit antara demografi, tanda vital, dan riwayat gaya hidup yang tidak selalu dapat dimodelkan dengan regresi linier sederhana.
+
+\begin{enumerate}
+    \item \textbf{Interaksi Variabel yang Tersembunyi}\\
+    Metode statistik tradisional sering gagal menangkap hubungan non-linier yang kompleks, misalnya bagaimana dampak indeks massa tubuh (IMT) terhadap tekanan darah mungkin berbeda secara drastis tergantung pada usia dan tingkat aktivitas fisik seseorang. Kegagalan menangkap nuansa ini menyebabkan prediksi menjadi kurang akurat untuk individu dengan profil risiko yang unik (Elshawi et al., 2020).
+    
+    \item \textbf{Keterbatasan Personalisasi}\\
+    Sistem informasi kesehatan yang ada saat ini umumnya bersifat "satu ukuran untuk semua" (\textit{one-size-fits-all}). Belum tersedia mekanisme yang secara otomatis mengadaptasi penjelasan risiko berdasarkan profil spesifik pasien secara \textit{real-time} yang didukung oleh bukti literatur medis terkini.
+\end{enumerate}
+
+\subsection{Identifikasi Kesenjangan (Gap Analysis)}
+Berdasarkan analisis kondisi saat ini, dilakukan pemetaan kesenjangan antara kondisi \textit{As-Is} (sistem konvensional/\textit{black box}) dengan kondisi ideal \textit{To-Be} (sistem yang diusulkan) yang dirangkum dalam \ref{tab:gap-analysis} di bawah ini.
+\begin{table}[htbp]
+    \caption{Identifikasi Kesenjangan (Gap Analysis)}
+    \label{tab:gap-analysis}
+    \centering
+    \small
+    \begin{tabular}{|p{2.5cm}|p{3.5cm}|p{3.5cm}|p{3.5cm}|}
+        \hline
+        \textbf{Domain Masalah} & \textbf{Kondisi Saat Ini (As-Is)} & \textbf{Kesenjangan (Gap)} & \textbf{Kondisi Ideal (To-Be)} \\
+        \hline
+        Transparansi \& Kepercayaan & Model prediksi bekerja sebagai \textit{black box}; pengguna hanya menerima skor risiko tanpa alasan penjelas. & Tidak adanya mekanisme untuk menelusuri alasan di balik prediksi dominan variabel. & Sistem menyediakan fitur visualisasi (XAI) yang menjelaskan variabel dominan penyebab risiko. \\
+        \hline
+        Validitas Informasi & Penjelasan risiko jika menggunakan LLM biasa masih rentan terhadap halusinasi dan tidak memiliki referensi yang jelas. & Risiko kesalahan informasi medis yang membahayakan keselamatan pasien. & Narasi penjelasan divalidasi oleh arsitektur RAG yang merujuk pada pedoman medis resmi (Kemenkes/WHO). \\
+        \hline
+        Akurasi \& Personalisasi & Analisis risiko bersifat reaktif dan generalis; sering mengabaikan interaksi non-linier antar variabel. & Rendahnya sensitivitas terhadap profil risiko individu dan kurangnya personalisasi. & Model ML mampu menangkap pola kompleks dan menyajikan narasi personal yang mudah dipahami awam. \\
+        \hline
+    \end{tabular}
 \end{table}
 
-Di sini diketahui bahwa masalah yang dihadapi bersifat multifaset, mencakup aspek proses klinis (paradigma reaktif) dan aspek teknologi (masalah "black box"). Kesenjangan ini menunjukkan kebutuhan mendesak akan sebuah solusi cerdas yang tidak hanya menyajikan prediksi outcome, tetapi juga mampu menyajikan rasionalisasi dari prediksi tersebut untuk membangun kepercayaan. Untuk dapat merancang solusi yang efektif dalam menutup kesenjangan ini, langkah selanjutnya adalah menerjemahkan kebutuhan tersebut ke dalam spesifikasi fungsional dan non-fungsional yang terukur.
+Analisis kesenjangan pada Tabel \ref{tab:gap-analysis} menggarisbawahi bahwa tantangan yang dihadapi tidak hanya sekadar meningkatkan akurasi angka prediksi, tetapi juga membangun jembatan komunikasi antara logika mesin dan pemahaman manusia. Secara kumulatif, kesenjangan ini menegaskan urgensi pengembangan sistem terintegrasi yang menggabungkan kekuatan prediksi \textit{Machine Learning}, transparansi XAI, dan kemampuan naratif LLM yang diamankan oleh RAG. Untuk mewujudkan solusi tersebut, langkah selanjutnya adalah menerjemahkan temuan ini ke dalam analisis kebutuhan sistem yang terukur.
 
 \section{Analisis Kebutuhan}
-Berdasarkan analisis kesenjangan yang telah dipaparkan sebelumnya, langkah selanjutnya adalah menerjemahkan kebutuhan solusi menjadi serangkaian spesifikasi yang terukur. Tahap ini krusial untuk memastikan bahwa sistem yang akan dikembangkan, yaitu purwarupa "Digital Twin Sederhana", secara langsung menjawab dua masalah fundamental yang telah diidentifikasi. Spesifikasi ini akan dibagi menjadi tiga kategori utama: identifikasi masalah spesifik dari kacamata pengguna, kebutuhan fungsional (apa yang harus dilakukan sistem), dan kebutuhan non-fungsional (kriteria kualitas sistem). Proses pendefinisian kebutuhan ini akan menjadi cetak biru (blueprint) yang memandu seluruh alur kerja penelitian, mulai dari akuisisi data hingga perancangan prototipe.
+Dalam perancangan sistem pendukung keputusan klinis yang menggabungkan kecerdasan buatan dan interpretasi bahasa alami ini, diperlukan pemahaman mendalam terhadap kebutuhan pengguna serta spesifikasi teknis yang ketat. Mengingat domain kesehatan merupakan area yang sensitif terhadap keselamatan (\textit{safety-critical}), analisis kebutuhan tidak hanya berfokus pada akurasi komputasi, tetapi juga pada aspek kepercayaan, transparansi, dan validitas informasi yang disampaikan kepada pengguna (Amann et al., 2020). Tahapan ini bertujuan menerjemahkan kesenjangan masalah yang telah diidentifikasi sebelumnya menjadi spesifikasi fungsional dan non-fungsional yang terukur.
 
 \subsection{Identifikasi Masalah Pengguna}
-Pengguna utama dari sistem "To-Be" yang diusulkan adalah Klinisi di lingkungan perawatan intensif, yang mencakup Dokter (sebagai pengambil keputusan) dan Perawat (sebagai pelaksana monitor dan intervensi). Berdasarkan analisis kondisi "As-Is" (3.1), kedua pengguna ini menghadapi dua masalah spesifik yang saling terkait. Masalah pertama adalah beban kognitif dan risiko keterlambatan intervensi akibat paradigma reaktif. Perawat ICU dihadapkan pada beban kerja pemantauan manual yang tinggi, di mana mereka harus mengamati tanda vital pasien secara periodik (misal, per jam). Masalahnya, krisis hipertensi dapat berkembang cepat di antara interval pengecekan, sehingga memunculkan risiko kesalahan manusiawi (human error) atau deteksi yang terlambat. Bagi Dokter, masalahnya adalah mereka baru menerima eskalasi darurat setelah pasien berada dalam kondisi krisis, sehingga kehilangan waktu emas untuk melakukan pencegahan.
+Berdasarkan analisis konteks, pengguna potensial dari sistem ini dikategorikan menjadi dua kelompok utama, yaitu masyarakat umum (pasien) sebagai penerima informasi kesehatan, dan tenaga medis profesional yang membutuhkan \textit{opini kedua} (\textit{second opinion}). Masalah spesifik yang dihadapi oleh masing-masing kelompok pengguna adalah sebagai berikut:
 
-Masalah kedua adalah ketidakpercayaan dan keraguan adopsi akibat sistem "kotak hitam". Ketika sebuah solusi teknologi (seperti model ML) ditawarkan untuk mengatasi masalah pertama, pengguna klinis dihadapkan pada masalah baru: ketidakmampuan untuk memvalidasi atau memahami mengapa sebuah peringatan risiko muncul. Bagi Dokter, masalah ini sangat fundamental karena mereka tidak dapat menindaklanjuti (misalnya, memberikan obat preventif) sebuah peringatan yang tidak dapat dijelaskan. Hal ini menciptakan masalah turunan berupa "keraguan dalam pengambilan keputusan" (hesitancy to act) dan masalah "akuntabilitas", di mana klinisi tidak dapat bertanggung jawab atas keputusan yang didasarkan pada alat yang buram (opaque). Oleh karena itu, masalah pengguna yang teridentifikasi bukan hanya "butuh prediksi", tetapi "butuh prediksi yang dapat dipercaya dan dijelaskan.".
+\begin{enumerate}
+    \item \textbf{Masyarakat Umum/Pasien}\\
+    Tantangan utama yang dihadapi pasien adalah ketidakmampuan untuk memahami terminologi medis yang kompleks dan angka probabilitas statistik yang dihasilkan oleh alat kesehatan konvensional. Pasien sering kali menerima hasil diagnosis atau prediksi risiko tanpa penjelasan kausalitas yang memadai mengenai faktor gaya hidup apa yang memicu risiko tersebut (Tjoa dan Guan, 2021). Selain itu, kurangnya akses terhadap informasi kesehatan yang terpersonalisasi membuat pasien kesulitan menentukan langkah mitigasi mandiri yang tepat tanpa harus berkonsultasi panjang dengan dokter.
+    
+    \item \textbf{Tenaga Medis Profesional}\\
+Dokter dan tenaga kesehatan menghadapi kendala dalam mengadopsi teknologi \textit{Machine Learning} karena sifat "\textit{black box}" dari algoritma tersebut. Tanpa adanya transparansi mengenai bagaimana model mengambil keputusan, tenaga medis sulit untuk memvalidasi apakah prediksi tersebut didasarkan pada logika medis yang benar atau hanya korelasi data yang bias (Linardatos et al., 2021). Hal ini mengakibatkan keraguan dalam menggunakan hasil prediksi AI sebagai dasar pengambilan keputusan klinis, serta menambah beban kognitif dokter untuk menjelaskan risiko kepada pasien secara manual.
+\end{enumerate}
+
+Untuk mengatasi permasalahan tersebut, maka dirumuskan sistem yang tidak hanya mampu memprediksi risiko hipertensi dengan akurasi tinggi, tetapi juga mampu "berbicara" atau menjelaskan alasan di balik prediksi tersebut menggunakan bahasa alami yang merujuk pada pedoman medis standar.
 
 \subsection{Kebutuhan Fungsional}
-Kebutuhan fungsional (Functional Requirements) adalah pernyataan spesifik mengenai fungsionalitas atau layanan inti yang harus disediakan sistem untuk memecahkan masalah pengguna yang teridentifikasi di 3.2.1. Kebutuhan ini diturunkan secara langsung dari alur kerja penelitian yang diuraikan dalam Bab 1.5 dan bertujuan untuk menutup kesenjangan teknis yang ada. Setiap fungsi harus dapat diimplementasikan dan diuji untuk memvalidasi bahwa sistem mampu mengeksekusi tugas-tugas yang diperlukan untuk mencapai tujuan proaktif dan dapat dijelaskan. Fungsi-fungsi ini mencakup seluruh siklus hidup data, mulai dari pemrosesan data mentah, transformasi fitur, pemodelan, hingga visualisasi hasil akhir. Kebutuhan fungsional dijabarkan sebagai berikut:
+Kebutuhan fungsional mendefinisikan serangkaian fitur dan perilaku spesifik yang harus dimiliki oleh sistem untuk menjawab permasalahan pengguna di atas. Berikut merupakan kebutuhan fungsional dari sistem prediksi hipertensi berbasis XAI dan LLM.
 
-% --- Tabel Kebutuhan Fungsional ---
-% FIX: Menggunakan [H] agar tabel tidak mengambang
-\begin{table}[H] 
-  \begin{tabularx}{\textwidth}{ | l | p{4cm} | X |}
-	\hline
-	\textbf{ID} & \textbf{Kebutuhan Fungsional} & \textbf{Deskripsi} \\
-	\hline
-	F-01 & Manajemen \& Ekstraksi Data & 
-    Sistem terbukti mampu memuat file .csv dari dataset MIMIC-IV Demo (100 pasien). Sistem harus mampu memvalidasi dan mengekstrak kohort pasien krisis (27 pasien unik yang teridentifikasi). \\
-	\hline
-	F-02 & Rekayasa Fitur (Feature Engineering) & 
-    Sistem mampu menghasilkan satu tabel fitur (X) statis dan satu tabel target (Y) biner ($1=\text{Krisis}, 0=\text{Aman}$). Tabel fitur (X) wajib mencakup fitur statis (usia, gender) dan fitur agregat/tren (misal: rata-rata, slope TD). \\
-	\hline
-	F-03 & Pemodelan Prediktif & 
-    \\
-	\hline
-	F-04 & Implementasi Interpretabilitas (XAI) & 
-    Sistem mampu menghasilkan visualisasi SHAP Summary Plot untuk penjelasan global. Sistem juga wajib mampu menghasilkan visualisasi SHAP Force Plot atau Waterfall Plot untuk setiap prediksi individu (penjelasan lokal). \\
-	\hline
-	F-05 & Visualisasi Prototipe CDSS (Dashboard) & 
-    Sistem (dibangun dengan Streamlit) mampu menampilkan secara bersamaan: (1) Skor prediksi risiko (dari F-3) dan (2) Visualisasi penjelasan SHAP (dari F-4) dalam satu antarmuka dashboard interaktif. \\
-	\hline
-  \end{tabularx}
-  \caption{Kebutuhan Fungsional}
-  \label{tbl:kebutuhan-fungsional}
+\begin{table}[ht]
+    \caption{Kebutuhan Fungsional}
+    \label{tab:kebutuhan-fungsional}
+    \centering
+    \small
+    \begin{tabular}{|p{1.5cm}|p{3.5cm}|p{8cm}|}
+        \hline
+        \textbf{ID} & \textbf{Kebutuhan Fungsional} & \textbf{Deskripsi} \\
+        \hline
+        FR01 & Pemrosesan Data Klinis \textit{Tabular} & Sistem harus mampu menerima dan memproses \textit{input} data pengguna yang terdiri dari variabel demografis, tanda vital, dan riwayat kesehatan dalam format terstruktur (\textit{tabular data}) sesuai standar \textit{dataset} kesehatan. \\
+        \hline
+        FR02 & Prediksi Risiko Probabilistik & Sistem harus menerapkan model \textit{Machine Learning} (seperti XGBoost atau \textit{Random Forest}) untuk mengklasifikasikan status risiko hipertensi dan menghasilkan skor probabilitas risiko yang presisi bagi setiap individu (Elshawi et al., 2019). \\
+        \hline
+        FR03 & Pembangkitan Penjelasan Lokal (XAI) & Sistem wajib mengintegrasikan metode \textit{Shapley Additive exPlanations} (SHAP) untuk menghitung dan memvisualisasikan kontribusi masing-masing fitur (misalnya: dampak usia atau BMI) terhadap hasil prediksi spesifik pengguna tersebut. \\
+        \hline
+        FR04 & Transformasi Narasi Berbasis RAG & Sistem harus mampu menggunakan arsitektur \textit{Retrieval-Augmented Generation} (RAG) untuk menerjemahkan hasil matematis XAI menjadi narasi teks bahasa Indonesia yang mudah dipahami, dengan mengambil konteks hanya dari basis pengetahuan pedoman medis yang telah diverifikasi. \\
+        \hline
+        FR05 & Validasi Referensi Otomatis & Sistem mampu menyertakan sitasi atau rujukan ke dokumen pedoman klinis yang relevan pada setiap saran atau penjelasan yang dihasilkan oleh LLM untuk memitigasi risiko halusinasi informasi. \\
+        \hline
+    \end{tabular}
 \end{table}
+
+
+
+Dengan spesifikasi pada Tabel \ref{tab:kebutuhan-fungsional}, penulis merancang \textit{alur kerja} di mana sistem tidak hanya berhenti pada \textit{output} klasifikasi biner (Sehat/Berisiko), tetapi melanjutkannya ke tahap interpretasi. Sistem diharapkan dapat melakukan \textit{preprocessing} data otomatis, menjalankan \textit{inferensi model}, menghitung \textit{feature importance}, dan akhirnya menyusun paragraf penjelasan yang koheren. fitur FR04 dan FR05 secara khusus ditujukan untuk menjembatani kesenjangan pemahaman antara data numerik dan bahasa manusia.
 
 \subsection{Kebutuhan Nonfungsional}
-Kebutuhan non-fungsional (Non-Functional Requirements) mendefinisikan kriteria kualitas, batasan operasional, dan atribut sistem yang tidak terkait langsung dengan fungsi spesifik. Dalam konteks penelitian medis ini, kebutuhan non-fungsional sama pentingnya dengan kebutuhan fungsional karena menentukan validitas, kepercayaan, dan reliabilitas dari solusi yang diusulkan. Kebutuhan ini menetapkan standar "seberapa baik" sistem harus bekerja, bukan hanya "apa" yang harus dilakukannya. Berikut adalah kebutuhan non-fungsional utama untuk sistem ini:
+Kebutuhan non-fungsional menetapkan batasan kualitas dan karakteristik operasional yang harus dipenuhi agar sistem dapat diandalkan dalam skenario penggunaan nyata. Dalam konteks informatika medis, aspek faktualitas dan akurasi menjadi prioritas di atas kecepatan semata.
 
-% --- Tabel Kebutuhan Nonfungsional ---
-% FIX: Menggunakan [H] agar tabel tidak mengambang
-\begin{table}[H] 
-  \begin{tabularx}{\textwidth}{ | l | p{4cm} | X |}
-	\hline
-	\textbf{ID} & \textbf{Kebutuhan Non-Fungsional} & \textbf{Deskripsi (Kriteria Kualitas yang Terukur)} \\
-	\hline
-	NFR-01 & Transparansi & 
-    Sistem harus 100\% dapat dijelaskan. Setiap prediksi risiko yang dihasilkan (F-3) wajib disertai dengan visualisasi penjelasan SHAP (F-4) yang menunjukkan kontribusi fitur-fitur pendorong risiko. \\
-	\hline
-	NFR-02 & Kinerja Prediktif & 
-    Kinerja model pada test set wajib dievaluasi menggunakan metrik utama AUC-ROC. Kinerja juga harus dilaporkan menggunakan Precision dan Recall, dengan penekanan analisis pada minimalisasi False Negative (pasien krisis yang diprediksi aman). \\
-	\hline
-	NFR-03 & Kebergunaan (Usability) & 
-    Visualisasi SHAP (F-4) pada dashboard (F-5) harus dapat dipahami secara intuitif oleh pengguna non-teknis (klinisi). Faktor pendorong risiko (fitur) harus disajikan dengan jelas, tanpa jargon ilmu data yang kompleks. \\
-	\hline
-	NFR-04 & Lingkup Prototipe & 
-    Sistem beroperasi sebagai purwarupa dalam lingkungan simulasi (offline). Output sistem (skor risiko \& SHAP) berfungsi sebagai pendukung keputusan, bukan diagnosis medis otomatis. \\
-	\hline
-  \end{tabularx}
-  \caption{Kebutuhan Nonfungsional}
-  \label{tbl:kebutuhan-nonfungsional}
+\begin{table}[ht]
+    \caption{Kebutuhan Non-Fungsional}
+    \label{tab:kebutuhan-nonfungsional}
+    \centering
+    \small
+    \begin{tabular}{|p{1.5cm}|p{3.5cm}|p{8cm}|}
+        \hline
+        \textbf{ID} & \textbf{Kebutuhan Non-Fungsional} & \textbf{Deskripsi} \\
+        \hline
+        NFR01 & Sensitivitas Klinis (\textit{Recall}) & Model prediksi harus memprioritaskan kemampuan mendeteksi kasus positif (berisiko) untuk meminimalkan \textit{False Negative}, dengan target metrik Recall $>$ 85\% pada data uji, mengingat kesalahan diagnosis negatif lebih fatal dalam konteks penyakit \textit{silent killer}. \\
+        \hline
+        NFR02 & Faktualitas Narasi (\textit{Faithfulness}) & Narasi yang dihasilkan oleh LLM harus memiliki tingkat kesetiaan (\textit{faithfulness}) yang tinggi terhadap dokumen sumber RAG, memastikan tidak ada saran medis yang difabrikasi di luar pedoman yang disediakan \parencite{ji2023}. \\
+        \hline
+        NFR03 & Interpretabilitas Visual & Prototipe \textit{antarmuka} harus mampu menyajikan grafik \textit{force plot} atau \textit{waterfall plot} dari SHAP yang dapat dibaca dalam waktu kurang dari 5 detik untuk membantu dokter memindai faktor risiko dominan dengan cepat. \\
+        \hline
+        NFR04 & Efisiensi Inferensi Sistem & Waktu tunggu total dari \textit{input} data hingga munculnya narasi penjelasan (termasuk proses \textit{retrieval} dokumen) tidak boleh melebihi 10 detik agar menjaga pengalaman pengguna (\textit{user experience}) yang responsif pada \textit{platform} berbasis \textit{web}. \\
+        \hline
+    \end{tabular}
 \end{table}
+
+Dengan memenuhi kebutuhan nonfungsional pada Tabel \ref{tab:kebutuhan-nonfungsional} di atas, sistem yang dikembangkan diharapkan tidak hanya cerdas secara komputasi, tetapi juga aman dan etis untuk digunakan sebagai alat pendukung keputusan. Pemenuhan standar NFR02 khususnya menjadi krusial untuk membedakan sistem ini dengan \textit{chatbot} kesehatan generik yang rentan terhadap halusinasi medis.
 
 \section{Analisis Pemilihan Solusi}
-Dalam merancang sistem "Digital Twin Sederhana" untuk prediksi krisis hipertensi, diperlukan analisis terhadap permasalahan dan potensi peluang untuk merumuskan solusi yang paling tepat. Sub-bab ini menyajikan pemetaan masalah dan peluang yang diidentifikasi dari sub-bab 3.1. Setelah itu, akan dipaparkan perbandingan alternatif solusi teknologi yang relevan, yang kemudian akan dievaluasi menggunakan kerangka kerja formal untuk menentukan solusi terpilih.
+Dalam merancang sistem informasi kesehatan yang kompleks seperti prediksi risiko hipertensi, diperlukan analisis yang tajam terhadap akar permasalahan klinis dan potensi teknologi yang tersedia. Tahapan ini krusial untuk memastikan bahwa arsitektur sistem yang diusulkan bukan hanya canggih secara teknis, tetapi juga menjawab kebutuhan praktis di lapangan. Subbab ini menyajikan pemetaan masalah dan peluang secara sistematis, serta membandingkan berbagai alternatif pendekatan teknologi untuk menjustifikasi solusi hibrida yang dipilih dalam penelitian tugas akhir ini.
 
 \subsection{Alternatif Solusi}
-Permasalahan yang muncul dalam lingkup penelitian tugas akhir ini perlu dikaji satu per satu agar penulis dapat merumuskan solusi yang relevan. Identifikasi masalah utama yang telah ditemukan (dari sub-bab 3.1) dijabarkan pada Tabel \ref{tbl:pemetaan-masalah}.
+Permasalahan multidimensi yang muncul dalam lingkup diagnosis dan prediksi hipertensi perlu dipetakan secara granular agar penulis dapat merumuskan intervensi teknologi yang presisi. Berdasarkan hasil tinjauan literatur dan observasi kondisi saat ini, dijabarkan pemetaan masalah utama beserta dampak signifikannya pada Tabel \ref{tab:pemetaan-masalah}.
 
-% --- Tabel Pemetaan Masalah ---
-% FIX: Menggunakan [H] agar tabel tidak mengambang
-\begin{table}[H]
-  \begin{tabularx}{\textwidth}{ | l | X | X |}
-	\hline
-	\textbf{ID} & \textbf{Masalah} & \textbf{Dampak} \\
-	\hline
-	M01 & Paradigma klinis reaktif; intervensi baru dilakukan setelah krisis hipertensi terjadi. & Risiko kerusakan organ target (stroke, gagal jantung) yang tinggi akibat keterlambatan intervensi preventif. \\
-	\hline
-	M02 & Model machine learning (ML) bersifat "black box" dan tidak transparan bagi klinisi. & Hambatan adopsi dan kurangnya kepercayaan (trust). Klinisi tidak dapat memvalidasi atau menindaklanjuti peringatan yang tidak dapat dijelaskan. \\
-	\hline
-	M03 & Data klinis (vital sign) bersifat runtun waktu (time-series) dan kompleks. & Sulit melakukan pemrosesan otomatis oleh model ML tabular (seperti XGBoost/RF) tanpa transformasi data terlebih dahulu. \\
-	\hline
-  \end{tabularx}
-  \caption{Pemetaan Masalah}
-  \label{tbl:pemetaan-masalah}
+\begin{table}[ht]
+    \caption{Pemetaan Masalah dan Dampak}
+    \label{tab:pemetaan-masalah}
+    \centering
+    \small
+    \begin{tabular}{|p{1cm}|p{2.5cm}|p{3.5cm}|p{6cm}|}
+        \hline
+        \textbf{ID} & \textbf{Nama Masalah} &\textbf{Deskripsi Masalah} & \textbf{Dampak} \\
+        \hline
+        M01 & Fenomena \textit{Black Box} pada Model Prediksi & Model Machine Learning konvensional menghasilkan skor risiko tanpa menyertakan alasan medis yang mendasarinya. & Terjadi defisit kepercayaan (\textit{trust deficit}) dari tenaga medis untuk menggunakan hasil prediksi dalam pengambilan keputusan klinis, serta kesulitan dalam memvalidasi logika model. \\
+        \hline
+        M02 & Inkomprehensibilitas bagi Pasien Awam & Luaran sistem prediksi berupa angka probabilitas atau grafik statistik sulit dipahami oleh pasien tanpa latar belakang medis. & Pasien gagal memahami urgensi kondisi kesehatan mereka yang berpotensi menyebabkan rendahnya kepatuhan terhadap saran medis atau perubahan gaya hidup yang disarankan. \\
+        \hline
+        M03 & Halusinasi Risiko pada Generative AI & Penggunaan model bahasa (LLM) standar untuk konsultasi kesehatan rentan menghasilkan fakta medis yang salah atau fabrikasi data. & Menimbulkan risiko keselamatan pasien yang fatal jika saran yang tidak valid diikuti, serta melanggar prinsip etika medis (\textit{non-maleficence}/tidak membahayakan). \\
+        \hline
+        M04 & Kompleksitas Hubungan Non-Linier & Metode statistik tradisional sering gagal menangkap interaksi kompleks antar variabel risiko. & Akurasi prediksi menjadi suboptimal untuk individu dengan profil risiko yang unik, menyebabkan tingginya angka \textit{False Negative} (pasien berisiko yang tidak terdeteksi). \\
+        \hline
+    \end{tabular}
 \end{table}
 
-Uraian permasalahan di atas menunjukkan bahwa didapati kebutuhan akan sistem yang dapat beralih ke paradigma proaktif dan menyajikan informasi risiko yang akurat serta dapat dipercaya. Di sisi lain, proyek yang berakar dari permasalahan ini memiliki potensi besar untuk dikembangkan, yang pemetaan peluangnya dijabarkan pada Tabel \ref{tbl:pemetaan-peluang}.
+Uraian permasalahan di atas menunjukkan adanya kebutuhan mendesak akan sistem yang tidak hanya akurat, tetapi juga transparan dan aman. Di sisi lain, perkembangan teknologi terkini membuka peluang besar untuk mengatasi hambatan tersebut. Pemetaan peluang yang menjadi dasar teknis pengembangan solusi dijabarkan pada Tabel \ref{tab:pemetaan-peluang}.
 
-% --- Tabel Pemetaan Peluang ---
-% FIX: Menggunakan [H] agar tabel tidak mengambang
-\begin{table}[H]
-  \begin{tabularx}{\textwidth}{ | l | l | X |}
-	\hline
-	\textbf{ID} & \textbf{Pemetaan Masalah} & \textbf{Peluang} \\
-	\hline
-	P01 & M01, M02 & Memungkinkan untuk perancangan CDSS proaktif yang mengintegrasikan modul prediksi risiko (mengatasi M01) dan modul XAI (mengatasi M02). \\
-	\hline
-	P02 & M03 & Ketersediaan dataset MIMIC-IV Demo (Data 1/Notulensi) yang dapat digunakan untuk melatih model machine learning. \\
-	\hline
-	P03 & M03 & Teknik Rekayasa Fitur (Feature Engineering) (F-2) memungkinkan ekstraksi fitur tabular yang relevan dari data runtun waktu yang kompleks. \\
-	\hline
-	P04 & M01 & Algoritma machine learning (seperti XGBoost) dari studi literatur terbukti state-of-the-art untuk data tabular klinis (mendukung F-3). \\
-	\hline
-	P05 & M02 & Algoritma XAI (SHAP) dari studi literatur (Data 1/Bab 2) dapat digunakan untuk memberikan transparansi dan membangun kepercayaan (mendukung F-4). \\
-	\hline
-  \end{tabularx}
-  \caption{Pemetaan Peluang (Proyek Hipertensi)}
-  \label{tbl:pemetaan-peluang}
+\begin{table}[ht]
+    \caption{Pemetaan Peluang}
+    \label{tab:pemetaan-peluang}
+    \centering
+    \small
+    \begin{tabular}{|p{1cm}|p{2.5cm}|p{3.5cm}|p{6cm}|}
+        \hline
+        \textbf{ID} & \textbf{Pemetaan Masalah} & \textbf{Nama Peluang} & \textbf{Deskripsi Peluang} \\
+        \hline
+        P01 & M01, M04 & \textbf{Integrasi Metode Model-Agnostic} & Pemanfaatan metode XAI (seperti SHAP/LIME) memungkinkan pembukaan "kotak hitam" model ML apa pun untuk mendapatkan nilai kontribusi fitur yang presisi tanpa mengorbankan akurasi prediksi. \\
+        \hline
+        P02 & M02 & \textbf{Pemanfaatan Large Language Model (LLM)} & Kemampuan \textit{natural language generation} (NLG) dari LLM dapat dimanfaatkan untuk menerjemahkan data matematis kompleks menjadi narasi personal yang humanis dan mudah dimengerti pasien. \\
+        \hline
+        P03 & M03 & \textbf{Arsitektur Retrieval-Augmented Generation (RAG)} & Penerapan mekanisme RAG memungkinkan sistem untuk membatasi jawaban LLM hanya berdasarkan dokumen pedoman klinis terverifikasi, sehingga memitigasi risiko halusinasi secara signifikan. \\
+        \hline
+        P04 & M01, M03, M04 & \textbf{Ketersediaan Dataset Kesehatan Terstruktur} & Tersedianya data sekunder publik (seperti IFLS atau NHANES) memungkinkan pelatihan model ML yang \textit{robust} sebagai fondasi sistem prediksi yang objektif. \\
+        \hline
+    \end{tabular}
 \end{table}
 
-Penulis mengevaluasi berbagai pendekatan teknis yang dapat diadopsi dalam membangun sistem prediksi krisis hipertensi, yang dijabarkan dalam Tabel \ref{tbl:alternatif-solusi} di bawah ini.
+Berdasarkan pemetaan masalah dan peluang tersebut, penulis mengevaluasi berbagai pendekatan arsitektur teknis yang mungkin diadopsi. Perbandingan komparatif dari setiap alternatif solusi disajikan dalam Tabel \ref{tab:alternatif-solusi}.
 
-% --- Tabel Alternatif Solusi ---
-% FIX: Menggunakan [H] agar tabel tidak mengambang
-\begin{table}[H]
-  \begin{tabularx}{\textwidth}{ | l | p{3.5cm} | X | X |}
-	\hline
-	\textbf{No.} & \textbf{Solusi} & \textbf{Kelebihan (Pros)} & \textbf{Kekurangan (Cons)} \\
-	\hline
-	1. & Model Statistik Dapat Diinterpretasi (cth: Regresi Logistik) & 
-    Sangat Transparan: Model bersifat "white box" dan inheren dapat dijelaskan. \newline Sederhana: Komputasi ringan dan mudah diimplementasikan. & 
-    Kinerja Terbatas: Cenderung memiliki kinerja prediktif yang lebih rendah pada data medis yang non-linear dan kompleks. \\
-	\hline
-	2. & Model Deep Learning (cth: LSTM/RNN) & 
-    Kinerja Sangat Tinggi: Sangat baik dalam menangkap pola data runtun waktu mentah. & 
-    "Black Box" Ekstrem: Sangat sulit diinterpretasikan (gagal memenuhi NF-1). \newline Kompleksitas Tinggi: Membutuhkan komputasi besar dan implementasi yang rumit. \\
-	\hline
-	3. & Model Ensemble + XAI (cth: XGBoost + SHAP) & 
-    Kinerja Tinggi: Performa state-of-the-art pada data tabular (hasil F-2). \newline Transparan (via XAI): Memenuhi NF-1 dengan menyediakan penjelasan post-hoc (SHAP). \newline Seimbang: Keseimbangan terbaik antara Kinerja (NF-2) dan Transparansi (NF-1). & 
-    Memerlukan Rekayasa Fitur (Feature Engineering): Kinerja sangat bergantung pada kualitas fitur yang diekstraksi (F-2). \\
-	\hline
-  \end{tabularx}
-  \caption{Alternatif Solusi}
-  \label{tbl:alternatif-solusi}
+\begin{table}[ht]
+    \caption{Alternatif Solusi}
+    \label{tab:alternatif-solusi}
+    \centering
+    \small
+    \begin{tabular}{|p{0.5cm}|p{3.5cm}|p{4.5cm}|p{4.5cm}|}
+        \hline
+        \textbf{No} & \textbf{Solusi} & \textbf{Kelebihan} & \textbf{Kekurangan} \\
+        \hline
+        1. & Sistem Pakar Berbasis Aturan (\textit{Rule-Based System}) & Sangat transparan dan mudah diaudit karena logika diprogram secara eksplisit. & Sangat kaku (\textit{rigid}), tidak mampu menangkap pola non-linier yang kompleks, dan sulit diperbarui seiring bertambahnya data baru. \\
+        \hline
+        2. & Pure Machine Learning (\textit{Black Box Model}) & Mampu mencapai akurasi prediksi yang sangat tinggi pada dataset besar dan menangkap pola rumit. & Tidak memiliki interpretabilitas keputusan (alasan tidak diketahui), sehingga sulit diterima dalam praktik klinis yang mengutamakan \textit{evidence-based medicine}. \\
+        \hline
+        3. & Chatbot LLM Langsung (\textit{Direct Prompting}) & Interaksi sangat natural dan mampu memberikan penjelasan panjang lebar. & Rentan halusinasi medis (fakta yang salah), tidak deterministik, dan sulit memproses data tabular numerik secara presisi untuk prediksi risiko kuantitatif. \\
+        \hline
+        4. & Hybrid System (ML + XAI + RAG LLM) & Menyeimbangkan akurasi tinggi, transparansi alasan prediksi, dan penyajian informasi yang aman serta valid secara medis. & Arsitektur sistem paling kompleks dan memerlukan integrasi berbagai komponen (model pipeline, vector database, LLM API). \\
+        \hline
+    \end{tabular}
 \end{table}
+
+Tabel \ref{tab:alternatif-solusi} di atas menunjukkan bahwa setiap pendekatan memiliki \textit{trade-off} tersendiri. Pemilihan solusi harus memprioritaskan keselamatan pasien dan kegunaan klinis di atas kemudahan pengembangan semata. Penentuan solusi final akan dikalkulasi secara objektif pada subbab selanjutnya.
 
 \subsection{Analisis Penentuan Solusi}
-Dalam menentukan pendekatan teknis dalam merancang sistem ini, dilakukan evaluasi menggunakan metode Weighted Scoring Matrix (WSM). WSM adalah sebuah teknik yang mengombinasikan ukuran kualitatif dan kuantitatif dengan cara memberikan skor pada setiap alternatif solusi terhadap serangkaian kriteria yang relevan. Metode ini dipilih karena dianggap tidak terlalu kompleks, fleksibel, dan bobotnya dapat disesuaikan berdasarkan aspek sesuai topik model yang akan dikembangkan. Masing-masing parameter penghitungan bobot diperoleh dari kebutuhan non-fungsional (Tabel \ref{tbl:kebutuhan-nonfungsional}) yang telah dijabarkan sebelumnya. Bobot ditentukan berdasarkan prioritas penelitian, di mana Kinerja Prediktif (NF-2) dan Transparansi (NF-1) dianggap sebagai prioritas utama. 
-Setiap alternatif solusi diberikan nilai antara 1 hingga 5 ($1 = \text{sangat buruk}, 5 = \text{sangat baik}$). Skor akhir diperoleh dari perkalian nilai dengan bobot masing-masing parameter yang dijabarkan pada Tabel \ref{tbl:wsm}.
+Dalam menentukan pendekatan teknis yang paling optimal untuk sistem prediksi risiko hipertensi ini, penulis melakukan evaluasi kuantitatif menggunakan metode \textit{Weighted Scoring Matrix} (WSM). WSM adalah teknik pengambilan keputusan yang memberikan bobot prioritas pada kriteria tertentu untuk membandingkan alternatif solusi secara objektif \parencite{ouchra2021}. Metode ini dipilih karena fleksibilitasnya dalam mengakomodasi kriteria teknis (seperti akurasi) dan kriteria kualitatif (seperti kepercayaan pengguna) dalam satu kerangka evaluasi.
 
-% --- Tabel WSM ---
-% FIX: Menggunakan [H] agar tabel tidak mengambang
-\begin{table}[H]
-  \centering 
-  \begin{tabular}{ | l | c | >{\centering\arraybackslash}p{2.5cm} | >{\centering\arraybackslash}p{2.5cm} | >{\centering\arraybackslash}p{3cm} |}
-	\hline
-	\textbf{Parameter} & \textbf{Bobot} & \textbf{1. Regresi Logistik} & \textbf{2. Deep Learning (LSTM)} & \textbf{3. Ensemble + SHAP} \\
-    & & Skor (1-5) & Skor (1-5) & Skor (1-5) \\
-	\hline
-	Kinerja Prediktif (NF-2) & 0,45 & 2 & 5 & 4 \\
-	Transparansi (NF-1) & 0,45 & 5 & 1 & 4 \\
-	Kompleksitas Implementasi & 0,10 & 5 & 1 & 3 \\
-	\hline
-	\textbf{Total Skor} & \textbf{1,00} & \textbf{3.65} & \textbf{2.80} & \textbf{3.90} \\
-	\hline
-  \end{tabular}
-  \caption{Pemilihan Solusi dengan Weighted Scoring Model (WSM)}
-  \label{tbl:wsm}
+Parameter penilaian didasarkan pada kebutuhan nonfungsional sistem medis yang kritis. Setiap alternatif solusi diberi nilai skala 1 hingga 5, di mana nilai 1 merepresentasikan performa sangat buruk dan nilai 5 merepresentasikan performa sangat baik. Adapun perhitungan skor akhir yang diperoleh dari perkalian nilai dengan bobot prioritas dijabarkan pada Tabel \ref{tab:pemilihan-solusi}.
+
+\begin{table}[ht]
+    \caption{Pemilihan Solusi dengan Weighted Scoring Model}
+    \label{tab:pemilihan-solusi}
+    \centering
+    \small
+    \begin{tabular}{|p{3.5cm}|p{1cm}|p{2cm}|p{2cm}|p{2cm}|p{2.5cm}|}
+        \hline
+        \textbf{Parameter} & \textbf{Bobot} & \textbf{Rule-Based System} & \textbf{Pure ML (Black Box)} & \textbf{LLM Chatbot (Direct)} & \textbf{Hybrid (ML+XAI+ RAG)} \\
+        \hline
+        Akurasi Prediksi & 0.25 & 2 & 5 & 2 & 5 \\
+        \hline
+        Interpretabilitas (\textit{Explainability}) & 0.25 & 5 & 1 & 3 & 5 \\
+        \hline
+        Keamanan Medis (Anti-Halusinasi) & 0.20 & 5 & 5 & 1 & 5 \\
+        \hline
+        Kualitas Narasi \& Personalisasi & 0.15 & 1 & 1 & 5 & 4 \\
+        \hline
+        Skalabilitas Data & 0.15 & 2 & 5 & 3 & 4 \\
+        \hline
+        \textbf{Total Skor} & \textbf{1.00} & \textbf{3.05} & \textbf{3.40} & \textbf{2.60} & \textbf{4.70} \\
+        \hline
+    \end{tabular}
 \end{table}
 
-% --- Subseksi Solusi Terpilih ---
-\subsection{Solusi Terpilih}
-Berdasarkan perhitungan skor total pada Tabel \ref{tbl:wsm}, solusi yang akan diadopsi dalam konteks penelitian tugas akhir ini adalah \textbf{Alternatif 3: Model Ensemble + XAI (XGBoost + SHAP)} dengan skor akhir tertinggi yaitu 3,90. Model ini dianggap mampu menangani data tabular hasil rekayasa fitur (F-2) dengan keandalan tinggi, sekaligus memenuhi kebutuhan non-fungsional krusial NF-1 (Transparansi). Solusi ini dipilih karena memberikan keseimbangan terbaik antara kinerja prediktif dan interpretabilitas, yang merupakan dua pilar utama untuk mengatasi masalah yang telah diidentifikasi.
+Berdasarkan perhitungan skor total pada Tabel \ref{tab:pemilihan-solusi}, solusi yang akan diadopsi dalam penelitian tugas akhir ini adalah Hybrid System (ML + XAI + RAG LLM) dengan perolehan skor akhir tertinggi yaitu 4.70. Pendekatan ini terbukti merupakan satu-satunya arsitektur yang mampu memenuhi tiga persyaratan penting sistem pendukung keputusan klinis, yaitu akurasi tinggi melalui ML, transparansi melalui XAI, dan komunikasi yang aman melalui RAG. Keputusan ini menjadi landasan bagi perancangan sistem yang akan dibahas pada bab selanjutnya.

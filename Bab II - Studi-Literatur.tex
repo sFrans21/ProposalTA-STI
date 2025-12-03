@@ -12,15 +12,7 @@ Penyakit ini sering disebut sebagai \textit{the silent killer} karena sebagian b
 Di Indonesia, hipertensi masih menjadi tantangan kesehatan utama dengan tingkat pengendalian yang rendah. Studi epidemiologi terbaru menunjukkan bahwa prevalensi hipertensi di Indonesia tidak hanya didominasi oleh lansia, tetapi mulai merambah ke populasi usia produktif akibat transisi nutrisi dan penurunan aktivitas fisik (Arifin et al., 2022). Patofisiologi hipertensi melibatkan interaksi kompleks antara curah jantung dan resistensi vaskular perifer, yang diatur oleh sistem saraf simpatis, sistem renin-angiotensin-aldosteron (RAAS), dan keseimbangan cairan tubuh (Hall et al., 2021). Ketidakseimbangan pada salah satu mekanisme ini dapat memicu vasokonstriksi berkepanjangan yang berujung pada elevasi tekanan darah sistemik.
 
 
-\begin{figure}[ht]
-	\centering
-    % Pastikan file gambar ada di folder image, atau uncomment baris di bawah jika belum ada gambar
-    % \includegraphics[width=0.8\textwidth]{image/raas_diagram.png}
-	\caption{Diagram Patofisiologi Mekanisme RAAS dalam Meningkatkan Tekanan Darah}
-	\label{gambar:raas}
-    \captionsetup{justification=centering}
-    \small{Sumber: Sparks et al., 2022}
-\end{figure}
+
 
 \subsection{Klasifikasi Hipertensi}
 \noindent Klasifikasi tekanan darah merupakan pedoman klinis fundamental yang digunakan untuk menentukan stratifikasi risiko dan strategi intervensi medis. Meskipun terdapat beberapa pedoman internasional, klasifikasi yang paling banyak diadopsi dalam literatur terkini merujuk pada pedoman \textit{International Society of Hypertension} (ISH) 2020 dan \textit{European Society of Hypertension} (ESH) 2023 yang berupaya menyederhanakan kategorisasi untuk kemudahan praktik klinis (Mancia et al., 2023).
@@ -163,11 +155,10 @@ Pencarian dalam \textit{Vector Database} umumnya menggunakan algoritma \textit{N
 
 \begin{figure}[ht]
 	\centering
-    % \includegraphics[width=0.7\textwidth]{image/vector_viz.png}
-	\caption{Visualisasi data vector database}
+    \includegraphics[width=0.7\textwidth]{image/vector_viz.png}
+	\caption{Visualisasi Data Vector Database}
 	\label{gambar:vector_db}
     \captionsetup{justification=centering}
-    \small{Sumber: Taipalus, 2024}
 \end{figure}
 
 Mekanisme kerja \textit{Vector Database} dapat diuraikan melalui tahapan berikut:
@@ -185,11 +176,10 @@ Mekanisme kerja \textit{Vector Database} dapat diuraikan melalui tahapan berikut
 
 \begin{figure}[ht]
 	\centering
-    % \includegraphics[width=0.9\textwidth]{image/vector_query.png}
-	\caption{Visualisasi query vector database}
+    \includegraphics[width=0.9\textwidth]{image/vector_query.png}
+	\caption{Visualisasi Query Vector Database}
 	\label{gambar:vector_query}
     \captionsetup{justification=centering}
-    \small{Sumber: Taipalus, 2024}
 \end{figure}
 
 Peran \textit{Vector Database} menjadi sangat strategis dalam implementasi \textit{Generative AI}, khususnya untuk mendukung metode \textit{Retrieval Augmented Generation} (RAG). Dengan menyediakan akses cepat ke basis pengetahuan eksternal yang relevan, \textit{Vector Database} membantu model bahasa menghasilkan respons yang lebih akurat dan terkontextualisasi, mengurangi risiko halusinasi model (Lewis et al., 2020).
@@ -233,11 +223,11 @@ Meskipun RAG menawarkan solusi signifikan untuk meningkatkan akurasi LLM, terdap
 \end{enumerate}
 
 Proses Retrieval Augmented Generation secara umum dapat digambarkan melalui diagram sebagai berikut:
-\begin{figure}[H]
+\begin{figure}[ht]
     \centering
     % GANTI 'nama_file_gambar_2.3.png' dengan nama file gambar Anda yang sebenarnya
-    % \includegraphics[width=0.8\textwidth]{nama_file_gambar_2.3.png}
-    \caption{Rangkaian proses implementasi Retrieval Augmented Generation.}
+    \includegraphics[width=0.8\textwidth]{image/ImplementasiRAG.png}
+    \caption{Rangkaian Proses Implementasi Retrieval Augmented Generation.}
     \label{fig:2.3}
 \end{figure}
 
@@ -255,10 +245,10 @@ Evaluasi terhadap model \textit{Large Language Model} (LLM) yang terintegrasi da
 
 Kerangka kerja RAGAS menyediakan berbagai metrik yang dikategorikan berdasarkan fokus evaluasinya yang terbagi menjadi metrik berbasis komponen (\textit{component-wise}) dan metrik ujung-ke-ujung (\textit{end-to-end}).
 
-\begin{figure}[H]
+\begin{figure}[ht]
     \centering
     % GANTI 'nama_file_gambar_II.5.png' dengan nama file gambar Anda yang sebenarnya
-    % \includegraphics[width=0.8\textwidth]{nama_file_gambar_II.5.png}
+    \includegraphics[width=0.8\textwidth]{image/RAGASEvaluation.png}
     \caption{Taksonomi Metrik Evaluasi dalam Framework RAGAS.}
     \label{fig:II.5}
 \end{figure}
@@ -275,10 +265,10 @@ Berdasarkan taksonomi di atas, metrik \textit{Faithfulness} dan \textit{Answer R
 \vspace{1em} % Memberi jarak antar bagian
 Selain metrik per komponen, terdapat juga metrik \textit{Answer Semantic Similarity} dan \textit{Answer Correctness} yang memberikan gambaran performa sistem secara keseluruhan (Es et al., 2023). Proses kerja RAGAS dalam melakukan evaluasi melibatkan alur data yang sistematis di mana data input diproses melalui \textit{retriever} dan \textit{generator} sebelum akhirnya dinilai oleh evaluator.
 
-\begin{figure}[H]
+\begin{figure}[ht]
     \centering
     % GANTI 'nama_file_gambar_II.6.png' dengan nama file gambar Anda yang sebenarnya
-    % \includegraphics[width=0.8\textwidth]{nama_file_gambar_II.6.png}
+    \includegraphics[width=0.8\textwidth]{image/AlurKerjaRAGAS.png}
     \caption{Alur Kerja Evaluasi Sistem RAG Menggunakan RAGAS.}
     \label{fig:II.6}
 \end{figure}
