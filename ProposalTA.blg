@@ -1,19 +1,19 @@
 [0] Config.pm:328> INFO - This is Biber 2.21
 [1] Config.pm:331> INFO - Logfile is 'ProposalTA.blg'
-[637] biber-MSWIN64:342> INFO - === 
-[866] Biber.pm:421> INFO - Reading 'ProposalTA.bcf'
-[1412] Biber.pm:1002> INFO - Found 2 citekeys in bib section 0
-[1454] Biber.pm:4487> INFO - Processing section 0
-[1510] Biber.pm:4678> INFO - Looking for bibtex file 'daftar-pustaka.bib' for section 0
-[1654] bibtex.pm:1713> INFO - LaTeX decoding ...
-[1758] bibtex.pm:1519> INFO - Found BibTeX data source 'daftar-pustaka.bib'
-[1796] UCollate.pm:68> INFO - Overriding locale 'id-ID' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[1796] UCollate.pm:68> INFO - Overriding locale 'id-ID' defaults 'variable = shifted' with 'variable = non-ignorable'
-[1797] UCollate.pm:68> INFO - Overriding locale 'id-ID' defaults 'level = 4' with 'level = 2'
-[1797] Biber.pm:4307> INFO - Sorting list 'cms/global//global/global/global' of type 'entry' with template 'cms' and locale 'id-ID'
-[1797] Biber.pm:4313> INFO - No sort tailoring available for locale 'id-ID'
-[1798] bbl.pm:676> INFO - Writing 'ProposalTA.bbl' with encoding 'UTF-8'
-[1798] bbl.pm:779> INFO - Output to ProposalTA.bbl
-[1799] Biber.pm:132> WARN - I didn't find a database entry for 'ji2023' (section 0)
-[1799] Biber.pm:132> WARN - I didn't find a database entry for 'ouchra2021' (section 0)
-[1799] Biber.pm:134> INFO - WARNINGS: 2
+[235] biber-MSWIN64:342> INFO - === 
+[302] Biber.pm:421> INFO - Reading 'ProposalTA.bcf'
+[695] Biber.pm:1002> INFO - Found 2 citekeys in bib section 0
+[725] Biber.pm:4487> INFO - Processing section 0
+[745] Biber.pm:4678> INFO - Looking for bibtex file 'daftar-pustaka.bib' for section 0
+[843] bibtex.pm:1713> INFO - LaTeX decoding ...
+[937] bibtex.pm:1519> INFO - Found BibTeX data source 'daftar-pustaka.bib'
+[971] UCollate.pm:68> INFO - Overriding locale 'id-ID' defaults 'variable = shifted' with 'variable = non-ignorable'
+[971] UCollate.pm:68> INFO - Overriding locale 'id-ID' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[971] UCollate.pm:68> INFO - Overriding locale 'id-ID' defaults 'level = 4' with 'level = 2'
+[972] Biber.pm:4307> INFO - Sorting list 'cms/global//global/global/global' of type 'entry' with template 'cms' and locale 'id-ID'
+[972] Biber.pm:4313> INFO - No sort tailoring available for locale 'id-ID'
+[972] bbl.pm:676> INFO - Writing 'ProposalTA.bbl' with encoding 'UTF-8'
+[973] bbl.pm:779> INFO - Output to ProposalTA.bbl
+[973] Biber.pm:132> WARN - I didn't find a database entry for 'ji2023' (section 0)
+[973] Biber.pm:132> WARN - I didn't find a database entry for 'ouchra2021' (section 0)
+[974] Biber.pm:134> INFO - WARNINGS: 2

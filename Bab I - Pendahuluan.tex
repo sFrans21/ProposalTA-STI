@@ -8,7 +8,7 @@
 \section{Latar Belakang}
 Hipertensi atau tekanan darah tinggi merupakan masalah kesehatan global yang menjadi faktor risiko utama untuk berbagai penyakit kardiovaskular, termasuk stroke dan gagal jantung (Mills \textit{et al.}, 2020). Menurut data Organisasi Kesehatan Dunia, diperkirakan 1,28 miliar orang dewasa di seluruh dunia menderita hipertensi (WHO, 2023). Di Indonesia, data Kementerian Kesehatan RI juga mencatat prevalensi yang signifikan (Riset Kesehatan Dasar, 2018). Meskipun manajemen hipertensi telah menjadi prioritas, penanganan yang umum terjadi saat ini sering kali bersifat reaktif (Whelton \textit{et al.}, 2018). Intervensi medis baru dilakukan setelah pasien mengalami gejala atau setelah Tekanan Darah (TD) terdeteksi sangat tinggi, yang berpotensi berujung pada komplikasi akut seperti krisis hipertensi (Kurtz \textit{et al.}, 2021).
 
-Pendekatan berbasis \textit{Machine Learning} (ML) menawarkan alternatif yang menjanjikan dalam memprediksi risiko hipertensi. Algoritma ML terkini memiliki kemampuan superior dalam memodelkan hubungan non-linier yang kompleks antara berbagai variabel risiko (Tarimana \textit{et al.}, 2024). Studi terbaru menunjukkan bahwa model ML mampu mencapai akurasi klasifikasi risiko yang jauh lebih tinggi dibandingkan regresi logistik tradisional. Namun, penerapan model-model ini di ranah klinis menghadapi kendala besar yaitu fenomena \textit{black box}, di mana model menghasilkan prediksi tanpa menyertakan alasan yang dapat dipahami manusia.
+Pendekatan berbasis \textit{Machine Learning} (ML) menawarkan alternatif yang menjanjikan dalam memprediksi risiko hipertensi. Algoritma ML terkini memiliki kemampuan superior dalam memodelkan hubungan non-linier yang kompleks antara berbagai variabel risiko (Tarimana \textit{et al.}, 2024). Studi terbaru menunjukkan bahwa model ML mampu mencapai akurasi klasifikasi risiko yang jauh lebih tinggi dibandingkan regresi logistik tradisional. Namun, penerapan model-model ini di ranah klinis menghadapi kendala besar yaitu fenomena \textit{black box} yang membuat model menghasilkan prediksi tanpa menyertakan alasan yang dapat dipahami manusia.
 
 Dalam konteks medis, hasil prediksi saja tidak cukup. Tenaga medis dan pasien membutuhkan interpretabilitas untuk memahami alasan di balik sebuah prediksi agar dapat mempercayai dan menindaklanjuti hasil tersebut. Kompleksitas algoritma prediksi yang bersifat \textit{black box} sering kali menjadi penghambat adopsi teknologi ini dalam praktik klinis sehari-hari karena kurangnya transparansi dan kepercayaan dari pengguna (Adadi \& Berrada, 2018).
 
@@ -33,7 +33,8 @@ Berdasarkan latar belakang yang telah diuraikan, maka rumusan masalah dalam pene
 Tujuan utama pelaksanaan Tugas Akhir ini adalah:
 \begin{enumerate}
     \item Membangun dan mengoptimasi model klasifikasi risiko hipertensi menggunakan algoritma ML dengan target metrik evaluasi melampaui 85\%.
-    \item Mengintegrasikan arsitektur RAG pada LLM untuk mentransformasi luaran teknis model prediksi menjadi narasi klinis yang valid dan merujuk pada basis pengetahuan medis terstandar guna memitigasi risiko halusinasi.
+    \item Menerapkan metode Explainable \textit{Artificial Intelligence} (XAI) untuk menghasilkan atribusi fitur yang transparan dan dapat diinterpretasikan secara klinis.
+    \item Mengembangkan modul narasi berbasis \textit{Large Language Model} (LLM) dengan arsitektur RAG yang memanfaatkan hasil XAI untuk memberikan penjelasan personal yang tervalidasi.
     \item Mengevaluasi efektivitas kinerja sistem secara komprehensif yang mencakup metrik akurasi model prediksi serta tingkat faktualitas dan koherensi narasi penjelasan yang dihasilkan dibandingkan dengan referensi medis.
 \end{enumerate}
 

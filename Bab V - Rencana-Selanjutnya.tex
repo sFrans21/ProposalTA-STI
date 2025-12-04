@@ -3,9 +3,157 @@
 % ==========================================
 \chapter{RENCANA SELANJUTNYA}
 \label{chap:rencana-selanjutnya}
-Jelaskan secara detail langkah-langkah rencana selanjutnya, hal-hal yang diperlukan atau akan disiapkan, dan risiko dan mitigasinya, yang meliputi:
+
+
+\section{Implementasi}
+Bagian ini meliputi kakas dan lingkungan implementasi, implementasi dataset, \textit{machine learning}, XAI, dan implementasi model ke aplikasi.
+
+\subsection{Kakas dan Lingkungan Implementasi}
+Implementasi dilakukan dengan memanfaatkan berbagai perangkat lunak pendukung yang berperan dalam pemrosesan data, pengembangan model \textit{Machine Learning}, integrasi XAI, serta penyusunan narasi klinis dengan pendekatan \textit{Retrieval Augmented Generation}. Kakas yang digunakan dapat diklasifikasikan ke dalam beberapa kelompok berikut:
+
 \begin{enumerate}
-\item	Rencana implementasi, termasuk alat dan bahan yang diperlukan, lingkungan, konfigurasi, biaya, dan sebagainya.
-\item	Desain pengujian dan evaluasi, misalnya metode verifikasi dan validasi.
-\item	Analisis risiko dan mitigasi, misalnya tindakan selanjutnya jika ada yang tidak berjalan sesuai rencana.
+    \item \textbf{Python}: Digunakan sebagai bahasa pemrograman utama dalam seluruh tahapan pengembangan model yang meliputi pemrosesan data, pelatihan model prediksi, integrasi XAI, serta komponen \textit{backend} pada prototipe aplikasi.
+    \item \textbf{NumPy}: Digunakan untuk operasi komputasi numerik dan manipulasi struktur \textit{array}.
+    \item \textbf{Pandas}: Digunakan untuk eksplorasi data tabular, pembersihan data, transformasi variabel, serta penyusunan dataset pelatihan dan pengujian.
+    \item \textbf{Matplotlib dan Seaborn}: Digunakan untuk menampilkan grafik terkait distribusi variabel, korelasi fitur klinis, dan visualisasi metrik evaluasi model.
+    \item \textbf{Scikit-learn}: Digunakan untuk \textit{preprocessing} data, pembagian dataset, penghitungan metrik evaluasi, serta \textit{baseline model}.
+    \item \textbf{XGBoost}: Digunakan sebagai algoritma utama klasifikasi risiko hipertensi yang sebelumnya telah dipilih berdasarkan evaluasi performa pada dataset tabular dengan variabel risiko multidimensional.
+    \item \textbf{SHAP}: Diterapkan untuk memberikan interpretasi luaran model baik dalam skala lokal maupun global. Metode ini mampu mengukur kontribusi setiap fitur secara matematis dengan prinsip keadilan dan konsistensi. Oleh karena itu, instrumen ini menjadi krusial dalam mengevaluasi keandalan model serta menjamin transparansi, khususnya pada sistem estimasi risiko medis yang sensitif seperti hipertensi.
+    \item \textbf{LangChain}: Digunakan sebagai kerangka integrasi untuk pipeline \textit{Retrieval Augmented Generation} meliputi komponen \textit{retriever}, pemanggilan model, pemrosesan konteks, dan orkestrasi \textit{prompt}.
+    \item \textbf{OpenAI API}: Digunakan untuk menghasilkan narasi klinis berbasis konteks serta mendukung proses evaluasi faktualitas melalui \textit{prompt engineering}.
 \end{enumerate}
+
+Lingkungan implementasi yang digunakan dalam penelitian ini meliputi perangkat keras dan perangkat lunak berikut:
+
+\begin{enumerate}
+    \item \textbf{Perangkat Keras}
+    \begin{enumerate}
+        \item Laptop: Lenovo IdeaPad Gaming 3 15ACH6
+        \item Processor (CPU): AMD Ryzen 5 5600H with Radeon Graphics
+        \item Memori (RAM): 16 GB
+        \item Penyimpanan: SSD 954 GB
+    \end{enumerate}
+    \item \textbf{Perangkat Lunak}
+    \begin{enumerate}
+        \item Sistem operasi: Windows 11
+        \item Editor dan IDE: Visual Studio Code dan Jupyter Notebook
+    \end{enumerate}
+\end{enumerate}
+
+\subsection{Jadwal Implementasi}
+Jadwal pelaksanaan penelitian dirinci dalam bentuk tabel kegiatan. Estimasi waktu relatif untuk setiap tahapan pekerjaan adalah sebagai berikut. Berikut adalah penjelasan detail dari jadwal penelitian dan pengembangan proyek. Tabel ini merinci setiap tahapan penelitian dan proyek, aktivitas utama, dan durasinya, sesuai dengan jadwal yang telah direncanakan.
+
+\begin{table}[H]
+    \caption{Tabel Detail Jadwal Proyek}
+    \label{tab:jadwal-proyek}
+    \centering
+    \small
+    \begin{tabular}{|p{1.5cm}|p{4.5cm}|p{3cm}|p{2cm}|p{2cm}|}
+        \hline
+        \textbf{Kode} & \textbf{Kegiatan} & \textbf{Output} & \textbf{Durasi} & \textbf{PIC} \\
+        \hline
+        BU-01 & Finalisasi ruang lingkup \& kebutuhan pengguna & Dokumen kebutuhan & 2 bulan & Peneliti \\
+        \hline
+        BU-02 & Studi literatur lanjutan AI/XAI/RAG medis & Bab II lengkap & 2 bulan & Peneliti \\
+        \hline
+        DU-01 & Akuisisi \& \textit{pre-assessment} dataset & Dataset siap analisis & 3 bulan & Peneliti \\
+        \hline
+        DP-01 & Data cleaning \& \textit{preprocessing} & Dataset siap model & 3 bulan & Peneliti \\
+        \hline
+        DP-02 & Feature engineering + balancing & Dataset final model & 3 bulan & Peneliti \\
+        \hline
+        ML-01 & Model training XGBoost + \textit{fine-tuning} & Model 85\% akurasi (target) & 2 bulan & Peneliti \\
+        \hline
+        XAI-01 & SHAP attribution analysis & Visualisasi kontribusi fitur & 2 bulan & Peneliti \\
+        \hline
+        RAG-01 & VectorDB + indexing pedoman medis & Knowledge base terstruktur & 2 bulan & Peneliti \\
+        \hline
+        RAG-02 & Integrasi LLM + narasi klinis & Penjelasan dapat dimengerti & 2 bulan & Peneliti \\
+        \hline
+        EV-01 & Evaluasi ML (Accuracy, Precision, F1) & Laporan performa model & 2 bulan & Peneliti \\
+        \hline
+        EV-02 & Evaluasi RAG (RAGAS: Faithfulness dll.) & Laporan evaluasi narasi & 2 bulan & Peneliti \\
+        \hline
+        DEP-01 & Pengembangan web prototype & Sistem CDSS berbasis web & 3 bulan & Peneliti \\
+        \hline
+        DEP-02 & User testing (dokter/tenaga medis) & Feedback usability \& klinis & 2 bulan & Peneliti \\
+        \hline
+        DOC-01 & Penyusunan laporan TA \& publikasi & Draft TA lengkap & 10 bulan & Peneliti \\
+        \hline
+    \end{tabular}
+\end{table}
+
+
+\section{Desain pengujian dan evaluasi}
+Evaluasi dilakukan untuk menilai kinerja model serta meninjau rasionalitas keputusan yang dihasilkan dengan melibatkan ahli di bidangnya. Tujuan dari proses ini adalah memastikan bahwa model tidak hanya mampu memprediksi risiko hipertensi secara akurat, tetapi juga menghasilkan penalaran yang logis, mudah dipahami, dan dapat dipertanggungjawabkan dalam praktik medis.
+
+\subsection{Evaluasi Kinerja Model}
+Pengujian kinerja model direncanakan menggunakan himpunan data uji terpisah untuk memvalidasi kemampuan generalisasi model dalam mengklasifikasikan risiko hipertensi. Sesuai dengan batasan masalah yang telah ditetapkan, evaluasi kuantitatif akan berfokus pada metrik \textit{Receiver Operating Characteristic Area Under Curve} atau ROC-AUC dan \textit{Precision-Recall Area Under Curve} atau PR-AUC sebagai indikator utama keberhasilan.
+
+Penggunaan ROC-AUC dipilih karena metrik ini mampu mengukur kinerja pemisahan kelas oleh model di berbagai ambang batas klasifikasi secara komprehensif. Mengingat luaran model berupa probabilitas risiko dan bukan sekadar label biner, ROC-AUC menjadi instrumen vital untuk melihat seberapa konsisten model memberikan skor risiko yang lebih tinggi pada pasien hipertensi dibandingkan pasien sehat.
+
+Selain itu, rencana evaluasi akan memberikan bobot prioritas pada nilai \textit{Sensitivity} atau \textit{Recall}. Hal ini didasarkan pada karakteristik hipertensi sebagai \textit{the silent killer} yang sering tidak bergejala. Dalam konteks penapis kesehatan, kegagalan mendeteksi pasien berisiko atau \textit{False Negative} memiliki konsekuensi keselamatan yang jauh lebih fatal dibandingkan kesalahan deteksi pada orang sehat. Oleh karena itu, skenario pengujian akan dirancang untuk memastikan model mencapai target \textit{Recall} yang optimal, sebagaimana ditargetkan dalam kebutuhan nonfungsional sistem.
+
+Metrik pendukung seperti \textit{Specificity} dan F1-Score juga akan dilibatkan untuk memantau keseimbangan model, terutama dalam menghadapi potensi ketidakseimbangan kelas pada dataset. \textit{Specificity} diperlukan untuk menjaga kepercayaan pengguna dengan tidak terlalu sering memberikan peringatan palsu, sedangkan F1-Score akan menjadi acuan harmonisasi antara ketepatan dan daya cakup prediksi. Kinerja model nantinya akan dibandingkan dengan ambang batas dasar atau \textit{baseline} dari penelitian terdahulu untuk memastikan bahwa solusi yang diusulkan memiliki nilai kompetitif secara ilmiah.
+
+\subsection{Rencana Evaluasi Rasionalitas Model}
+Evaluasi rasionalitas dirancang untuk memverifikasi validitas logika medis yang dipelajari oleh algoritma \textit{Machine Learning}. Tahapan ini tidak hanya melihat hasil akhir prediksi, tetapi menelusuri alur pengambilan keputusan menggunakan metode \textit{Explainable Artificial Intelligence} atau XAI, khususnya \textit{Shapley Additive exPlanations} atau SHAP.
+
+Mekanisme validasi akan dilaksanakan melalui konsultasi dengan tenaga ahli medis atau dokter. Dalam proses ini, sejumlah sampel kasus uji akan disajikan bersamaan dengan visualisasi nilai SHAP yang menunjukkan fitur-fitur dominan yang memengaruhi skor risiko. Tenaga ahli kemudian akan diminta menilai kesesuaian antara fitur yang dianggap penting oleh model dengan pedoman klinis standar, seperti panduan dari Kementerian Kesehatan atau organisasi hipertensi internasional.
+
+Sebagai indikator keberhasilan evaluasi ini, model diharapkan mampu menunjukkan pola kausalitas yang benar. Misalnya, peningkatan variabel usia, indeks massa tubuh, atau riwayat tekanan darah sistolik harus berkontribusi positif terhadap kenaikan skor risiko hipertensi. Sebaliknya, model harus dapat mengenali faktor protektif atau variabel yang menurunkan risiko. Jika interpretasi model dinilai selaras dengan pengetahuan medis dan bebas dari korelasi semu yang menyesatkan, maka model akan dinyatakan lolos uji rasionalitas dan layak diintegrasikan dengan komponen \textit{Large Language Model} untuk tahap pembangkitan narasi.
+
+\subsection{Evaluasi RAG}
+Sistem yang diusulkan mengevaluasi kinerja arsitektur \textit{Retrieval-Augmented Generation} (RAG) menggunakan kerangka kerja evaluasi standar yaitu \textit{Retrieval Augmented Generation Assessment} (RAGAS). Pendekatan ini dipilih karena metrik tradisional dianggap tidak memadai untuk mengukur koherensi semantik dan akurasi faktual yang dihasilkan oleh \textit{Large Language Model} (LLM) dalam konteks RAG. RAGAS beroperasi secara \textit{reference-free} dengan memanfaatkan LLM itu sendiri sebagai juri penilai, yang terbukti memiliki korelasi tinggi dengan penilaian manusia. Evaluasi ini memisahkan proses penilaian menjadi dua komponen utama, yaitu metrik kualitas generasi teks (\textit{generation}) dan metrik kualitas pengambilan konteks (\textit{retrieval}).
+
+Berikut adalah penjelasan mengenai metrik-metrik kunci dalam evaluasi RAGAS yang diterapkan:
+
+\begin{enumerate}
+    \item \textbf{Faithfulness}: Kerangka RAGAS mengukur \textit{Faithfulness} untuk menilai konsistensi faktual dari narasi yang dibangkitkan terhadap konteks yang disajikan oleh \textit{retriever}. Metrik ini menjadi sangat krusial dalam domain kesehatan yang berisiko tinggi karena berfungsi untuk memastikan bahwa model tidak menghasilkan informasi medis yang dibuat-buat atau halusinasi. Hal ini secara langsung memitigasi bahaya laten yang timbul dari fabrikasi saran medis dan melanggar prinsip etika medis (\textit{non-maleficence}). Dengan demikian, \textit{Faithfulness} menjamin bahwa respons model memiliki landasan bukti (\textit{evidence-grounded}) yang dapat diverifikasi demi keselamatan pasien.
+    
+    \item \textbf{Context Precision}: Digunakan untuk mengevaluasi kualitas pengambilan dokumen. Metrik ini menghitung rasio antara informasi yang relevan yang berhasil diambil dibandingkan dengan total informasi yang disajikan. Nilai presisi konteks yang tinggi menunjukkan efisiensi sistem dalam menyaring data medis yang tidak diperlukan atau \textit{noise data}. Pengukuran ini sangat penting karena ketidaksinkronan antara proses \textit{retrieval} dan \textit{generation} dapat terjadi jika informasi yang tidak relevan masuk ke dalam konteks, yang pada akhirnya dapat memengaruhi kualitas penjelasan akhir.
+    
+    \item \textbf{Context Recall}: Mengukur kemampuan sistem untuk mengambil seluruh informasi yang diperlukan dari basis pengetahuan eksternal guna menjawab pertanyaan pengguna secara komprehensif. Kualitas metrik ini sangat memengaruhi \textit{prompt} yang diperkaya (\textit{augmented}) yang diberikan kepada LLM, memastikan model memiliki fondasi faktual yang lengkap sebelum menyusun jawaban. Dalam konteks medis, metrik ini juga didukung oleh \textit{Context Entity Recall} yang memastikan entitas spesifik krusial (seperti nama obat atau kondisi komorbiditas hipertensi) tidak hilang selama pengambilan konteks.
+    
+    \item \textbf{Answer Relevancy}: Metrik ini menilai kualitas narasi yang dibangkitkan dari perspektif sejauh mana jawaban tersebut secara langsung merespons pertanyaan yang diajukan oleh pengguna. Metrik \textit{Answer Relevancy} diukur tanpa mempertimbangkan kebenaran faktual dari jawaban yang dihasilkan. Tujuannya adalah untuk memastikan bahwa LLM tetap fokus pada permintaan pengguna, yang krusial dalam menghasilkan output yang mudah dipahami dan personal bagi pasien maupun tenaga medis.
+\end{enumerate}
+
+\section{Analisis Risiko dan Mitigasi}
+Sistem yang diusulkan beroperasi dalam ranah kesehatan yang menuntut akurasi faktual dan keandalan keputusan sehingga manajemen risiko harus diterapkan secara sistematis. Analisis ini mengadopsi prinsip dan proses dari pedoman Manajemen Risiko ISO 31000 yang membagi prosesnya menjadi tiga tahapan besar yaitu identifikasi risiko, analisis dan evaluasi risiko, serta penanganan risiko.
+
+\subsection{Identifikasi Risiko Kunci}
+Identifikasi risiko berfokus pada potensi kegagalan di setiap komponen sistem hibrida yang dapat memengaruhi keselamatan pasien dan kepercayaan klinis. Komponen tersebut meliputi \textit{Machine Learning} (ML), \textit{Explainable Artificial Intelligence} (XAI), dan \textit{Retrieval Augmented Generation} (RAG). Risiko-risiko kunci yang teridentifikasi adalah sebagai berikut:
+
+\begin{enumerate}
+    \item \textbf{Risiko Halusinasi Medis (R1)}: Model bahasa besar atau LLM rentan menghasilkan informasi yang difabrikasi yaitu informasi yang terdengar meyakinkan namun faktanya salah. Dampak potensial dari risiko ini adalah bahaya keselamatan pasien yang fatal jika sistem memberikan saran medis yang tidak berdasar atau bertentangan dengan pedoman klinis resmi.
+    \item \textbf{Risiko Kegagalan Faithfulness (R2)}: Jawaban yang dihasilkan oleh LLM tidak sepenuhnya didukung oleh konteks yang diambil dari basis data vektor atau \textit{Vector Database}. Hal ini menunjukkan ketidaksetiaan faktual terhadap sumber. Dampak potensialnya adalah kerusakan kredibilitas sistem dan defisit kepercayaan di kalangan tenaga medis.
+    \item \textbf{Risiko Kualitas Retrieval (R3)}: Komponen \textit{retriever} gagal mengambil semua konteks yang relevan atau justru mengambil terlalu banyak informasi tidak relevan sehingga menyebabkan ketidaksinkronan antara proses pencarian dan pembangkitan jawaban.
+    \item \textbf{Risiko Kegagalan Target Recall Model Prediksi (R4)}: Model ML gagal mencapai target metrik sensitivitas klinis atau \textit{Recall} melampaui 85\% pada data uji. Dampak potensialnya adalah tingginya angka negatif palsu atau \textit{False Negative} yaitu pasien berisiko tinggi yang tidak terdeteksi.
+    \item \textbf{Risiko Latensi Sistem Tinggi (R5)}: Waktu tunggu total dari input data hingga munculnya narasi penjelasan melampaui batas yang ditentukan yaitu 10 detik. Hal ini mencakup proses RAG secara keseluruhan. Latensi tinggi dapat menurunkan pengalaman pengguna.
+\end{enumerate}
+
+\subsection{Analisis dan Evaluasi Risiko}
+Analisis risiko dilakukan dengan membandingkan kemungkinan dan dampak setiap risiko. Mengingat sensitivitas sistem ini dalam domain kesehatan maka beberapa risiko dapat memiliki dampak yang tinggi. Oleh karena itu strategi mitigasi difokuskan pada penanganan proaktif terhadap risiko berkategori tinggi tersebut.
+
+\subsection{Strategi Mitigasi dan Tindak Lanjut}
+Strategi penanganan risiko berfokus pada mitigasi untuk mengurangi kemungkinan atau dampak dan didukung dengan rencana kontingensi sebagai tindak lanjut jika evaluasi menunjukkan kegagalan. Rincian strategi mitigasi dapat dilihat pada Tabel \ref{tab:mitigasi-risiko}.
+
+\begin{table}[htbp]
+    \caption{Strategi mitigasi risiko dan rencana tindak lanjut}
+    \label{tab:mitigasi-risiko}
+    \centering
+    \small
+    \begin{tabular}{|p{2cm}|p{5.5cm}|p{5.5cm}|}
+        \hline
+        \textbf{Kode Risiko} & \textbf{Strategi Mitigasi} & \textbf{Tindak Lanjut Jika Gagal} \\
+        \hline
+        R1 \& R2 & Menggunakan arsitektur RAG untuk secara eksplisit memaksa LLM membatasi respons pada dokumen pedoman klinis Kemenkes atau WHO. Kualitas narasi divalidasi menggunakan metrik \textit{Faithfulness} dari kerangka RAGAS. & Jika skor \textit{Faithfulness} atau \textit{Answer Relevancy} rendah maka lakukan \textit{fine-tuning} atau rekayasa \textit{prompt} ulang pada komponen generator untuk menekankan pembatasan konteks. \\
+        \hline
+        R3 & Evaluasi komponen \textit{retriever} menggunakan metrik \textit{Context Precision} untuk menolak data bising dan \textit{Context Recall} untuk memastikan kelengkapan dari kerangka RAGAS. & Jika skor \textit{retrieval} rendah maka lakukan \textit{fine-tuning} pada model \textit{embedding} yang digunakan untuk pencarian vektor atau terapkan mekanisme \textit{reranking} pascapencarian dokumen. \\
+        \hline
+        R4 & ML dioptimalkan untuk memprioritaskan metrik \textit{Recall} selama pelatihan dengan target minimal 85\% untuk meminimalkan \textit{False Negative}. & Jika \textit{Recall} kurang dari 85\% maka terapkan teknik \textit{hyperparameter tuning} yang lebih agresif pada model XGBoost atau gunakan teknik penyeimbangan data seperti SMOTE untuk mengatasi ketidakseimbangan kelas pada data latih. \\
+        \hline
+        R5 & Menerapkan mekanisme \textit{Semantic Cache} dan klasifikasi kueri untuk pertanyaan sederhana agar dapat melewati alur RAG penuh yang mahal secara komputasi. & Jika waktu tunggu total melampaui 10 detik maka lakukan optimasi pada proses pencarian vektor seperti penyesuaian algoritma ANNS atau pertimbangkan untuk menggunakan API LLM yang memiliki latensi lebih rendah. \\
+        \hline
+    \end{tabular}
+\end{table}

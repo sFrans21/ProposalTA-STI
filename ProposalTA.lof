@@ -1,12 +1,15 @@
 \babel@toc {bahasa}{}\relax 
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {II.1}{\ignorespaces Visualisasi Data Vector Database}}{17}{figure.caption.3}%
-\contentsline {figure}{\numberline {II.2}{\ignorespaces Visualisasi Query Vector Database}}{18}{figure.caption.4}%
+\contentsline {figure}{\numberline {II.1}{\ignorespaces Visualisasi Data \textit {Vector Database}}}{17}{figure.caption.3}%
+\contentsline {figure}{\numberline {II.2}{\ignorespaces Visualisasi Query textit{Vector Database}}}{18}{figure.caption.4}%
 \contentsline {figure}{\numberline {II.3}{\ignorespaces Rangkaian Proses Implementasi Retrieval Augmented Generation.}}{21}{figure.caption.5}%
-\contentsline {figure}{\numberline {II.4}{\ignorespaces Taksonomi Metrik Evaluasi dalam Framework RAGAS.}}{22}{figure.caption.6}%
+\contentsline {figure}{\numberline {II.4}{\ignorespaces Taksonomi Metrik Evaluasi dalam \textit {framework} RAGAS.}}{22}{figure.caption.6}%
 \contentsline {figure}{\numberline {II.5}{\ignorespaces Alur Kerja Evaluasi Sistem RAG Menggunakan RAGAS.}}{23}{figure.caption.7}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {III.1}{\ignorespaces Alur Diagnosis Hipertensi Konvensional di Fasilitas Kesehatan Tingkat Pertama (FKTP)}}{28}{figure.caption.8}%
+\contentsline {figure}{\numberline {III.1}{\ignorespaces Alur Diagnosis Hipertensi di Fasilitas Kesehatan Tingkat Pertama (FKTP)}}{28}{figure.caption.8}%
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {IV.1}{\ignorespaces Desain Konsep Solusi Sistem}}{40}{figure.caption.16}%
+\contentsline {figure}{\numberline {IV.2}{\ignorespaces Arsitektur Teknis Sistem }}{41}{figure.caption.17}%
+\contentsline {figure}{\numberline {IV.3}{\ignorespaces Alur Diagnosis Hipertensi di Fasilitas Kesehatan Tingkat Pertama (FKTP) (To-Be)}}{43}{figure.caption.18}%
 \addvspace {10\p@ }

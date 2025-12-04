@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2025.10.28)  3 DEC 2025 02:09
+This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2025.10.28)  5 DEC 2025 00:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1167,18 +1167,24 @@ Package datetime2 Warning: Region `bahasai' has ignored
 
 
 ]
-
-[1] (ProposalTA.toc
-LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
-
-(C:\Users\Samuel\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+LaTeX Font Info:    Trying to load font information for U+msa on input line 192
+.
+ (C:\Users\Samuel\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 192
+.
 
 (C:\Users\Samuel\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
+Overfull \hbox (64.45271pt too wide) in paragraph at lines 192--197
+ [][] 
+ []
+
+
+
+[1] (ProposalTA.toc
 
 [2
 
@@ -1188,13 +1194,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 
-[3] (ProposalTA.lof
-Overfull \hbox (4.04898pt too wide) in paragraph at lines 10--10
- [][] [][][]\TU/TimesNewRoman(0)/m/n/12 Alur Diagnosis Hipertensi Konvensional 
-di Fasilitas Kesehatan Ting- 
- []
-
-)
+[3] (ProposalTA.lof)
 \tf@lof=\write6
 \openout6 = `ProposalTA.lof'.
 
@@ -1213,55 +1213,55 @@ di Fasilitas Kesehatan Ting-
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\<let>-command' on input line 247.
+(hyperref)                removing `\<let>-command' on input line 251.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 247.
+(hyperref)                removing `\\' on input line 251.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@centercr' on input line 247.
+(hyperref)                removing `\@centercr' on input line 251.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\rightskip' on input line 247.
+(hyperref)                removing `\rightskip' on input line 251.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@flushglue' on input line 247.
+(hyperref)                removing `\@flushglue' on input line 251.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leftskip' on input line 247.
+(hyperref)                removing `\leftskip' on input line 251.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@flushglue' on input line 247.
+(hyperref)                removing `\@flushglue' on input line 251.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\finalhyphendemerits' on input line 247.
+(hyperref)                removing `\finalhyphendemerits' on input line 251.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 247.
+(hyperref)                removing `\z@' on input line 251.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\parindent' on input line 247.
+(hyperref)                removing `\parindent' on input line 251.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 247.
+(hyperref)                removing `\z@' on input line 251.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\parfillskip' on input line 247.
+(hyperref)                removing `\parfillskip' on input line 251.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@skip' on input line 247.
+(hyperref)                removing `\z@skip' on input line 251.
 
 
 
@@ -1281,7 +1281,7 @@ Bab I.
 [3]
 
 [4]
-Overfull \hbox (4.46805pt too wide) in paragraph at lines 61--62
+Overfull \hbox (4.46805pt too wide) in paragraph at lines 62--63
 \TU/TimesNewRoman(0)/m/n/12 tode \TU/TimesNewRoman(0)/m/it/12 state-of-the-art 
 \TU/TimesNewRoman(0)/m/n/12 dengan menggunakan kata kunci spesifik pada kompone
 n-
@@ -1873,12 +1873,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 335--335
 
 
 Underfull \hbox (badness 1072) in paragraph at lines 335--335
-\TU/TimesNewRoman(0)/m/n/12 0.78 (tanpa riwayat
+\TU/TimesNewRoman(0)/m/n/12 0,78 (tanpa riwayat
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 335--335
-\TU/TimesNewRoman(0)/m/n/12 pasien) dan 0.85
+\TU/TimesNewRoman(0)/m/n/12 pasien) dan 0,85
  []
 
 
@@ -1935,16 +1935,16 @@ Bab III.
 File: image/gambar1.png Graphic file (type bmp)
 <image/gambar1.png>
 
+
+[27
+
+]
 Overfull \hbox (4.05478pt too wide) in paragraph at lines 24--25
 []\TU/TimesNewRoman(0)/m/n/12 Dalam upaya mengatasi masalah transparansi terseb
 ut, penelitian terkini mulai meng-
  []
 
 
-
-[27
-
-]
 
 [28]
 
@@ -2089,8 +2089,6 @@ Overfull \hbox (21.54718pt too wide) in paragraph at lines 68--79
 [30]
 
 [31]
-
-[32]
 Underfull \hbox (badness 1194) in paragraph at lines 109--109
 []|\TU/TimesNewRoman(0)/b/n/10.95 Kebutuhan Fungsio-
  []
@@ -2144,7 +2142,7 @@ Overfull \hbox (9.14719pt too wide) in paragraph at lines 107--122
 
 
 
-[33]
+[32]
 Underfull \hbox (badness 10000) in paragraph at lines 138--138
 []|\TU/TimesNewRoman(0)/b/n/10.95 Kebutuhan Non-
  []
@@ -2160,7 +2158,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 142--142
  []
 
 
-LaTeX Warning: Citation 'ji2023' on page 34 undefined on input line 142.
+LaTeX Warning: Citation 'ji2023' on page 33 undefined on input line 142.
 
 
 Overfull \hbox (9.14719pt too wide) in paragraph at lines 136--149
@@ -2169,7 +2167,7 @@ Overfull \hbox (9.14719pt too wide) in paragraph at lines 136--149
 
 
 
-[34]
+[33]
 Underfull \hbox (badness 10000) in paragraph at lines 168--168
 []|\TU/TimesNewRoman(0)/m/n/10.95 Fenomena
  []
@@ -2270,6 +2268,8 @@ Overfull \hbox (21.54716pt too wide) in paragraph at lines 164--177
  []
 
 
+
+[34]
 Underfull \hbox (badness 10000) in paragraph at lines 190--190
 []|\TU/TimesNewRoman(0)/b/n/10.95 Integrasi Metode
  []
@@ -2321,8 +2321,6 @@ Overfull \hbox (21.54716pt too wide) in paragraph at lines 186--199
  []
 
 
-
-[35]
 Underfull \hbox (badness 10000) in paragraph at lines 212--212
 \TU/TimesNewRoman(0)/m/n/10.95 Aturan (\TU/TimesNewRoman(0)/m/it/10.95 Rule-Bas
 ed
@@ -2427,11 +2425,11 @@ Overfull \hbox (21.54718pt too wide) in paragraph at lines 208--221
  []
 
 
-LaTeX Warning: Citation 'ouchra2021' on page 36 undefined on input line 226.
+LaTeX Warning: Citation 'ouchra2021' on page 35 undefined on input line 226.
 
 
 
-[36]
+[35]
 Underfull \hbox (badness 10000) in paragraph at lines 237--237
 []|\TU/TimesNewRoman(0)/b/n/10.95 Rule-Based
  []
@@ -2467,37 +2465,194 @@ Underfull \hbox (badness 10000) in paragraph at lines 241--241
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 243--243
-[]|\TU/TimesNewRoman(0)/m/n/10.95 Keamanan Medis
- []
-
-
 Overfull \hbox (46.34714pt too wide) in paragraph at lines 235--252
  [][] 
  []
 
-) (Bab IV - Desain-Konsep-Solusi.tex
+
+
+[36]) (Bab IV - Desain-Konsep-Solusi.tex
 
 [37]
 
 [38]
 Bab IV.
-) (Bab V - Rencana-Selanjutnya.tex
+File: image/Desain Konsep Solusi Sistem.png Graphic file (type bmp)
+<image/Desain Konsep Solusi Sistem.png>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (3.35635pt too wide) in paragraph at lines 24--25
+[]\TU/TimesNewRoman(0)/m/n/12 Pengguna memasukkan parameter kesehatan (seperti 
+usia, tekanan darah, IMT,
+ []
+
+
 
 [39
 
 ]
-Bab V.
-)
+File: image/arsitektur sistem.png Graphic file (type bmp)
+<image/arsitektur sistem.png>
 
-[40
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+
+[40]
+
+[41]
+Overfull \hbox (1.10834pt too wide) in paragraph at lines 64--66
+\TU/TimesNewRoman(0)/m/n/12 pihak ketiga seperti OpenAI atau model \TU/TimesNew
+Roman(0)/m/it/12 open-source \TU/TimesNewRoman(0)/m/n/12 terhosting lainnya. Ko
+m-
+ []
+
+File: image/alursistemtobe.png Graphic file (type bmp)
+<image/alursistemtobe.png>
+
+
+[42]) (Bab V - Rencana-Selanjutnya.tex
+
+[43]
+Bab V.
+
+
+[44
 
 ]
+Underfull \hbox (badness 1888) in paragraph at lines 55--55
+[]|\TU/TimesNewRoman(0)/m/n/10.95 Finalisasi ruang lingkup &
+ []
 
-LaTeX Warning: Empty bibliography on input line 293.
+
+Underfull \hbox (badness 2229) in paragraph at lines 57--57
+[]|\TU/TimesNewRoman(0)/m/n/10.95 Studi literatur lanjutan AI-
+ []
 
 
-Package caption Warning: Unused \captionsetup[lstlisting] on input line 272.
+Underfull \hbox (badness 6542) in paragraph at lines 59--59
+[]|\TU/TimesNewRoman(0)/m/n/10.95 Akuisisi & \TU/TimesNewRoman(0)/m/it/10.95 pr
+e-assessment
+ []
+
+
+Underfull \hbox (badness 1286) in paragraph at lines 65--65
+[]|\TU/TimesNewRoman(0)/m/n/10.95 Model training XGBoost +
+ []
+
+
+Underfull \hbox (badness 6204) in paragraph at lines 67--67
+[]|\TU/TimesNewRoman(0)/m/n/10.95 Visualisasi kontri-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 69--69
+[]|\TU/TimesNewRoman(0)/m/n/10.95 Knowledge base
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 71--71
+[]|\TU/TimesNewRoman(0)/m/n/10.95 Penjelasan dapat
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 73--73
+[]|\TU/TimesNewRoman(0)/m/n/10.95 Laporan performa
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--75
+[]|\TU/TimesNewRoman(0)/m/n/10.95 Laporan evaluasi
+ []
+
+
+Underfull \hbox (badness 5893) in paragraph at lines 77--77
+[]|\TU/TimesNewRoman(0)/m/n/10.95 Pengembangan web proto-
+ []
+
+
+Underfull \hbox (badness 4108) in paragraph at lines 79--79
+[]|\TU/TimesNewRoman(0)/m/n/10.95 User testing (dokter/tenaga
+ []
+
+
+Underfull \hbox (badness 2393) in paragraph at lines 81--81
+[]|\TU/TimesNewRoman(0)/m/n/10.95 Penyusunan laporan TA &
+ []
+
+
+Overfull \hbox (33.94716pt too wide) in paragraph at lines 51--84
+ [][] 
+ []
+
+
+
+[45]
+
+[46]
+Overfull \hbox (2.73251pt too wide) in paragraph at lines 97--98
+\TU/TimesNewRoman(0)/m/n/12 mantau keseimbangan model, terutama dalam menghadap
+i potensi ketidakseimbang-
+ []
+
+
+
+[47]
+
+[48]
+
+[49]
+
+[50]
+Underfull \hbox (badness 10000) in paragraph at lines 150--150
+\TU/TimesNewRoman(0)/m/n/10.95 pedoman klinis Kemenkes atau
+ []
+
+
+Underfull \hbox (badness 4108) in paragraph at lines 150--150
+\TU/TimesNewRoman(0)/m/n/10.95 WHO. Kualitas narasi divalidasi
+ []
+
+
+Underfull \hbox (badness 1577) in paragraph at lines 150--150
+\TU/TimesNewRoman(0)/m/n/10.95 menggunakan metrik \TU/TimesNewRoman(0)/m/it/10.
+95 Faithfulness
+ []
+
+
+Underfull \hbox (badness 2781) in paragraph at lines 150--151
+[]|\TU/TimesNewRoman(0)/m/n/10.95 Jika skor \TU/TimesNewRoman(0)/m/it/10.95 Fai
+thfulness \TU/TimesNewRoman(0)/m/n/10.95 atau \TU/TimesNewRoman(0)/m/it/10.95 A
+ns-
+ []
+
+
+Underfull \hbox (badness 1205) in paragraph at lines 156--156
+[]|\TU/TimesNewRoman(0)/m/n/10.95 Menerapkan mekanisme \TU/TimesNewRoman(0)/m/i
+t/10.95 Semantic
+ []
+
+
+Underfull \hbox (badness 3884) in paragraph at lines 156--156
+\TU/TimesNewRoman(0)/m/n/10.95 pertanyaan sederhana agar dapat
+ []
+
+
+Overfull \hbox (9.14717pt too wide) in paragraph at lines 146--159
+ [][] 
+ []
+
+)
+
+[51]
+
+LaTeX Warning: Empty bibliography on input line 297.
+
+
+Package caption Warning: Unused \captionsetup[lstlisting] on input line 276.
 See the caption package documentation for explanation.
 
 (ProposalTA.aux)
@@ -2510,7 +2665,7 @@ L3 programming layer <2025-10-09>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `ProposalTA.out' has not changed.
-(rerunfilecheck)             Checksum: D8CBB802CBCBC734887757F281642000;8709.
+(rerunfilecheck)             Checksum: DC868FF99FE8FB4D50187601FC407EA7;11695.
 
 Package biblatex Warning: Please (re)run Biber on the file:
 (biblatex)                ProposalTA
@@ -2521,12 +2676,12 @@ Package logreq Info: Writing requests to 'ProposalTA.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 29947 strings out of 403196
- 586314 string characters out of 5455712
- 1966440 words of memory out of 5000000
- 58120 multiletter control sequences out of 15000+600000
+ 29993 strings out of 403196
+ 587577 string characters out of 5455712
+ 1969969 words of memory out of 5000000
+ 58163 multiletter control sequences out of 15000+600000
  634490 words of font info for 92 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  73i,11n,93p,1464b,1733s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on ProposalTA.pdf (47 pages).
+Output written on ProposalTA.pdf (58 pages).

@@ -34,7 +34,7 @@ Klasifikasi hipertensi dibagi menjadi beberapa kategori sebagai berikut:
     Tekanan sistolik $\ge160$ mmHg dan/atau diastolik $\ge100$ mmHg. Kondisi ini memerlukan penanganan segera untuk mencegah kejadian akut seperti stroke atau infark miokard (Byrd et al., 2019).
 \end{enumerate}
 \vspace{1em} % Memberi jarak antar bagian
-Selain klasifikasi berbasis derajat, hipertensi juga diklasifikasikan berdasarkan etiologinya menjadi hipertensi primer (esensial) dan hipertensi sekunder. Hipertensi primer mencakup 90-95\% dari seluruh kasus dan tidak memiliki penyebab tunggal yang dapat diidentifikasi, melainkan hasil dari interaksi multifaktorial genetik dan lingkungan (Rimoldi et al., 2020). Sedangkan hipertensi sekunder disebabkan oleh kondisi medis yang mendasarinya, seperti penyakit parenkim ginjal, gangguan endokrin, atau penggunaan obat-obatan tertentu (Charles et al., 2021).
+Selain klasifikasi berbasis derajat, hipertensi juga diklasifikasikan berdasarkan etiologinya menjadi hipertensi primer (esensial) dan hipertensi sekunder. Hipertensi primer mencakup 90-95\% dari seluruh kasus dan tidak memiliki penyebab tunggal yang dapat diidentifikasi, melainkan hasil dari interaksi multifaktorial genetik dan lingkungan (Rimoldi et al., 2020). Sementara itu, hipertensi sekunder disebabkan oleh kondisi medis yang mendasarinya, seperti penyakit parenkim ginjal, gangguan endokrin, atau penggunaan obat-obatan tertentu (Charles et al., 2021).
 
 \vspace{1em} % Memberi jarak antar bagian
 
@@ -135,7 +135,7 @@ Dalam ranah \textit{Generative AI}, kemampuan LLM tidak terbatas pada pemahaman 
 
 Model-model ini dilatih menggunakan pendekatan \textit{Unsupervised Learning} atau \textit{Self-Supervised Learning}, yang memungkinkan mereka mempelajari struktur bahasa tanpa memerlukan pelabelan data manual secara ekstensif (Brown et al., 2020). Fundamental teknologi di balik LLM adalah arsitektur \textit{Transformer}, yang memperkenalkan mekanisme \textit{attention} untuk menangani ketergantungan jarak jauh dalam urutan data. Hal ini memungkinkan model untuk mempertahankan konteks pembicaraan atau dokumen yang panjang, menjadikannya sangat efektif untuk aplikasi seperti penerjemahan otomatis, \textit{chatbot} cerdas, dan pembuatan ringkasan teks otomatis (Vaswani et al., 2017; Naveed et al., 2023).
 
-\subsection{Vector Database}
+\subsection{\textit{Vector Database}}
 Dalam ekosistem pengembangan aplikasi berbasis AI modern, \textit{Vector Database} memegang peranan vital sebagai infrastruktur penyimpanan data. Berbeda dengan basis data relasional tradisional yang menyimpan data dalam baris dan kolom, \textit{Vector Database} dirancang khusus untuk menyimpan, mengelola, dan mengindeks data dalam format vektor berdimensi tinggi (Pan et al., 2023). Vektor ini, atau yang sering disebut sebagai \textit{embeddings}, merupakan representasi matematis dari data tidak terstruktur seperti teks, gambar, audio, atau video.
 Keunggulan utama dari jenis basis data ini terletak pada kemampuannya melakukan pencarian semantik (\textit{semantic search}) berdasarkan kemiripan vektor, bukan sekadar pencocokan kata kunci (Wang et al., 2024).
 Untuk menangani beban kerja komputasi yang berat dan memastikan skalabilitas, arsitektur \textit{Vector Database} menerapkan beberapa mekanisme optimasi sistem:
@@ -156,7 +156,7 @@ Pencarian dalam \textit{Vector Database} umumnya menggunakan algoritma \textit{N
 \begin{figure}[ht]
 	\centering
     \includegraphics[width=0.7\textwidth]{image/vector_viz.png}
-	\caption{Visualisasi Data Vector Database}
+	\caption{Visualisasi Data \textit{Vector Database}}
 	\label{gambar:vector_db}
     \captionsetup{justification=centering}
 \end{figure}
@@ -177,7 +177,7 @@ Mekanisme kerja \textit{Vector Database} dapat diuraikan melalui tahapan berikut
 \begin{figure}[ht]
 	\centering
     \includegraphics[width=0.9\textwidth]{image/vector_query.png}
-	\caption{Visualisasi Query Vector Database}
+	\caption{Visualisasi Query textit{Vector Database}}
 	\label{gambar:vector_query}
     \captionsetup{justification=centering}
 \end{figure}
@@ -249,7 +249,7 @@ Kerangka kerja RAGAS menyediakan berbagai metrik yang dikategorikan berdasarkan 
     \centering
     % GANTI 'nama_file_gambar_II.5.png' dengan nama file gambar Anda yang sebenarnya
     \includegraphics[width=0.8\textwidth]{image/RAGASEvaluation.png}
-    \caption{Taksonomi Metrik Evaluasi dalam Framework RAGAS.}
+    \caption{Taksonomi Metrik Evaluasi dalam \textit{framework} RAGAS.}
     \label{fig:II.5}
 \end{figure}
 
@@ -332,6 +332,6 @@ Rentan terhadap bias data pelatihan dan "halusinasi" fakta, serta belum diintegr
 \hline
 5 & Prediction of Personalised Hypertension Using Machine Learning in Indonesian Population (Septian dkk., 2025) (Septian dkk., 2025) & 
 Mengkomparasi 5 algoritma (termasuk textit{LightGBM} dan textit{XGBoost}) pada 9,58 juta data SATUSEHAT dengan analisis fitur menggunakan SHAP (SHapley Additive exPlanations) & 
-Model \textit{LightGBM} mencapai performa terbaik dengan AUC 0.78 (tanpa riwayat pasien) dan 0.85 (dengan riwayat pasien), di mana usia dan lingkar pinggang menjadi fitur prediktor dominan. & 
+Model \textit{LightGBM} mencapai performa terbaik dengan AUC 0,78 (tanpa riwayat pasien) dan 0,85 (dengan riwayat pasien), di mana usia dan lingkar pinggang menjadi fitur prediktor dominan. & 
 Studi bersifat \textit{cross-sectional} sehingga tidak dapat menyimpulkan kausalitas, serta data terbatas pada seting non-rumah sakit yang tidak mencakup variabel klinis mendalam seperti status pengobatan rinci. \\
 \end{longtable}
