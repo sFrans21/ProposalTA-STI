@@ -23,7 +23,7 @@ Sistem yang diusulkan bekerja dalam alur sekuensial otomatis sebagai berikut:
 \begin{enumerate}
     \item Pengguna memasukkan parameter kesehatan (seperti usia, tekanan darah, IMT, dan riwayat keluarga) ke dalam sistem.
     
-    \item Model ML (XGBoost) memproses data tersebut untuk menghasilkan skor probabilitas risiko hipertensi (misalnya: 85\% Berisiko).
+    \item Model ML (XGBoost) memproses data tersebut untuk menghasilkan skor probabilitas risiko hipertensi (misalnya: 56\% Berisiko).
     
     \item Secara paralel, modul XAI menggunakan metode SHAP untuk membedah \textit{black box} model ML. Modul ini mengidentifikasi variabel mana yang paling berkontribusi terhadap skor risiko tersebut, misalnya tinggi konsumsi garam dan IMT, yang menjadi kontributor utama.
     

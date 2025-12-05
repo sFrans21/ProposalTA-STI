@@ -62,7 +62,7 @@ Jadwal pelaksanaan penelitian dirinci dalam bentuk tabel kegiatan. Estimasi wakt
         \hline
         DP-02 & Feature engineering + balancing & Dataset final model & 3 bulan & Peneliti \\
         \hline
-        ML-01 & Model training XGBoost + \textit{fine-tuning} & Model 85\% akurasi (target) & 2 bulan & Peneliti \\
+        ML-01 & Model training XGBoost + \textit{fine-tuning} & Model 70\% akurasi (target) & 2 bulan & Peneliti \\
         \hline
         XAI-01 & SHAP attribution analysis & Visualisasi kontribusi fitur & 2 bulan & Peneliti \\
         \hline
@@ -109,13 +109,13 @@ Sistem yang diusulkan mengevaluasi kinerja arsitektur \textit{Retrieval-Augmente
 Berikut adalah penjelasan mengenai metrik-metrik kunci dalam evaluasi RAGAS yang diterapkan:
 
 \begin{enumerate}
-    \item \textbf{Faithfulness}: Kerangka RAGAS mengukur \textit{Faithfulness} untuk menilai konsistensi faktual dari narasi yang dibangkitkan terhadap konteks yang disajikan oleh \textit{retriever}. Metrik ini menjadi sangat krusial dalam domain kesehatan yang berisiko tinggi karena berfungsi untuk memastikan bahwa model tidak menghasilkan informasi medis yang dibuat-buat atau halusinasi. Hal ini secara langsung memitigasi bahaya laten yang timbul dari fabrikasi saran medis dan melanggar prinsip etika medis (\textit{non-maleficence}). Dengan demikian, \textit{Faithfulness} menjamin bahwa respons model memiliki landasan bukti (\textit{evidence-grounded}) yang dapat diverifikasi demi keselamatan pasien.
+    \item \textbf{Faithfulness}\\ Kerangka RAGAS mengukur \textit{Faithfulness} untuk menilai konsistensi faktual dari narasi yang dibangkitkan terhadap konteks yang disajikan oleh \textit{retriever}. Metrik ini menjadi sangat krusial dalam domain kesehatan yang berisiko tinggi karena berfungsi untuk memastikan bahwa model tidak menghasilkan informasi medis yang dibuat-buat atau halusinasi. Hal ini secara langsung memitigasi bahaya laten yang timbul dari fabrikasi saran medis dan melanggar prinsip etika medis (\textit{non-maleficence}). Dengan demikian, \textit{Faithfulness} menjamin bahwa respons model memiliki landasan bukti (\textit{evidence-grounded}) yang dapat diverifikasi demi keselamatan pasien.
     
-    \item \textbf{Context Precision}: Digunakan untuk mengevaluasi kualitas pengambilan dokumen. Metrik ini menghitung rasio antara informasi yang relevan yang berhasil diambil dibandingkan dengan total informasi yang disajikan. Nilai presisi konteks yang tinggi menunjukkan efisiensi sistem dalam menyaring data medis yang tidak diperlukan atau \textit{noise data}. Pengukuran ini sangat penting karena ketidaksinkronan antara proses \textit{retrieval} dan \textit{generation} dapat terjadi jika informasi yang tidak relevan masuk ke dalam konteks, yang pada akhirnya dapat memengaruhi kualitas penjelasan akhir.
+    \item \textbf{Context Precision}\\ Digunakan untuk mengevaluasi kualitas pengambilan dokumen. Metrik ini menghitung rasio antara informasi yang relevan yang berhasil diambil dibandingkan dengan total informasi yang disajikan. Nilai presisi konteks yang tinggi menunjukkan efisiensi sistem dalam menyaring data medis yang tidak diperlukan atau \textit{noise data}. Pengukuran ini sangat penting karena ketidaksinkronan antara proses \textit{retrieval} dan \textit{generation} dapat terjadi jika informasi yang tidak relevan masuk ke dalam konteks, yang pada akhirnya dapat memengaruhi kualitas penjelasan akhir.
     
-    \item \textbf{Context Recall}: Mengukur kemampuan sistem untuk mengambil seluruh informasi yang diperlukan dari basis pengetahuan eksternal guna menjawab pertanyaan pengguna secara komprehensif. Kualitas metrik ini sangat memengaruhi \textit{prompt} yang diperkaya (\textit{augmented}) yang diberikan kepada LLM, memastikan model memiliki fondasi faktual yang lengkap sebelum menyusun jawaban. Dalam konteks medis, metrik ini juga didukung oleh \textit{Context Entity Recall} yang memastikan entitas spesifik krusial (seperti nama obat atau kondisi komorbiditas hipertensi) tidak hilang selama pengambilan konteks.
+    \item \textbf{Context Recall}\\ Mengukur kemampuan sistem untuk mengambil seluruh informasi yang diperlukan dari basis pengetahuan eksternal guna menjawab pertanyaan pengguna secara komprehensif. Kualitas metrik ini sangat memengaruhi \textit{prompt} yang diperkaya (\textit{augmented}) yang diberikan kepada LLM, memastikan model memiliki fondasi faktual yang lengkap sebelum menyusun jawaban. Dalam konteks medis, metrik ini juga didukung oleh \textit{Context Entity Recall} yang memastikan entitas spesifik krusial (seperti nama obat atau kondisi komorbiditas hipertensi) tidak hilang selama pengambilan konteks.
     
-    \item \textbf{Answer Relevancy}: Metrik ini menilai kualitas narasi yang dibangkitkan dari perspektif sejauh mana jawaban tersebut secara langsung merespons pertanyaan yang diajukan oleh pengguna. Metrik \textit{Answer Relevancy} diukur tanpa mempertimbangkan kebenaran faktual dari jawaban yang dihasilkan. Tujuannya adalah untuk memastikan bahwa LLM tetap fokus pada permintaan pengguna, yang krusial dalam menghasilkan output yang mudah dipahami dan personal bagi pasien maupun tenaga medis.
+    \item \textbf{Answer Relevancy}\\ Metrik ini menilai kualitas narasi yang dibangkitkan dari perspektif sejauh mana jawaban tersebut secara langsung merespons pertanyaan yang diajukan oleh pengguna. Metrik \textit{Answer Relevancy} diukur tanpa mempertimbangkan kebenaran faktual dari jawaban yang dihasilkan. Tujuannya adalah untuk memastikan bahwa LLM tetap fokus pada permintaan pengguna, yang krusial dalam menghasilkan output yang mudah dipahami dan personal bagi pasien maupun tenaga medis.
 \end{enumerate}
 
 \section{Analisis Risiko dan Mitigasi}
@@ -125,11 +125,16 @@ Sistem yang diusulkan beroperasi dalam ranah kesehatan yang menuntut akurasi fak
 Identifikasi risiko berfokus pada potensi kegagalan di setiap komponen sistem hibrida yang dapat memengaruhi keselamatan pasien dan kepercayaan klinis. Komponen tersebut meliputi \textit{Machine Learning} (ML), \textit{Explainable Artificial Intelligence} (XAI), dan \textit{Retrieval Augmented Generation} (RAG). Risiko-risiko kunci yang teridentifikasi adalah sebagai berikut:
 
 \begin{enumerate}
-    \item \textbf{Risiko Halusinasi Medis (R1)}: Model bahasa besar atau LLM rentan menghasilkan informasi yang difabrikasi yaitu informasi yang terdengar meyakinkan namun faktanya salah. Dampak potensial dari risiko ini adalah bahaya keselamatan pasien yang fatal jika sistem memberikan saran medis yang tidak berdasar atau bertentangan dengan pedoman klinis resmi.
-    \item \textbf{Risiko Kegagalan Faithfulness (R2)}: Jawaban yang dihasilkan oleh LLM tidak sepenuhnya didukung oleh konteks yang diambil dari basis data vektor atau \textit{Vector Database}. Hal ini menunjukkan ketidaksetiaan faktual terhadap sumber. Dampak potensialnya adalah kerusakan kredibilitas sistem dan defisit kepercayaan di kalangan tenaga medis.
-    \item \textbf{Risiko Kualitas Retrieval (R3)}: Komponen \textit{retriever} gagal mengambil semua konteks yang relevan atau justru mengambil terlalu banyak informasi tidak relevan sehingga menyebabkan ketidaksinkronan antara proses pencarian dan pembangkitan jawaban.
-    \item \textbf{Risiko Kegagalan Target Recall Model Prediksi (R4)}: Model ML gagal mencapai target metrik sensitivitas klinis atau \textit{Recall} melampaui 85\% pada data uji. Dampak potensialnya adalah tingginya angka negatif palsu atau \textit{False Negative} yaitu pasien berisiko tinggi yang tidak terdeteksi.
-    \item \textbf{Risiko Latensi Sistem Tinggi (R5)}: Waktu tunggu total dari input data hingga munculnya narasi penjelasan melampaui batas yang ditentukan yaitu 10 detik. Hal ini mencakup proses RAG secara keseluruhan. Latensi tinggi dapat menurunkan pengalaman pengguna.
+    \item \textbf{Risiko Halusinasi Medis (R1)}\\ 
+    Model bahasa besar atau LLM rentan menghasilkan informasi yang difabrikasi yaitu informasi yang terdengar meyakinkan namun faktanya salah. Dampak potensial dari risiko ini adalah bahaya keselamatan pasien yang fatal jika sistem memberikan saran medis yang tidak berdasar atau bertentangan dengan pedoman klinis resmi.
+    \item \textbf{Risiko Kegagalan Faithfulness (R2)} \\ 
+    Jawaban yang dihasilkan oleh LLM tidak sepenuhnya didukung oleh konteks yang diambil dari basis data vektor atau \textit{Vector Database}. Hal ini menunjukkan ketidaksetiaan faktual terhadap sumber. Dampak potensialnya adalah kerusakan kredibilitas sistem dan defisit kepercayaan di kalangan tenaga medis.
+    \item \textbf{Risiko Kualitas Retrieval (R3)} \\ 
+    Komponen \textit{retriever} gagal mengambil semua konteks yang relevan atau justru mengambil terlalu banyak informasi tidak relevan sehingga menyebabkan ketidaksinkronan antara proses pencarian dan pembangkitan jawaban.
+    \item \textbf{Risiko Kegagalan Target Recall Model Prediksi (R4)} \\ 
+    Model ML gagal mencapai target metrik sensitivitas klinis atau \textit{Recall} melampaui 70\% pada data uji. Dampak potensialnya adalah tingginya angka negatif palsu atau \textit{False Negative} yaitu pasien berisiko tinggi yang tidak terdeteksi.
+    \item \textbf{Risiko Latensi Sistem Tinggi (R5)} \\ 
+    Waktu tunggu total dari input data hingga munculnya narasi penjelasan melampaui batas yang ditentukan yaitu 10 detik. Hal ini mencakup proses RAG secara keseluruhan. Latensi tinggi dapat menurunkan pengalaman pengguna.
 \end{enumerate}
 
 \subsection{Analisis dan Evaluasi Risiko}
@@ -151,7 +156,7 @@ Strategi penanganan risiko berfokus pada mitigasi untuk mengurangi kemungkinan a
         \hline
         R3 & Evaluasi komponen \textit{retriever} menggunakan metrik \textit{Context Precision} untuk menolak data bising dan \textit{Context Recall} untuk memastikan kelengkapan dari kerangka RAGAS. & Jika skor \textit{retrieval} rendah maka lakukan \textit{fine-tuning} pada model \textit{embedding} yang digunakan untuk pencarian vektor atau terapkan mekanisme \textit{reranking} pascapencarian dokumen. \\
         \hline
-        R4 & ML dioptimalkan untuk memprioritaskan metrik \textit{Recall} selama pelatihan dengan target minimal 85\% untuk meminimalkan \textit{False Negative}. & Jika \textit{Recall} kurang dari 85\% maka terapkan teknik \textit{hyperparameter tuning} yang lebih agresif pada model XGBoost atau gunakan teknik penyeimbangan data seperti SMOTE untuk mengatasi ketidakseimbangan kelas pada data latih. \\
+        R4 & ML dioptimalkan untuk memprioritaskan metrik \textit{Recall} selama pelatihan dengan target minimal 70\% untuk meminimalkan \textit{False Negative}. & Jika \textit{Recall} kurang dari 70\% maka terapkan teknik \textit{hyperparameter tuning} yang lebih agresif pada model XGBoost atau gunakan teknik penyeimbangan data seperti SMOTE untuk mengatasi ketidakseimbangan kelas pada data latih. \\
         \hline
         R5 & Menerapkan mekanisme \textit{Semantic Cache} dan klasifikasi kueri untuk pertanyaan sederhana agar dapat melewati alur RAG penuh yang mahal secara komputasi. & Jika waktu tunggu total melampaui 10 detik maka lakukan optimasi pada proses pencarian vektor seperti penyesuaian algoritma ANNS atau pertimbangkan untuk menggunakan API LLM yang memiliki latensi lebih rendah. \\
         \hline
